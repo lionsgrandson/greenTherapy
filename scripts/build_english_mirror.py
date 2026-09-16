@@ -69,6 +69,14 @@ OVERRIDES = {
     'יצירת קשר': 'Contact',
     'מייל': 'Email',
     'אירוע חברה / Offsite': 'Company Event / Offsite',
+    'תודה! פנייתך התקבלה בהצלחה, נחזור אליך בהקדם.': 'Thank you! Your inquiry was received successfully. We will get back to you shortly.',
+    'תודה! פנייתך התקבלה בהצלחה, צוות Green Therapy יצור עמך קשר בהקדם.': 'Thank you! Your inquiry was received successfully. The Green Therapy team will contact you shortly.',
+    'תודה! פרטי הפנייה התקבלו. ניצור איתכם קשר בהקדם עם הצעה מותאמת אישית.': 'Thank you! We received your inquiry and will contact you shortly with a tailored proposal.',
+    'תודה! פרטי הבקשה התקבלו ונחזור אליך בהקדם.': 'Thank you! We received your request and will get back to you shortly.',
+    'תודה על פנייתך! צוות Green Therapy ייצור איתך קשר בהקדם לתכנון האירוע.': 'Thank you for reaching out! The Green Therapy team will contact you shortly to plan your event.',
+    'שלום, אשמח לקבל הצעת מחיר למתחם עיסויים לאירוע חברה': 'Hello, I would like to receive a quote for a corporate event massage experience',
+    'היי, נשמח לייעוץ לגבי מתחם ספא לאירוע החברה': 'Hi, we would love advice about a spa experience for our company event',
+    'היי, יש לנו אירוע דחוף ונשמח לבדוק זמינות למתחם עיסויים': 'Hi, we have an upcoming event and would like to check availability for a massage experience',
 }
 
 
@@ -100,7 +108,7 @@ def google_translate(text):
 
 def collect_strings(source):
     strings = set()
-    # Protect script/style contents from text-node extraction.
+    # Protect script/style contents from ordinary text-node extraction.
     protected = re.sub(r'<(script|style)\b[^>]*>.*?</\1>', '', source, flags=re.I|re.S)
     for m in re.finditer(r'>([^<>]+)<', protected, flags=re.S):
         s = norm(m.group(1))
@@ -109,6 +117,13 @@ def collect_strings(source):
         for m in re.finditer(rf'{attr}="([^"]+)"', protected, flags=re.I):
             s = norm(m.group(1))
             if s and HEBREW.search(s): strings.add(s)
+    # Dynamic UI strings in inline alert handlers.
+    for m in re.finditer(r"alert\(\s*['\"]([^'\"]*[\u0590-\u05FF][^'\"]*)['\"]\s*\)", source, flags=re.I):
+        strings.add(norm(m.group(1)))
+    # WhatsApp prefilled messages are also user-visible after clicking.
+    for m in re.finditer(r'https://wa\.me/\?text=([^"&]+)', source, flags=re.I):
+        decoded = urllib.parse.unquote(m.group(1))
+        if HEBREW.search(decoded): strings.add(norm(decoded))
     return strings
 
 
@@ -122,7 +137,7 @@ all_sources = {p: Path(p).read_text(encoding='utf-8') for p in PAGES}
 needed = set()
 for src in all_sources.values(): needed.update(collect_strings(src))
 missing = sorted(s for s in needed if s not in cache)
-print(f'{len(needed)} unique visible Hebrew strings; {len(missing)} need translation')
+print(f'{len(needed)} unique Hebrew strings; {len(missing)} need translation')
 
 if missing:
     with ThreadPoolExecutor(max_workers=6) as ex:
@@ -169,12 +184,27 @@ def translate_html(source, filename):
 
     for i, block in enumerate(blocks): out = out.replace(f'__GT_PROTECTED_BLOCK_{i}__', block)
 
+    # Translate inline confirmation alerts without changing their behavior.
+    def alert_cb(m):
+        quote, raw = m.group(1), m.group(2)
+        s = norm(raw)
+        tr = cache.get(s, raw)
+        return 'alert(' + quote + tr.replace('\\', '\\\\').replace(quote, '\\' + quote) + quote + ')'
+    out = re.sub(r"alert\(\s*(['\"])([^'\"]*[\u0590-\u05FF][^'\"]*)\1\s*\)", alert_cb, out)
+
+    # Translate pre-filled WhatsApp messages and keep the same destination behavior.
+    def wa_cb(m):
+        raw = m.group(1)
+        decoded = norm(urllib.parse.unquote(raw))
+        tr = cache.get(decoded, decoded)
+        return 'https://wa.me/?text=' + urllib.parse.quote(tr, safe=',.!?')
+    out = re.sub(r'https://wa\.me/\?text=([^"&]+)', wa_cb, out, flags=re.I)
+
     # English document direction and matching page-to-page language switch.
     out = re.sub(r'<html\s+dir="rtl"\s+lang="he"', '<html dir="ltr" lang="en"', out, count=1, flags=re.I)
     out = re.sub(r'<html\s+lang="he"\s+dir="rtl"', '<html dir="ltr" lang="en"', out, count=1, flags=re.I)
     out = out.replace('data-lang-switch="en"', 'data-lang-switch="he"')
     out = re.sub(r'href="en/([^"]+\.html)"', r'href="../\1"', out)
-    # Switch label only on the language-toggle anchor.
     out = re.sub(r'(<a[^>]*data-lang-switch="he"[^>]*>)(\s*)EN(\s*</a>)', r'\1\2HE\3', out, flags=re.I)
 
     # Shared local assets live one directory above /en.
@@ -192,7 +222,8 @@ for page, source in all_sources.items():
     Path('en', page).write_text(built, encoding='utf-8')
     print(f'Built en/{page}: {len(source)} -> {len(built)} bytes')
 
-# Visible English output must not contain Hebrew. Ignore comments and protected script/style internals for this check.
+# Visible English output must not contain Hebrew. Ignore comments and style/script blocks themselves,
+# but keep checking inline attributes such as href/onsubmit because users can see their results.
 leftovers = []
 for page in PAGES:
     text = Path('en', page).read_text(encoding='utf-8')
