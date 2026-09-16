@@ -207,7 +207,7 @@ def translate_html(source, filename):
         if re.search(r'\bdir="[^"]*"', tag, re.I):
             tag = re.sub(r'\bdir="[^"]*"', 'dir="ltr"', tag, count=1, flags=re.I)
         else:
-            tag = tag[:-1] + ' dir="rtl">'
+            tag = tag[:-1] + ' dir="ltr">'
         return tag
     out = re.sub(r'<html\b[^>]*>', html_tag_cb, out, count=1, flags=re.I)
     out = out.replace('data-lang-switch="en"', 'data-lang-switch="he"')
