@@ -32,8 +32,9 @@ jobs:
               return text
 
           def remove_adjacent_duplicate_email(text: str) -> str:
+              # Collapse any run of 2+ adjacent plain email paragraphs to one.
               pattern = re.compile(
-                  r'(<p[^>]*>\s*alongreentherapy@gmail\.com\s*</p>)\s*<p[^>]*>\s*alongreentherapy@gmail\.com\s*</p>',
+                  r'(<p[^>]*>\s*alongreentherapy@gmail\.com\s*</p>)(?:\s*<p[^>]*>\s*alongreentherapy@gmail\.com\s*</p>)+',
                   re.I
               )
               return pattern.sub(r'\1', text)
@@ -62,6 +63,7 @@ jobs:
               footer = footer.replace('text-surface-bone', 'text-[#f2e8d5]')
               s = head + '<footer' + footer
 
+          # No participant range or service is chosen for the visitor.
           s = s.replace(' checked=""', '')
           s = s.replace(
               '<input class="sr-only peer" name="participants" type="radio" value="10-30"/>',
@@ -92,6 +94,7 @@ jobs:
 
           p.write_text(s, encoding='utf-8')
 
+          # Ice bath form: no real group size selected by default.
           p = Path('ice-bath.html')
           s = p.read_text(encoding='utf-8')
           s = s.replace('<option selected="">25-60 משתתפים (מחלקתי / Offsite)</option>', '<option>25-60 משתתפים (מחלקתי / Offsite)</option>')
