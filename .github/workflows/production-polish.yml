@@ -26,15 +26,16 @@ jobs:
           ]
 
           def remove_placeholder_privacy(text: str) -> str:
-              # Remove non-functional Privacy Policy placeholders until a real policy page exists.
               text = re.sub(r'\s*<li[^>]*>\s*<(?:a|span)[^>]*>\s*Privacy Policy\s*</(?:a|span)>\s*</li>', '', text, flags=re.I)
               text = re.sub(r'\s*<div class="pt-2">\s*<(?:a|span)[^>]*>\s*Privacy Policy\s*</(?:a|span)>\s*</div>', '', text, flags=re.I)
               text = re.sub(r'\s*<(?:a|span)[^>]*>\s*Privacy Policy\s*</(?:a|span)>', '', text, flags=re.I)
               return text
 
           def remove_adjacent_duplicate_email(text: str) -> str:
-              # Collapse exact adjacent duplicate email paragraphs.
-              pattern = re.compile(r'(<p(?P<attrs>[^>]*)>\s*alongreentherapy@gmail\.com\s*</p>)\s*<p(?P=attrs)>\s*alongreentherapy@gmail\.com\s*</p>', re.I)
+              pattern = re.compile(
+                  r'(<p[^>]*>\s*alongreentherapy@gmail\.com\s*</p>)\s*<p[^>]*>\s*alongreentherapy@gmail\.com\s*</p>',
+                  re.I
+              )
               return pattern.sub(r'\1', text)
 
           for page in pages:
@@ -42,11 +43,9 @@ jobs:
               s = p.read_text(encoding='utf-8')
               s = remove_placeholder_privacy(s)
               s = remove_adjacent_duplicate_email(s)
-              # One Stitch footer had an explicit brown override that defeated forest green.
               s = s.replace('bg-[#372f28]', 'bg-[#1d3326]')
               p.write_text(s, encoding='utf-8')
 
-          # Contact page: remove leaked design-system annotation, normalize footer, and never preselect user choices.
           p = Path('contact.html')
           s = p.read_text(encoding='utf-8')
           leaked = ' Links Column (Mandated strings from JSON: "Pop-Up Spa", "Mind &amp; Body Workshops", "Ice Bath Experience", "Privacy Policy") '
@@ -56,7 +55,6 @@ jobs:
               '<footer class="full-width py-12 bg-[#1d3326] text-[#f2e8d5]">'
           )
 
-          # Footer text colors were referencing a token that this page does not define.
           if '<footer' in s:
               head, footer = s.split('<footer', 1)
               footer = footer.replace('text-surface-bone/80', 'text-[#f2e8d5]/80')
@@ -64,14 +62,12 @@ jobs:
               footer = footer.replace('text-surface-bone', 'text-[#f2e8d5]')
               s = head + '<footer' + footer
 
-          # No participant range or service may be chosen on the visitor's behalf.
           s = s.replace(' checked=""', '')
           s = s.replace(
               '<input class="sr-only peer" name="participants" type="radio" value="10-30"/>',
               '<input class="sr-only peer" name="participants" required="" type="radio" value="10-30"/>'
           )
 
-          # Add useful names/autocomplete so the form is ready for a real transport endpoint.
           field_names = {
               'fullName': ('fullName', 'name'),
               'companyName': ('companyName', 'organization'),
@@ -96,7 +92,6 @@ jobs:
 
           p.write_text(s, encoding='utf-8')
 
-          # Ice-bath inquiry: replace the real preselected group size with a neutral required placeholder.
           p = Path('ice-bath.html')
           s = p.read_text(encoding='utf-8')
           s = s.replace('<option selected="">25-60 משתתפים (מחלקתי / Offsite)</option>', '<option>25-60 משתתפים (מחלקתי / Offsite)</option>')
@@ -107,7 +102,6 @@ jobs:
           s = s.replace(marker, replacement, 1)
           p.write_text(s, encoding='utf-8')
 
-          # Avoid a new machine-translated placeholder when rebuilding English.
           cache_path = Path('translations-he-en.json')
           cache = json.loads(cache_path.read_text(encoding='utf-8'))
           cache['בחרו כמות משתתפים'] = 'Choose participant range'
@@ -138,13 +132,11 @@ jobs:
               if 'checked=""' in s:
                   raise SystemExit(f'{page}: a form choice is still pre-checked')
 
-              # selected is allowed only for a neutral empty placeholder.
               for m in re.finditer(r'<option\b[^>]*selected=""[^>]*>', s, flags=re.I):
                   tag = m.group(0)
                   if 'value=""' not in tag:
                       raise SystemExit(f'{page}: real option still preselected: {tag}')
 
-              # Catch exact duplicate email paragraphs next to each other.
               if re.search(r'<p[^>]*>\s*alongreentherapy@gmail\.com\s*</p>\s*<p[^>]*>\s*alongreentherapy@gmail\.com\s*</p>', s, flags=re.I):
                   raise SystemExit(f'{page}: duplicate adjacent email remains')
 
