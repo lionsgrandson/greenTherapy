@@ -17,6 +17,7 @@ html[lang="en"] body.gt-en-page .font-label-sm {
   font-family: 'Manrope', 'Assistant', sans-serif !important;
 }
 
+/* Long English strings should never force a card, grid cell or flex child to overflow. */
 html[lang="en"] body.gt-en-page .grid > *,
 html[lang="en"] body.gt-en-page .flex > * {
   min-width: 0;
@@ -42,7 +43,11 @@ html[lang="en"] body.gt-en-page select {
   text-align: left;
 }
 
-/* The English hero needs a slightly wider text measure than the Hebrew copy. */
+html[lang="en"] body.gt-en-page p.max-w-2xl {
+  max-width: 46rem !important;
+}
+
+/* The English homepage hero needs a wider measure than the Hebrew copy. */
 html[lang="en"] body.gt-en-page .gt-en-hero-copy {
   max-width: 58rem !important;
 }
@@ -54,7 +59,7 @@ html[lang="en"] body.gt-en-page .gt-en-hero-copy h1 {
 }
 
 html[lang="en"] body.gt-en-page .gt-en-hero-copy p {
-  max-width: 46rem;
+  max-width: 46rem !important;
   text-wrap: pretty;
 }
 
@@ -63,14 +68,24 @@ html[lang="en"] body.gt-en-page button {
   line-height: 1.3;
 }
 
-/* Prevent long English card copy from feeling squeezed at mid-size desktop widths. */
-@media (min-width: 1024px) and (max-width: 1180px) {
-  html[lang="en"] body.gt-en-page .lg\:grid-cols-4 {
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+/* English navigation needs a little more breathing room at tablet widths. */
+@media (max-width: 1023px) {
+  html[lang="en"] body.gt-en-page header nav {
+    display: none !important;
   }
 }
 
+/* Fixed three-column micro-card rows work in Hebrew because the labels are short.
+   Stack them on small English screens instead of squeezing the copy. */
 @media (max-width: 767px) {
+  html[lang="en"] body.gt-en-page .grid.grid-cols-3 {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  html[lang="en"] body.gt-en-page .grid.grid-cols-3 > * {
+    width: 100%;
+  }
+
   html[lang="en"] body.gt-en-page .gt-en-hero-copy h1 {
     font-size: clamp(2.15rem, 10vw, 3rem) !important;
     line-height: 1.08 !important;
@@ -78,6 +93,21 @@ html[lang="en"] body.gt-en-page button {
   }
 
   html[lang="en"] body.gt-en-page .gt-en-hero-copy p {
-    max-width: none;
+    max-width: none !important;
+  }
+}
+
+/* Four-card rows become cramped in English on smaller desktops; keep the same cards,
+   just give them two columns until there is genuinely enough room. */
+@media (min-width: 1024px) and (max-width: 1180px) {
+  html[lang="en"] body.gt-en-page .lg\:grid-cols-4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+/* Trust/metric rows with three fixed columns get a touch more usable width in English. */
+@media (min-width: 768px) {
+  html[lang="en"] body.gt-en-page .grid.grid-cols-3.max-w-xl {
+    max-width: 42rem !important;
   }
 }
