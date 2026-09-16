@@ -27,9 +27,9 @@ jobs:
 
           def remove_placeholder_privacy(text: str) -> str:
               # Remove non-functional Privacy Policy placeholders until a real policy page exists.
-              text = re.sub(r'\s*<li>\s*<span[^>]*>\s*Privacy Policy\s*</span>\s*</li>', '', text, flags=re.I)
-              text = re.sub(r'\s*<div class="pt-2">\s*<span[^>]*>\s*Privacy Policy\s*</span>\s*</div>', '', text, flags=re.I)
-              text = re.sub(r'\s*<span[^>]*>\s*Privacy Policy\s*</span>', '', text, flags=re.I)
+              text = re.sub(r'\s*<li[^>]*>\s*<(?:a|span)[^>]*>\s*Privacy Policy\s*</(?:a|span)>\s*</li>', '', text, flags=re.I)
+              text = re.sub(r'\s*<div class="pt-2">\s*<(?:a|span)[^>]*>\s*Privacy Policy\s*</(?:a|span)>\s*</div>', '', text, flags=re.I)
+              text = re.sub(r'\s*<(?:a|span)[^>]*>\s*Privacy Policy\s*</(?:a|span)>', '', text, flags=re.I)
               return text
 
           def remove_adjacent_duplicate_email(text: str) -> str:
