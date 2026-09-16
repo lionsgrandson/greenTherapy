@@ -201,8 +201,18 @@ def translate_html(source, filename):
     out = re.sub(r'https://wa\.me/\?text=([^"&]+)', wa_cb, out, flags=re.I)
 
     # English document direction and matching page-to-page language switch.
-    out = re.sub(r'<html\s+dir="rtl"\s+lang="he"', '<html dir="ltr" lang="en"', out, count=1, flags=re.I)
-    out = re.sub(r'<html\s+lang="he"\s+dir="rtl"', '<html dir="ltr" lang="en"', out, count=1, flags=re.I)
+    def html_tag_cb(m):
+        tag = m.group(0)
+        if re.search(r'\blang="[^"]*"', tag, re.I):
+            tag = re.sub(r'\blang="[^"]*"', 'lang="en"', tag, count=1, flags=re.I)
+        else:
+            tag = tag[:-1] + ' lang="en">'
+        if re.search(r'\bdir="[^"]*"', tag, re.I):
+            tag = re.sub(r'\bdir="[^"]*"', 'dir="ltr"', tag, count=1, flags=re.I)
+        else:
+            tag = tag[:-1] + ' dir="ltr">'
+        return tag
+    out = re.sub(r'<html\b[^>]*>', html_tag_cb, out, count=1, flags=re.I)
     out = out.replace('data-lang-switch="en"', 'data-lang-switch="he"')
     out = re.sub(r'href="en/([^"]+\.html)"', r'href="../\1"', out)
     out = re.sub(r'(<a[^>]*data-lang-switch="he"[^>]*>)(\s*)EN(\s*</a>)', r'\1\2HE\3', out, flags=re.I)
