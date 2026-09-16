@@ -196,8 +196,8 @@ def translate_html(source, filename):
         return 'https://wa.me/?text=' + urllib.parse.quote(tr, safe=',.!?')
     out = re.sub(r'https://wa\.me/\?text=([^"&]+)', wa_cb, out, flags=re.I)
 
-    # Preserve the Hebrew page's RTL layout direction so the English design is visually identical.
-    # English characters still render left-to-right naturally inside their text runs.
+    # English keeps the same Stitch components, spacing and imagery, but uses natural LTR flow.
+    # Fine-grained English-only CSS handles longer copy without changing the Hebrew master.
     def html_tag_cb(m):
         tag = m.group(0)
         if re.search(r'\blang="[^"]*"', tag, re.I):
@@ -205,7 +205,7 @@ def translate_html(source, filename):
         else:
             tag = tag[:-1] + ' lang="en">'
         if re.search(r'\bdir="[^"]*"', tag, re.I):
-            tag = re.sub(r'\bdir="[^"]*"', 'dir="rtl"', tag, count=1, flags=re.I)
+            tag = re.sub(r'\bdir="[^"]*"', 'dir="ltr"', tag, count=1, flags=re.I)
         else:
             tag = tag[:-1] + ' dir="rtl">'
         return tag
@@ -219,8 +219,17 @@ def translate_html(source, filename):
     out = out.replace('src="assets/', 'src="../assets/')
     out = out.replace('href="assets/', 'href="../assets/')
 
-    # Do NOT alter layout classes such as text-right/text-left: the English page must retain
-    # the same visual composition as the Hebrew Stitch master.
+    # English-specific layout polish: preserve the design system while giving English natural LTR flow.
+    out = out.replace('href="../enhancements.css" rel="stylesheet"/>', 'href="../enhancements.css" rel="stylesheet"/>\n<link href="../english.css" rel="stylesheet"/>')
+    out = out.replace('<body class="', '<body class="gt-en-page ', 1)
+    out = out.replace('text-right', 'text-left')
+
+    # The homepage hero and trust badges need a little more room for English copy.
+    if filename == 'index.html':
+        out = out.replace('max-w-3xl text-white">', 'max-w-4xl text-white gt-en-hero-copy">', 1)
+        out = out.replace('grid grid-cols-2 sm:grid-cols-4 gap-4 text-white/90', 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-white/90', 1)
+        out = out.replace('>arrow_back<', '>arrow_forward<', 1)
+
     return out
 
 for page, source in all_sources.items():
