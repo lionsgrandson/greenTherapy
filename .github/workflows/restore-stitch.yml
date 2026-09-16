@@ -80,19 +80,12 @@ jobs:
               raise SystemExit('Expected added Spa card not found')
           s = s.replace(inserted, '<!-- Card 4 -->', 1)
 
-          # Keep the existing compact treatment card but align it to the email wording.
-          s = s.replace('עיסוי קרקפת, פנים וכפות רגליים', 'עיסוי קרקפת, פנים וכפות רגליים', 1)
-          old_para = 'טיפול קצר ומרגיע הכולל עיסוי קרקפת ופנים, לצד עיסוי כפות רגליים אותנטי בהשראת המסורת התאילנדית. מתאים במיוחד להפוגה נעימה במהלך יום חברה או כנס.'
-          if old_para not in s:
-              raise SystemExit('Expected compact-treatment paragraph not found')
-          # paragraph already approved; leave it unchanged
-
           # Repurpose the existing Tailored Treatment card instead of adding a seventh card.
           if 'טיפול משולב (Tailored Treatment)' not in s:
               raise SystemExit('Expected Tailored Treatment card not found')
           s = s.replace('טיפול משולב (Tailored Treatment)', 'עיסוי תאילנדי ושיאצו', 1)
 
-          tailored_old = 'אנחנו לא עובדים לפי תבנית. המטפל מתאים את הטיפול בזמן אמת לצרכי העובד, ומשלב טכניקות שונות ליצירת טיפול מדויק ואפקטיבי.'
+          tailored_old = 'שיחה מקדימה קצרה עם המטפל בתחילת הסשן, בה כל עובד מגדיר את העדפות הלחץ ואת האזורים הזקוקים לתשומת לב מיוחדת באותו רגע.'
           tailored_new = 'טיפולים משחררים המשלבים מתיחות, לחיצות ועבודה מדויקת על עומסים בגוף. ניתן לשלב עיסוי תאילנדי ושיאצו כחלק מתפריט הטיפולים באירוע.'
           if tailored_old not in s:
               raise SystemExit('Expected Tailored Treatment paragraph not found')
