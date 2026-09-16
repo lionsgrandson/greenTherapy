@@ -20,18 +20,18 @@
         extend: {
           "colors": {
             "surface-variant": "#eee0d6",
-            "secondary-container": "#f8dac8",
+            "secondary-container": "#e3ece5",
             "surface-container-low": "#fff1e7",
             "surface-container": "#faebe1",
             "background": "#fff8f5",
             "on-error-container": "#93000a",
-            "surface-tint": "#645e4f",
+            "surface-tint": "#4e6b58",
             "on-primary": "#ffffff",
             "on-background": "#211a14",
             "surface-dim": "#e5d8ce",
             "inverse-surface": "#372f28",
             "tertiary-fixed-dim": "#efbc98",
-            "on-secondary-container": "#755e50",
+            "on-secondary-container": "#355140",
             "on-primary-fixed-variant": "#4c4638",
             "secondary-fixed": "#fbddca",
             "on-surface": "#211a14",
@@ -43,12 +43,12 @@
             "surface-container-lowest": "#ffffff",
             "surface-container-high": "#f4e6db",
             "tertiary-fixed": "#ffdcc4",
-            "secondary": "#705a4c",
+            "secondary": "#506b58",
             "on-error": "#ffffff",
             "on-secondary": "#ffffff",
             "on-tertiary": "#ffffff",
-            "inverse-primary": "#cfc6b3",
-            "primary-container": "#f2e8d5",
+            "inverse-primary": "#bfd2c3",
+            "primary-container": "#dfe9e1",
             "tertiary": "#7c5639",
             "inverse-on-surface": "#fceee4",
             "on-tertiary-fixed-variant": "#613f24",
@@ -56,11 +56,11 @@
             "error-container": "#ffdad6",
             "surface-container-highest": "#eee0d6",
             "secondary-fixed-dim": "#dec1af",
-            "primary-fixed-dim": "#cfc6b3",
+            "primary-fixed-dim": "#bfd2c3",
             "on-surface-variant": "#4a463e",
             "error": "#ba1a1a",
             "surface": "#fff8f5",
-            "primary-fixed": "#ebe1cf",
+            "primary-fixed": "#dbe8dd",
             "outline": "#7c766d",
             "on-primary-container": "#6f6859",
             "on-tertiary-fixed": "#2f1501",
@@ -131,13 +131,13 @@
       -webkit-font-smoothing: antialiased;
     }
   </style>
-</head>
+<link href="enhancements.css" rel="stylesheet"/></head>
 <body class="bg-surface text-on-surface antialiased flex flex-col min-h-screen">
 <!-- TOP APP BAR (Shared Components JSON Anchor) -->
 <header class="bg-surface-bone dark:bg-surface-dim docked full-width top-0 sticky z-50 shadow-sm transition-all duration-300">
 <div class="flex justify-between items-center w-full px-margin-desktop py-4 max-w-container-max mx-auto">
 <!-- Brand Anchor -->
-<a class="flex items-center gap-3 group" href="#">
+<a class="flex items-center gap-3 group" href="index.html">
 <div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-forest-deep">
 <span class="material-symbols-outlined">spa</span>
 </div>
@@ -147,15 +147,10 @@
 </div>
 </a>
 <!-- Desktop Navigation Links (JSON items) -->
-<nav class="hidden md:flex items-center gap-8">
-<a class="text-on-surface-variant font-medium hover:text-sage-soft transition-colors duration-300 font-label-md text-label-md" href="#services">Services</a>
-<a class="text-on-surface-variant font-medium hover:text-sage-soft transition-colors duration-300 font-label-md text-label-md" href="#pricing">Pricing</a>
-<a class="text-forest-deep font-bold border-b-2 border-forest-deep pb-1 hover:text-sage-soft transition-colors duration-300 font-label-md text-label-md" href="#atmosphere">Atmosphere</a>
-<a class="text-on-surface-variant font-medium hover:text-sage-soft transition-colors duration-300 font-label-md text-label-md" href="#contact">Contact</a>
-</nav>
+<nav class="hidden md:flex items-center gap-8"><a class="text-on-surface-variant font-medium hover:text-sage-soft transition-colors duration-300 font-label-md text-label-md" href="index.html">דף הבית</a><a class="text-on-surface-variant font-medium hover:text-sage-soft transition-colors duration-300 font-label-md text-label-md" href="index.html#experiences">מתחמים</a><a class="text-on-surface-variant font-medium hover:text-sage-soft transition-colors duration-300 font-label-md text-label-md" href="about.html">אודות</a><a class="text-on-surface-variant font-medium hover:text-sage-soft transition-colors duration-300 font-label-md text-label-md" href="gallery.html">גלריה</a><a class="text-on-surface-variant font-medium hover:text-sage-soft transition-colors duration-300 font-label-md text-label-md" href="contact.html">צור קשר</a></nav>
 <!-- Primary Action -->
 <div class="flex items-center gap-3"><a class="inline-flex items-center justify-center min-w-10 h-10 px-3 rounded-full bg-surface-container text-forest-deep border border-outline-variant/40 hover:bg-primary-container transition-all font-label-sm text-label-sm font-bold" data-lang-switch="en" href="en/index.html#why-us">EN</a>
-<a class="bg-forest-deep text-surface-bone hover:bg-opacity-90 px-5 py-2.5 rounded-lg font-label-md text-label-md font-semibold transition-all duration-200 active:scale-95 shadow-sm" href="#contact-b2b">
+<a class="bg-forest-deep text-surface-bone hover:bg-opacity-90 px-5 py-2.5 rounded-lg font-label-md text-label-md font-semibold transition-all duration-200 active:scale-95 shadow-sm" href="contact.html">
           Book Now
         </a>
 </div>
@@ -167,10 +162,7 @@
 <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
 <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
 <div class="lg:col-span-7 flex flex-col gap-6">
-<div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary-container/70 border border-outline-variant/30 w-fit">
-<span class="material-symbols-outlined text-secondary text-sm">nature_people</span>
-<span class="font-label-sm text-label-sm text-secondary font-semibold">אודות Green Therapy • הפקת מתחמי Wellness לאירועי חברה</span>
-</div>
+
 <h1 class="font-display text-display text-on-surface leading-tight tracking-tight">
               Green Therapy – חוויות Wellness ו-Wellbeing פרימיום לאירועי חברה
             </h1>
@@ -178,7 +170,7 @@
               Green Therapy מביאה את עולם הספא, הבריאות והאנרגיה ישירות לאתר האירוע שלכם – במשרדים, בטבע או בסיור החברה. אנחנו מספקים מעטפת 360° מלאה, מותאמת אישית ומדויקת עד הפרט האחרון.
             </p>
 <div class="flex flex-wrap items-center gap-4 pt-2">
-<a class="inline-flex items-center justify-center gap-2 bg-forest-deep text-surface-bone px-7 py-3.5 rounded-lg font-label-md text-label-md font-semibold hover:bg-opacity-95 transition-all shadow-sm" href="#contact-b2b">
+<a class="inline-flex items-center justify-center gap-2 bg-forest-deep text-surface-bone px-7 py-3.5 rounded-lg font-label-md text-label-md font-semibold hover:bg-opacity-95 transition-all shadow-sm" href="contact.html">
 <span>תכנון אירוע חברה בהתאמה אישית</span>
 <span class="material-symbols-outlined text-sm">arrow_back</span>
 </a>
@@ -213,15 +205,7 @@
 </div>
 </div>
 <!-- Floating Ceramic Card -->
-<div class="absolute -bottom-6 -left-4 hidden sm:flex items-center gap-3 bg-surface-container-lowest p-4 rounded-xl border border-outline-variant/50 shadow-md">
-<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center text-forest-deep">
-<span class="material-symbols-outlined">workspace_premium</span>
-</div>
-<div>
-<p class="font-label-md text-label-md text-on-surface font-bold">מקצועיות ושירות</p>
-<p class="font-label-sm text-label-sm text-on-surface-variant">צוות מנוסה, מוסמך ושירותי ברמה הגבוהה ביותר</p>
-</div>
-</div>
+
 </div>
 </div>
 </div>
@@ -257,7 +241,7 @@
 <section class="py-20 bg-surface-container-lowest">
 <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
 <div class="text-center max-w-2xl mx-auto mb-16">
-<span class="font-label-sm text-label-sm text-secondary tracking-wide uppercase font-semibold">הסטנדרט שמבדיל אותנו</span>
+
 <h2 class="font-headline-lg text-headline-lg text-on-surface mt-2 font-bold">ערכי המותג שמובילים כל אירוע</h2>
 <p class="font-body-md text-body-md text-on-surface-variant mt-3">
             שלושה עקרונות מובילים את העבודה שלנו: מקצועיות ללא פשרות, ראש שקט למנהלי האירוע וגמישות מלאה בהתאמה אישית.
@@ -324,10 +308,7 @@
 </div>
 <!-- Founder & Philosophy Story -->
 <div class="lg:col-span-6 order-1 lg:order-2 flex flex-col gap-6">
-<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary-container/60 w-fit">
-<span class="material-symbols-outlined text-secondary text-sm">self_improvement</span>
-<span class="font-label-sm text-label-sm text-on-secondary-container font-semibold">צוות Green Therapy</span>
-</div>
+
 <h2 class="font-headline-lg text-headline-lg text-on-surface font-bold leading-tight">
               מקצועיות, שירות ונראות מוקפדת
             </h2>
@@ -342,7 +323,7 @@
 <span class="material-symbols-outlined">local_florist</span>
 </div>
 <div>
-<h4 class="font-headline-md text-headline-md text-forest-deep text-lg font-bold">צוות Green Therapy</h4>
+
 <p class="font-label-sm text-label-sm text-on-surface-variant">Corporate Wellness Events</p>
 </div>
 </div>
@@ -354,7 +335,7 @@
 <section class="py-20 bg-surface">
 <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
 <div class="text-center max-w-2xl mx-auto mb-16">
-<span class="font-label-sm text-label-sm text-secondary uppercase font-semibold">איך זה עובד?</span>
+
 <h2 class="font-headline-lg text-headline-lg text-on-surface mt-2 font-bold">פשוט, מסודר וללא כאבי ראש</h2>
 <p class="font-body-md text-body-md text-on-surface-variant mt-2">
             אנחנו מטפלים בכל הלוגיסטיקה מא' ועד ת' כדי שאתם תוכלו ליהנות מהאירוע יחד עם העובדים.
@@ -443,7 +424,7 @@
 <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
 <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
 <div class="lg:col-span-6 flex flex-col gap-6">
-<span class="font-label-sm text-label-sm text-mint-mist uppercase font-semibold">שותפות לרווחת העובדים</span>
+
 <h2 class="font-headline-lg text-headline-lg font-bold text-surface-bone leading-tight">
               בואו נעבוד יחד – צרו קשר לתכנון האירוע הבא שלכם.
             </h2>
@@ -532,15 +513,15 @@
 <!-- Quick links (From JSON) -->
 <div class="flex flex-col gap-3">
 <span class="font-label-caps text-label-caps font-bold text-surface-bone dark:text-forest-deep">Corporate Wellness</span>
-<a class="text-surface-bone/80 dark:text-on-surface-variant hover:text-mint-mist transition-colors duration-300 font-body-sm text-body-sm" href="#services">Pop-Up Spa</a>
-<a class="text-surface-bone/80 dark:text-on-surface-variant hover:text-mint-mist transition-colors duration-300 font-body-sm text-body-sm" href="#services">Mind &amp; Body Workshops</a>
-<a class="text-surface-bone/80 dark:text-on-surface-variant hover:text-mint-mist transition-colors duration-300 font-body-sm text-body-sm" href="#services">Ice Bath Experience</a>
+<a class="text-surface-bone/80 dark:text-on-surface-variant hover:text-mint-mist transition-colors duration-300 font-body-sm text-body-sm" href="index.html#experiences">Pop-Up Spa</a>
+<a class="text-surface-bone/80 dark:text-on-surface-variant hover:text-mint-mist transition-colors duration-300 font-body-sm text-body-sm" href="index.html#experiences">Mind &amp; Body Workshops</a>
+<a class="text-surface-bone/80 dark:text-on-surface-variant hover:text-mint-mist transition-colors duration-300 font-body-sm text-body-sm" href="index.html#experiences">Ice Bath Experience</a>
 </div>
 <!-- Corporate / B2B Links -->
 <div class="flex flex-col gap-3">
 <span class="font-label-caps text-label-caps font-bold text-surface-bone dark:text-forest-deep">אירועים עסקיים (B2B)</span>
-<a class="text-surface-bone/80 dark:text-on-surface-variant hover:text-mint-mist transition-colors duration-300 font-body-sm text-body-sm" href="#contact-b2b">ימי בריאות בארגונים</a>
-<a class="text-surface-bone/80 dark:text-on-surface-variant hover:text-mint-mist transition-colors duration-300 font-body-sm text-body-sm" href="#contact-b2b">סדנאות נשימה וטבילת קרח</a>
+<a class="text-surface-bone/80 dark:text-on-surface-variant hover:text-mint-mist transition-colors duration-300 font-body-sm text-body-sm" href="contact.html">ימי בריאות בארגונים</a>
+<a class="text-surface-bone/80 dark:text-on-surface-variant hover:text-mint-mist transition-colors duration-300 font-body-sm text-body-sm" href="contact.html">סדנאות נשימה וטבילת קרח</a>
 <a class="text-surface-bone/80 dark:text-on-surface-variant hover:text-mint-mist transition-colors duration-300 font-body-sm text-body-sm" href="#clinical-team">הנבחרת המקצועית שלנו</a>
 </div>
 <!-- Legal & Contact -->
@@ -552,4 +533,4 @@
 </div>
 </div>
 </footer>
-</body></html>
+<script defer="True" src="enhancements.js"></script></body></html>

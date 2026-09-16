@@ -20,7 +20,7 @@
       theme: {
         extend: {
           "colors": {
-            "on-secondary-container": "#755e50",
+            "on-secondary-container": "#355140",
             "surface-container-low": "#fff1e7",
             "primary": "#645e4f",
             "surface-dim": "#e5d8ce",
@@ -28,18 +28,18 @@
             "on-primary": "#ffffff",
             "inverse-surface": "#372f28",
             "on-error": "#ffffff",
-            "secondary": "#705a4c",
+            "secondary": "#506b58",
             "surface-bright": "#fff8f5",
             "on-secondary": "#ffffff",
             "on-surface-variant": "#4a463e",
             "error": "#ba1a1a",
             "tertiary-fixed": "#ffdcc4",
-            "primary-container": "#f2e8d5",
+            "primary-container": "#dfe9e1",
             "on-tertiary-fixed": "#2f1501",
             "surface-container-lowest": "#ffffff",
-            "surface-tint": "#645e4f",
+            "surface-tint": "#4e6b58",
             "surface-variant": "#eee0d6",
-            "primary-fixed-dim": "#cfc6b3",
+            "primary-fixed-dim": "#bfd2c3",
             "on-primary-fixed-variant": "#4c4638",
             "on-secondary-fixed-variant": "#574335",
             "surface-container-high": "#f4e6db",
@@ -59,14 +59,14 @@
             "tertiary-container": "#ffe4d3",
             "secondary-fixed-dim": "#dec1af",
             "on-secondary-fixed": "#28180d",
-            "primary-fixed": "#ebe1cf",
+            "primary-fixed": "#dbe8dd",
             "inverse-on-surface": "#fceee4",
             "outline": "#7c766d",
             "on-primary-fixed": "#1f1b10",
-            "secondary-container": "#f8dac8",
+            "secondary-container": "#e3ece5",
             "on-tertiary": "#ffffff",
             "on-error-container": "#93000a",
-            "inverse-primary": "#cfc6b3",
+            "inverse-primary": "#bfd2c3",
             /* Shared component aliases */
             "forest-deep": "#2c3b2d",
             "surface-bone": "#fcf9f2",
@@ -117,23 +117,18 @@
       }
     }
   </script>
-</head>
+<link href="enhancements.css" rel="stylesheet"/></head>
 <body class="bg-background text-on-surface font-body-md text-body-md antialiased selection:bg-secondary-container selection:text-on-secondary-container">
 <!-- ==================== 1. TOP APP BAR (Shared Component Anchor) ==================== -->
 <header class="docked full-width top-0 sticky z-50 bg-surface-bone dark:bg-surface-dim border-b border-mint-mist dark:border-outline-variant">
 <div class="flex justify-between items-center w-full px-margin-desktop py-4 max-w-container-max mx-auto">
 <!-- Brand Logo Anchor -->
-<a class="font-headline-sm text-headline-sm font-bold text-forest-deep dark:text-primary-fixed tracking-tight flex items-center gap-2" href="#">
+<a class="font-headline-sm text-headline-sm font-bold text-forest-deep dark:text-primary-fixed tracking-tight flex items-center gap-2" href="index.html">
 <span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">spa</span>
 <span>Green Therapy</span>
 </a>
 <!-- Desktop Nav Links -->
-<nav class="hidden md:flex items-center gap-8">
-<a class="text-forest-deep dark:text-primary-fixed font-bold border-b-2 border-forest-deep dark:border-primary-fixed pb-1 hover:text-sage-soft transition-colors duration-300" href="#services">Services</a>
-<a class="text-on-surface-variant dark:text-on-surface-variant font-medium hover:text-sage-soft transition-colors duration-300" href="#pricing">Pricing</a>
-<a class="text-on-surface-variant dark:text-on-surface-variant font-medium hover:text-sage-soft transition-colors duration-300" href="#atmosphere">Atmosphere</a>
-<a class="text-on-surface-variant dark:text-on-surface-variant font-medium hover:text-sage-soft transition-colors duration-300" href="#contact">Contact</a>
-</nav>
+<nav class="hidden md:flex items-center gap-8"><a class="text-forest-deep dark:text-primary-fixed font-bold border-b-2 border-forest-deep dark:border-primary-fixed pb-1 hover:text-sage-soft transition-colors duration-300" href="index.html">דף הבית</a><a class="text-forest-deep dark:text-primary-fixed font-bold border-b-2 border-forest-deep dark:border-primary-fixed pb-1 hover:text-sage-soft transition-colors duration-300" href="index.html#experiences">מתחמים</a><a class="text-forest-deep dark:text-primary-fixed font-bold border-b-2 border-forest-deep dark:border-primary-fixed pb-1 hover:text-sage-soft transition-colors duration-300" href="about.html">אודות</a><a class="text-forest-deep dark:text-primary-fixed font-bold border-b-2 border-forest-deep dark:border-primary-fixed pb-1 hover:text-sage-soft transition-colors duration-300" href="gallery.html">גלריה</a><a class="text-forest-deep dark:text-primary-fixed font-bold border-b-2 border-forest-deep dark:border-primary-fixed pb-1 hover:text-sage-soft transition-colors duration-300" href="contact.html">צור קשר</a></nav>
 <!-- Trailing Action -->
 <div class="flex items-center gap-3"><a class="inline-flex items-center justify-center min-w-10 h-10 px-3 rounded-full bg-surface-container text-forest-deep border border-outline-variant/40 hover:bg-primary-container transition-all font-label-sm text-label-sm font-bold" data-lang-switch="en" href="en/index.html#workshops">EN</a>
 <a class="hidden sm:inline-flex items-center justify-center bg-secondary hover:bg-on-secondary-container text-surface-bone font-label-md text-label-md px-6 py-2.5 rounded-lg transition-all duration-200 active:scale-95 shadow-sm" href="#b2b-contact">
@@ -204,7 +199,7 @@
 <!-- ==================== 3. WORKSHOPS CATALOG (Bento Architecture) ==================== -->
 <section class="py-16 md:py-24 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop" id="workshops-catalog">
 <div class="text-center max-w-3xl mx-auto mb-14 space-y-3">
-<span class="font-label-caps text-label-caps text-secondary font-bold uppercase tracking-wider">קטלוג פעילויות חווייתיות</span>
+
 <h2 class="font-headline-lg text-headline-lg font-bold text-on-surface">סדנאות גוף-נפש מעמיקות</h2>
 <p class="font-body-md text-body-md text-on-surface-variant">
         סדנאות חווייתיות שמחברות את צוות העובדים ומעניקות כלים פרקטיים לחיים בריאים ומאוזנים.
@@ -359,7 +354,7 @@
 <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
 <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
 <div>
-<span class="font-label-caps text-label-caps text-secondary font-bold uppercase tracking-wider">ידע, מדע והרגלים לחיים</span>
+
 <h2 class="font-headline-lg text-headline-lg font-bold text-on-surface mt-1">הרצאות העשרה</h2>
 </div>
 <p class="font-body-md text-body-md text-on-surface-variant max-w-md">
@@ -432,7 +427,7 @@
 <div class="bg-surface-container-low rounded-3xl p-8 md:p-12 border border-outline-variant/30">
 <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
 <div class="lg:col-span-5 space-y-4">
-<span class="font-label-caps text-label-caps text-secondary font-bold uppercase tracking-wider">התאמה מלאה למבנה האירוע</span>
+
 <h2 class="font-headline-lg text-headline-lg font-bold text-on-surface">
             תוכן מודולרי בהתאם לאירוע
           </h2>
@@ -471,7 +466,7 @@
 <section class="py-16 md:py-24 bg-surface-container-high/40 border-t border-outline-variant/20" id="atmosphere">
 <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
 <div class="text-center max-w-2xl mx-auto mb-14 space-y-3">
-<span class="font-label-caps text-label-caps text-secondary font-bold uppercase tracking-wider">מעטפת מקצועית מלאה</span>
+
 <h2 class="font-headline-lg text-headline-lg font-bold text-on-surface">Green Therapy מתאימה את החוויה לאירוע</h2>
 <p class="font-body-md text-body-md text-on-surface-variant">
           אנחנו דואגים לציוד, לתפאורה, ללוגיסטיקה ולתפעול כחלק ממעטפת 360° מלאה.
@@ -515,7 +510,7 @@
 <div class="mt-12 rounded-2xl overflow-hidden relative shadow-sm border border-outline-variant/30">
 <div class="grid grid-cols-1 md:grid-cols-12 items-center bg-primary-container">
 <div class="md:col-span-5 p-8 md:p-12 space-y-4">
-<span class="font-label-caps text-label-caps text-secondary font-bold">מקצועיות ושירות</span>
+
 <h3 class="font-headline-lg text-headline-lg font-bold text-on-surface">מגע מקצועי שמשנה את יום העבודה</h3>
 <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
               הסדנאות וההרצאות מועברות כחלק מחוויית Wellness מקצועית, מותאמת ואיכותית.
@@ -533,7 +528,7 @@
 <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
  Content &amp; Email (5 cols) 
 <div class="lg:col-span-5 space-y-6">
-<span class="font-label-caps text-label-caps text-secondary font-bold uppercase tracking-wider">בואו נבנה יחד אירוע בלתי נשכח</span>
+
 <h2 class="font-headline-lg text-headline-lg font-bold text-on-surface">קבלת הצעה מותאמת לארגון</h2>
 <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
           שתפו אותנו באופי האירוע, התקציב וכמות המשתתפים ונבנה יחד את תפריט הסדנאות והחוויות המתאים.
@@ -677,4 +672,4 @@
 </div>
 </div>
 </footer>
-</body></html>
+<script defer="True" src="enhancements.js"></script></body></html>

@@ -19,7 +19,7 @@
       theme: {
         extend: {
           "colors": {
-            "on-secondary-container": "#755e50",
+            "on-secondary-container": "#355140",
             "surface-container-low": "#fff1e7",
             "primary": "#645e4f",
             "surface-dim": "#e5d8ce",
@@ -27,18 +27,18 @@
             "on-primary": "#ffffff",
             "inverse-surface": "#372f28",
             "on-error": "#ffffff",
-            "secondary": "#705a4c",
+            "secondary": "#506b58",
             "surface-bright": "#fff8f5",
             "on-secondary": "#ffffff",
             "on-surface-variant": "#4a463e",
             "error": "#ba1a1a",
             "tertiary-fixed": "#ffdcc4",
-            "primary-container": "#f2e8d5",
+            "primary-container": "#dfe9e1",
             "on-tertiary-fixed": "#2f1501",
             "surface-container-lowest": "#ffffff",
-            "surface-tint": "#645e4f",
+            "surface-tint": "#4e6b58",
             "surface-variant": "#eee0d6",
-            "primary-fixed-dim": "#cfc6b3",
+            "primary-fixed-dim": "#bfd2c3",
             "on-primary-fixed-variant": "#4c4638",
             "on-secondary-fixed-variant": "#574335",
             "surface-container-high": "#f4e6db",
@@ -58,14 +58,14 @@
             "tertiary-container": "#ffe4d3",
             "secondary-fixed-dim": "#dec1af",
             "on-secondary-fixed": "#28180d",
-            "primary-fixed": "#ebe1cf",
+            "primary-fixed": "#dbe8dd",
             "inverse-on-surface": "#fceee4",
             "outline": "#7c766d",
             "on-primary-fixed": "#1f1b10",
-            "secondary-container": "#f8dac8",
+            "secondary-container": "#e3ece5",
             "on-tertiary": "#ffffff",
             "on-error-container": "#93000a",
-            "inverse-primary": "#cfc6b3",
+            "inverse-primary": "#bfd2c3",
             // Semantic helper tokens mapped from identity
             "forest-deep": "#3D2B1F",
             "surface-bone": "#FAF6F0",
@@ -129,23 +129,18 @@
       -webkit-backdrop-filter: blur(12px);
     }
   </style>
-</head>
+<link href="enhancements.css" rel="stylesheet"/></head>
 <body class="bg-background text-on-surface antialiased selection:bg-secondary-fixed selection:text-on-secondary-fixed">
 <!-- ================= TOP APP BAR (Shared Component Execution) ================= -->
 <header class="docked full-width top-0 sticky z-50 bg-surface-bone dark:bg-surface-dim border-b border-mint-mist dark:border-outline-variant flat no shadows transition-all duration-300">
 <div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-base max-w-container-max mx-auto">
 <!-- Brand Logo -->
-<a class="font-headline-sm text-headline-sm font-bold text-forest-deep dark:text-primary-fixed tracking-tight flex items-center gap-2" href="#">
+<a class="font-headline-sm text-headline-sm font-bold text-forest-deep dark:text-primary-fixed tracking-tight flex items-center gap-2" href="index.html">
 <span class="material-symbols-outlined text-tertiary text-2xl" data-icon="spa">spa</span>
 <span>Green Therapy</span>
 </a>
 <!-- Navigation Links (Desktop) -->
-<nav class="hidden md:flex items-center gap-8">
-<a class="text-on-surface-variant dark:text-on-surface-variant font-medium hover:text-sage-soft transition-colors duration-300 font-label-md text-label-md" href="#services">Services</a>
-<a class="text-on-surface-variant dark:text-on-surface-variant font-medium hover:text-sage-soft transition-colors duration-300 font-label-md text-label-md" href="#pricing">Pricing</a>
-<a class="text-forest-deep dark:text-primary-fixed font-bold border-b-2 border-forest-deep dark:border-primary-fixed pb-1 font-label-md text-label-md" href="#atmosphere">Atmosphere</a>
-<a class="text-on-surface-variant dark:text-on-surface-variant font-medium hover:text-sage-soft transition-colors duration-300 font-label-md text-label-md" href="#contact">Contact</a>
-</nav>
+<nav class="hidden md:flex items-center gap-8"><a class="text-on-surface-variant dark:text-on-surface-variant font-medium hover:text-sage-soft transition-colors duration-300 font-label-md text-label-md" href="index.html">דף הבית</a><a class="text-on-surface-variant dark:text-on-surface-variant font-medium hover:text-sage-soft transition-colors duration-300 font-label-md text-label-md" href="index.html#experiences">מתחמים</a><a class="text-on-surface-variant dark:text-on-surface-variant font-medium hover:text-sage-soft transition-colors duration-300 font-label-md text-label-md" href="about.html">אודות</a><a class="text-on-surface-variant dark:text-on-surface-variant font-medium hover:text-sage-soft transition-colors duration-300 font-label-md text-label-md" href="gallery.html">גלריה</a><a class="text-on-surface-variant dark:text-on-surface-variant font-medium hover:text-sage-soft transition-colors duration-300 font-label-md text-label-md" href="contact.html">צור קשר</a></nav>
 <!-- Trailing Action -->
 <div class="flex items-center gap-3"><a class="inline-flex items-center justify-center min-w-10 h-10 px-3 rounded-full bg-surface-container text-forest-deep border border-outline-variant/40 hover:bg-primary-container transition-all font-label-sm text-label-sm font-bold" data-lang-switch="en" href="en/index.html#ice-baths">EN</a>
 <a class="bg-tertiary text-on-tertiary px-6 py-2.5 rounded-full font-label-md text-label-md hover:bg-secondary transition-all duration-200 active:scale-95 shadow-sm inline-flex items-center gap-2" href="#quote-form">
@@ -163,7 +158,7 @@
 <div class="lg:col-span-7 flex flex-col items-start gap-6">
 <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-surface-container border border-outline-variant/40 text-tertiary">
 <span class="material-symbols-outlined text-base" data-icon="ac_unit">ac_unit</span>
-<span class="font-label-sm text-label-sm uppercase tracking-wider font-semibold">Peak Energy Experience</span>
+
 </div>
 <h1 class="font-display text-display text-on-surface leading-tight text-3xl md:text-display">
             מתחם אמבטיות קרח <span class="text-tertiary block sm:inline">(Peak Energy Experience)</span> באירוע החברה שלכם
@@ -218,7 +213,7 @@
 <section class="py-16 md:py-24 bg-surface-container-low border-b border-outline-variant/30" id="services">
 <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
 <div class="max-w-3xl mb-12">
-<span class="font-label-sm text-label-sm uppercase tracking-wider text-tertiary font-semibold">ערך מוסף לצוות ולמנהלים</span>
+
 <h2 class="font-headline-lg text-headline-lg text-on-surface mt-2 mb-4">
           חוויית שיא שמחברת אנרגיה, חוסן וגיבוש
         </h2>
@@ -299,7 +294,7 @@
 <section class="py-16 md:py-24 bg-surface border-b border-outline-variant/30">
 <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
 <div class="text-center max-w-2xl mx-auto mb-16">
-<span class="font-label-sm text-label-sm uppercase tracking-wider text-tertiary font-semibold">Zero Hassle for HR</span>
+
 <h2 class="font-headline-lg text-headline-lg text-on-surface mt-2 mb-4">
           מעטפת הפקה מלאה 360° – אנחנו דואגים לכל הפרטים
         </h2>
@@ -375,7 +370,7 @@
 <section class="py-16 md:py-24 bg-surface-container-low border-b border-outline-variant/30" id="atmosphere">
 <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
 <div class="text-center max-w-2xl mx-auto mb-16">
-<span class="font-label-sm text-label-sm uppercase tracking-wider text-tertiary font-semibold">איך זה עובד בפועל?</span>
+
 <h2 class="font-headline-lg text-headline-lg text-on-surface mt-2 mb-4">
           חוויה מודרכת, מקצועית ומעצימה
         </h2>
@@ -507,7 +502,7 @@
 <section class="py-16 md:py-24 bg-surface border-b border-outline-variant/30" id="quote-form">
 <div class="max-w-3xl mx-auto px-margin-mobile md:px-margin-desktop">
 <div class="text-center mb-10">
-<span class="font-label-sm text-label-sm uppercase tracking-wider text-tertiary font-semibold">הצעת מחיר מותאמת אישית</span>
+
 <h2 class="font-headline-lg text-headline-lg text-on-surface mt-2 mb-3">
           בואו נתכנן את רגע השיא של האירוע שלכם
         </h2>
@@ -609,16 +604,16 @@
 <!-- Col 2: Services Links -->
 <div class="flex flex-col gap-3">
 <span class="font-label-caps text-label-caps font-bold text-sage-soft">שירותי בריאות וטבע</span>
-<a class="font-body-sm text-body-sm text-surface-bone/80 dark:text-on-surface-variant hover:text-mint-mist transition-colors duration-300" href="#services">Pop-Up Spa</a>
-<a class="font-body-sm text-body-sm text-surface-bone/80 dark:text-on-surface-variant hover:text-mint-mist transition-colors duration-300" href="#services">Mind &amp; Body Workshops</a>
-<a class="font-body-sm text-body-sm text-surface-bone/80 dark:text-on-surface-variant hover:text-mint-mist transition-colors duration-300" href="#services">Ice Bath Experience</a>
+<a class="font-body-sm text-body-sm text-surface-bone/80 dark:text-on-surface-variant hover:text-mint-mist transition-colors duration-300" href="index.html#experiences">Pop-Up Spa</a>
+<a class="font-body-sm text-body-sm text-surface-bone/80 dark:text-on-surface-variant hover:text-mint-mist transition-colors duration-300" href="index.html#experiences">Mind &amp; Body Workshops</a>
+<a class="font-body-sm text-body-sm text-surface-bone/80 dark:text-on-surface-variant hover:text-mint-mist transition-colors duration-300" href="index.html#experiences">Ice Bath Experience</a>
 </div>
 <!-- Col 3: Corporate & Info -->
 <div class="flex flex-col gap-3">
 <span class="font-label-caps text-label-caps font-bold text-sage-soft">אירועים עסקיים</span>
-<a class="font-body-sm text-body-sm text-surface-bone/80 dark:text-on-surface-variant hover:text-mint-mist transition-colors duration-300" href="#atmosphere">Offsite Experiences</a>
-<a class="font-body-sm text-body-sm text-surface-bone/80 dark:text-on-surface-variant hover:text-mint-mist transition-colors duration-300" href="#services">Team Building Workshops</a>
-<a class="font-body-sm text-body-sm text-surface-bone/80 dark:text-on-surface-variant hover:text-mint-mist transition-colors duration-300" href="#contact">Privacy Policy</a>
+<a class="font-body-sm text-body-sm text-surface-bone/80 dark:text-on-surface-variant hover:text-mint-mist transition-colors duration-300" href="gallery.html">Offsite Experiences</a>
+<a class="font-body-sm text-body-sm text-surface-bone/80 dark:text-on-surface-variant hover:text-mint-mist transition-colors duration-300" href="index.html#experiences">Team Building Workshops</a>
+<a class="font-body-sm text-body-sm text-surface-bone/80 dark:text-on-surface-variant hover:text-mint-mist transition-colors duration-300" href="contact.html">Privacy Policy</a>
 </div>
 <!-- Col 4: Location & Contact -->
 <div class="flex flex-col gap-3">
@@ -629,4 +624,4 @@
 </div>
 </div>
 </footer>
-</body></html>
+<script defer="True" src="enhancements.js"></script></body></html>

@@ -21,20 +21,20 @@
           colors: {
             "surface-container-lowest": "#ffffff",
             "surface-container-highest": "#eee0d6",
-            "primary-fixed": "#ebe1cf",
+            "primary-fixed": "#dbe8dd",
             "surface-bright": "#fff8f5",
             "on-secondary-fixed": "#28180d",
             "on-secondary": "#ffffff",
             "surface-variant": "#eee0d6",
-            "secondary-container": "#f8dac8",
+            "secondary-container": "#e3ece5",
             "on-primary": "#ffffff",
-            "on-secondary-container": "#755e50",
-            "surface-tint": "#645e4f",
+            "on-secondary-container": "#355140",
+            "surface-tint": "#4e6b58",
             "tertiary": "#7c5639",
             "on-primary-fixed-variant": "#4c4638",
-            "secondary": "#705a4c",
+            "secondary": "#506b58",
             "inverse-on-surface": "#fceee4",
-            "primary-fixed-dim": "#cfc6b3",
+            "primary-fixed-dim": "#bfd2c3",
             "on-tertiary": "#ffffff",
             "on-error-container": "#93000a",
             "surface": "#fff8f5",
@@ -55,13 +55,13 @@
             "error-container": "#ffdad6",
             "surface-container": "#faebe1",
             "primary": "#2d5a43", /* Deep Forest Olive */
-            "inverse-primary": "#cfc6b3",
+            "inverse-primary": "#bfd2c3",
             "inverse-surface": "#372f28",
             "on-background": "#211a14",
             "on-error": "#ffffff",
             "on-tertiary-container": "#876042",
             "on-primary-container": "#6f6859",
-            "primary-container": "#f2e8d5",
+            "primary-container": "#dfe9e1",
             "surface-container-high": "#f4e6db",
             "on-tertiary-fixed-variant": "#613f24",
             "secondary-fixed": "#fbddca",
@@ -132,13 +132,13 @@
       -webkit-backdrop-filter: blur(12px);
     }
   </style>
-</head>
+<link href="enhancements.css" rel="stylesheet"/></head>
 <body class="bg-background text-on-surface antialiased selection:bg-primary selection:text-white">
 <!-- 1. Navigation Shell -->
 <header class="docked full-width top-0 sticky z-50 bg-surface-bright/95 backdrop-blur-md border-b border-outline-variant/30 transition-all duration-300">
 <div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
 <!-- Brand Logo Cluster -->
-<a aria-label="Green Therapy" class="flex items-center gap-3 group" href="#">
+<a aria-label="Green Therapy" class="flex items-center gap-3 group" href="index.html">
 <div class="w-12 h-12 rounded-full bg-primary-container p-1.5 flex items-center justify-center border border-outline-variant/40 shadow-sm transition-transform duration-200 group-hover:scale-105">
 <img alt="Green Therapy Mascot Logo" class="w-full h-full object-contain rounded-full" src="https://lh3.googleusercontent.com/aida/AEtjO1XtPufgZ3TuXjZxIPTGjcFzGQKaphe1Zm88ROChFtCLIMZTK9qTeCVg2d-nPN5zAmlScZKAo5mw-HkQd1EtpL8dWTnneQHvDNlJrFvAw6knu_at2xC5sJvF5P0J_0Fz7mV50ZTJh6B9yzuUGQ7p0WW50iOtxkhRu8mRR3TNwyIuWPASqFF-FG9rhN2_tB5F648I6J6ZuDRBujjDUYcEmPzSrzKdfpnEI7mB4oux3kkUJ71jQ86f37vG1nNcH5kwolq9PDGnJyH-uw"/>
 </div>
@@ -148,19 +148,10 @@
 </div>
 </a>
 <!-- Desktop Links -->
-<nav class="hidden lg:flex items-center gap-6 font-label-md text-label-md text-on-surface-variant">
-<a class="text-forest-deep font-bold border-b-2 border-forest-deep pb-1 transition-colors" href="#experiences">חוויות ומתחמים</a>
-<a class="hover:text-primary transition-colors" href="#popup-spa">מתחם פופ-אפ ספא</a>
-<a class="hover:text-primary transition-colors" href="#ice-baths">אמבטיות קרח</a>
-<a class="hover:text-primary transition-colors" href="#workshops">סדנאות והרצאות</a>
-<a class="hover:text-primary transition-colors" href="#healthy-bar">דוכני בריאות</a>
-<a class="hover:text-primary transition-colors" href="#why-us">עלינו</a>
-<a class="hover:text-primary transition-colors" href="#gallery">גלריה</a>
-<a class="hover:text-primary transition-colors" href="#contact">צור קשר</a>
-</nav>
+<nav class="hidden lg:flex items-center gap-6 font-label-md text-label-md text-on-surface-variant"><a class="text-forest-deep font-bold border-b-2 border-forest-deep pb-1 transition-colors" href="index.html">דף הבית</a><a class="text-forest-deep font-bold border-b-2 border-forest-deep pb-1 transition-colors" href="index.html#experiences">מתחמים</a><a class="text-forest-deep font-bold border-b-2 border-forest-deep pb-1 transition-colors" href="about.html">אודות</a><a class="text-forest-deep font-bold border-b-2 border-forest-deep pb-1 transition-colors" href="gallery.html">גלריה</a><a class="text-forest-deep font-bold border-b-2 border-forest-deep pb-1 transition-colors" href="contact.html">צור קשר</a></nav>
 <!-- Primary Action CTA -->
 <div class="flex items-center gap-3"><a class="inline-flex items-center justify-center min-w-10 h-10 px-3 rounded-full bg-surface-container text-forest-deep border border-outline-variant/40 hover:bg-primary-container transition-all font-label-sm text-label-sm font-bold" data-lang-switch="en" href="en/index.html">EN</a>
-<a class="hidden sm:inline-flex items-center justify-center gap-2 bg-primary text-on-primary font-label-md text-label-md px-5 py-2.5 rounded-full hover:bg-forest-deep active:scale-95 transition-all duration-200 shadow-sm" href="#contact">
+<a class="hidden sm:inline-flex items-center justify-center gap-2 bg-primary text-on-primary font-label-md text-label-md px-5 py-2.5 rounded-full hover:bg-forest-deep active:scale-95 transition-all duration-200 shadow-sm" href="contact.html">
 <span>בואו נבנה חוויה</span>
 <span class="material-symbols-outlined text-[18px]">calendar_today</span>
 </a>
@@ -196,7 +187,7 @@
             </p>
 <!-- Hero CTAs -->
 <div class="flex flex-wrap items-center gap-4 pt-2">
-<a class="inline-flex items-center justify-center gap-2 bg-surface-bright text-forest-deep font-label-md text-label-md px-7 py-3.5 rounded-full hover:bg-primary-container shadow-md transition-all duration-200 active:scale-95" href="#contact">
+<a class="inline-flex items-center justify-center gap-2 bg-surface-bright text-forest-deep font-label-md text-label-md px-7 py-3.5 rounded-full hover:bg-primary-container shadow-md transition-all duration-200 active:scale-95" href="contact.html">
 <span>בואו נבנה את החוויה שלכם</span>
 <span class="material-symbols-outlined text-[20px]">arrow_back</span>
 </a>
@@ -232,7 +223,7 @@
 <section class="py-12 bg-surface-container-low/50">
 <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
 <div class="text-center max-w-2xl mx-auto mb-12">
-<span class="font-label-sm text-label-sm uppercase tracking-wider text-terracotta font-semibold">הסטנדרט של Green Therapy</span>
+
 <h2 class="font-headline-lg text-headline-lg text-on-surface font-bold mt-2">מדוע מנהלות רווחה ומשאבי אנוש בוחרות בנו?</h2>
 <p class="font-body-md text-body-md text-on-surface-variant mt-2">מעטפת הפקה מקצועית שמאפשרת לכם ליהנות מהאירוע יחד עם העובדים, בראש שקט לחלוטין.</p>
 </div>
@@ -308,7 +299,7 @@
 <section class="py-16 md:py-24" id="experiences">
 <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop space-y-24">
 <div class="text-center max-w-3xl mx-auto">
-<span class="font-label-sm text-label-sm uppercase tracking-wider text-terracotta font-semibold">עולם החוויות שלנו</span>
+
 <h2 class="font-display text-headline-lg md:text-[40px] md:leading-[48px] text-forest-deep font-bold mt-2">מתחמי תוכן ורווחה בהתאמה אישית</h2>
 <p class="font-body-lg text-body-lg text-on-surface-variant mt-3">
             Green Therapy מביאה את עולם הספא, הבריאות והאנרגיה ישירות לאירוע שלכם עם מעטפת מלאה ומותאמת אישית.
@@ -351,7 +342,7 @@
 <span>כולל מערכת דיגיטלית חכמה לניהול תורים וסבבים מראש</span>
 </div>
 </div>
-<a class="inline-flex items-center gap-2 bg-primary text-on-primary font-label-md text-label-md px-6 py-3 rounded-full hover:bg-forest-deep transition-all" href="#contact">
+<a class="inline-flex items-center gap-2 bg-primary text-on-primary font-label-md text-label-md px-6 py-3 rounded-full hover:bg-forest-deep transition-all" href="contact.html">
 <span>למתחם העיסויים לאירוע שלכם</span>
 <span class="material-symbols-outlined text-[18px]">chevron_left</span>
 </a>
@@ -413,7 +404,7 @@
 </div>
 </div>
 </div>
-<a class="inline-flex items-center gap-2 bg-primary text-on-primary font-label-md text-label-md px-6 py-3 rounded-full hover:bg-forest-deep transition-all" href="#contact">
+<a class="inline-flex items-center gap-2 bg-primary text-on-primary font-label-md text-label-md px-6 py-3 rounded-full hover:bg-forest-deep transition-all" href="contact.html">
 <span>לחוויית אמבטיות הקרח לאירוע</span>
 <span class="material-symbols-outlined text-[18px]">chevron_left</span>
 </a>
@@ -452,7 +443,7 @@
 <p class="font-label-sm text-label-sm text-on-surface-variant mt-1">הרצאות מפי מומחים בנושאי אורח חיים בריא, אופטימיזציה של הפיזיולוגיה וניהול מתחים.</p>
 </div>
 </div>
-<a class="inline-flex items-center gap-2 bg-primary text-on-primary font-label-md text-label-md px-6 py-3 rounded-full hover:bg-forest-deep transition-all" href="#contact">
+<a class="inline-flex items-center gap-2 bg-primary text-on-primary font-label-md text-label-md px-6 py-3 rounded-full hover:bg-forest-deep transition-all" href="contact.html">
 <span>לסדנאות ולהרצאות</span>
 <span class="material-symbols-outlined text-[18px]">chevron_left</span>
 </a>
@@ -510,7 +501,7 @@
 </div>
 </div>
 </div>
-<a class="inline-flex items-center gap-2 bg-primary text-on-primary font-label-md text-label-md px-6 py-3 rounded-full hover:bg-forest-deep transition-all" href="#contact">
+<a class="inline-flex items-center gap-2 bg-primary text-on-primary font-label-md text-label-md px-6 py-3 rounded-full hover:bg-forest-deep transition-all" href="contact.html">
 <span>לדוכני הבריאות והאירוח</span>
 <span class="material-symbols-outlined text-[18px]">chevron_left</span>
 </a>
@@ -522,7 +513,7 @@
 <section class="py-16 bg-surface-container-low border-y border-outline-variant/20" id="why-us">
 <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
 <div class="text-center max-w-2xl mx-auto mb-14">
-<span class="font-label-sm text-label-sm uppercase tracking-wider text-terracotta font-semibold">היתרון התחרותי שלנו</span>
+
 <h2 class="font-display text-headline-lg md:text-[36px] text-forest-deep font-bold mt-2">למה חברות מובילות בוחרות בנו?</h2>
 <p class="font-body-md text-body-md text-on-surface-variant mt-2">מעטפת 360° מלאה, מקצועית ומדויקת עד הפרט האחרון.</p>
 </div>
@@ -562,7 +553,7 @@
 <section class="py-16 md:py-24">
 <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
 <div class="text-center max-w-2xl mx-auto mb-16">
-<span class="font-label-sm text-label-sm uppercase tracking-wider text-terracotta font-semibold">פשוט, חלק ומדויק</span>
+
 <h2 class="font-display text-headline-lg md:text-[36px] text-forest-deep font-bold mt-2">תהליך העבודה איתנו ב-3 שלבים</h2>
 <p class="font-body-md text-body-md text-on-surface-variant mt-2">איך הופכים רעיון למתחם בריאות מפנק ומתוקתק בשטח?</p>
 </div>
@@ -611,7 +602,7 @@
 <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
 <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
 <div>
-<span class="font-label-sm text-label-sm uppercase tracking-wider text-terracotta font-semibold">מהשטח</span>
+
 <h2 class="font-display text-headline-lg md:text-[36px] text-forest-deep font-bold mt-1">גלריית אירועים אמיתיים</h2>
 <p class="font-body-md text-body-md text-on-surface-variant mt-1">טעימה מהאווירה, העיצוב והחיוכים באירועים האחרונים שהפקנו ברחבי הארץ.</p>
 </div>
@@ -672,90 +663,8 @@
 </div>
 </div>
 </section>
-<!-- 8. Social Proof / Corporate Testimonials -->
-<section class="py-16 md:py-24">
-<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
-<div class="text-center max-w-2xl mx-auto mb-14">
-<span class="font-label-sm text-label-sm uppercase tracking-wider text-terracotta font-semibold">משובי לקוחות</span>
-<h2 class="font-display text-headline-lg md:text-[36px] text-forest-deep font-bold mt-2">למה חברות הפקה ומנהלות HR בוחרות ב-Green Therapy?</h2>
-<p class="font-body-md text-body-md text-on-surface-variant mt-2">שלושה עקרונות שמובילים את השירות שלנו בכל אירוע.</p>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-<!-- Testimonial 1 -->
-<div class="bg-surface-bright p-8 rounded-2xl border border-outline-variant/30 shadow-sm flex flex-col justify-between">
-<div>
-<div class="flex items-center gap-1 text-terracotta mb-4">
-<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
-<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
-<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
-<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
-<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
-</div>
-<p class="font-body-md text-body-md text-on-surface leading-relaxed mb-6">
-                ראש שקט (Turnkey Solution): אנחנו דואגים לכל הציוד, התפאורה, הלוגיסטיקה והתפעול – אתם רק צריכים להגיע וליהנות.
-              </p>
-</div>
-<div class="pt-4 border-t border-outline-variant/20 flex items-center gap-3">
-<div class="w-10 h-10 rounded-full bg-primary-container text-terracotta flex items-center justify-center font-bold">
-                ש
-              </div>
-<div>
-<p class="font-label-md text-label-md font-bold text-forest-deep">ראש שקט</p>
-<p class="font-label-sm text-label-sm text-on-surface-variant">Turnkey Solution</p>
-</div>
-</div>
-</div>
-<!-- Testimonial 2 -->
-<div class="bg-surface-bright p-8 rounded-2xl border border-outline-variant/30 shadow-sm flex flex-col justify-between">
-<div>
-<div class="flex items-center gap-1 text-terracotta mb-4">
-<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
-<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
-<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
-<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
-<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
-</div>
-<p class="font-body-md text-body-md text-on-surface leading-relaxed mb-6">
-                סטנדרט שירות גבוה: דגש על יחסי אנוש, ייצוגיות, נראות מוקפדת ומקצועיות ללא פשרות.
-              </p>
-</div>
-<div class="pt-4 border-t border-outline-variant/20 flex items-center gap-3">
-<div class="w-10 h-10 rounded-full bg-secondary-container text-terracotta flex items-center justify-center font-bold">
-                ע
-              </div>
-<div>
-<p class="font-label-md text-label-md font-bold text-forest-deep">סטנדרט שירות</p>
-<p class="font-label-sm text-label-sm text-on-surface-variant">מקצועיות ונראות</p>
-</div>
-</div>
-</div>
-<!-- Testimonial 3 -->
-<div class="bg-surface-bright p-8 rounded-2xl border border-outline-variant/30 shadow-sm flex flex-col justify-between">
-<div>
-<div class="flex items-center gap-1 text-terracotta mb-4">
-<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
-<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
-<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
-<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
-<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
-</div>
-<p class="font-body-md text-body-md text-on-surface leading-relaxed mb-6">
-                גמישות והתאמה אישית: בונים יחד אתכם את תפריט החוויות המדויק לפי אופי האירוע, התקציב וכמות המשתתפים.
-              </p>
-</div>
-<div class="pt-4 border-t border-outline-variant/20 flex items-center gap-3">
-<div class="w-10 h-10 rounded-full bg-mint-mist text-forest-sage flex items-center justify-center font-bold">
-                נ
-              </div>
-<div>
-<p class="font-label-md text-label-md font-bold text-forest-deep">התאמה אישית</p>
-<p class="font-label-sm text-label-sm text-on-surface-variant">לפי האירוע, התקציב והקהל</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
+<!-- 8. Authentic Client Recommendations -->
+<section class="py-16 md:py-24 bg-forest-deep text-white" id="recommendations"><div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop"><div class="max-w-2xl mx-auto text-center mb-12"><h2 class="font-display text-headline-lg md:text-[36px] font-bold">הודעות אמיתיות מלקוחות אחרי אירועים</h2><p class="font-body-md text-white/75 mt-3">פידבקים אמיתיים שנשלחו ל-Green Therapy אחרי הפעילויות.</p></div><div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto items-start"><figure class="rounded-3xl bg-white/10 border border-white/15 p-5 md:p-7"><img src="assets/client-message-1.jpg" alt="הודעת המלצה אמיתית מלקוח Green Therapy" class="w-full max-w-[330px] mx-auto rounded-2xl shadow-2xl" loading="lazy"/></figure><figure class="rounded-3xl bg-white/10 border border-white/15 p-5 md:p-7"><img src="assets/client-message-2.jpg" alt="פידבק אמיתי נוסף מלקוח Green Therapy" class="w-full max-w-[330px] mx-auto rounded-2xl shadow-2xl" loading="lazy"/></figure></div></div></section>
 <!-- 9. Final Full-Width CTA Section -->
 <section class="py-16 md:py-24 bg-surface-container-high relative overflow-hidden" id="contact">
 <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
@@ -826,19 +735,19 @@
 <li><a class="hover:text-mint-mist transition-colors" href="#">בית</a></li>
 <li><a class="hover:text-mint-mist transition-colors" href="#experiences">חוויות ומתחמים</a></li>
 <li><a class="hover:text-mint-mist transition-colors" href="#why-us">עלינו והסטנדרט שלנו</a></li>
-<li><a class="hover:text-mint-mist transition-colors" href="#gallery">גלריית אירועים</a></li>
-<li><a class="hover:text-mint-mist transition-colors" href="#contact">צור קשר</a></li>
+<li><a class="hover:text-mint-mist transition-colors" href="gallery.html">גלריית אירועים</a></li>
+<li><a class="hover:text-mint-mist transition-colors" href="contact.html">צור קשר</a></li>
 </ul>
 </div>
 <!-- Services List -->
 <div class="space-y-3">
 <h4 class="font-label-md text-label-md font-bold text-primary-fixed tracking-wider uppercase">מתחמים ושירותים</h4>
 <ul class="space-y-2 font-body-md text-body-md text-white/80">
-<li><a class="hover:text-mint-mist transition-colors" href="#popup-spa">מתחם פופ-אפ ספא</a></li>
-<li><a class="hover:text-mint-mist transition-colors" href="#ice-baths">סדנאות ואמבטיות קרח</a></li>
-<li><a class="hover:text-mint-mist transition-colors" href="#workshops">סדנאות Sound Healing</a></li>
-<li><a class="hover:text-mint-mist transition-colors" href="#workshops">הרצאות בריאות וניהול מתחים</a></li>
-<li><a class="hover:text-mint-mist transition-colors" href="#healthy-bar">דוכני בריאות ושייקים</a></li>
+<li><a class="hover:text-mint-mist transition-colors" href="spa.html">מתחם פופ-אפ ספא</a></li>
+<li><a class="hover:text-mint-mist transition-colors" href="ice-bath.html">סדנאות ואמבטיות קרח</a></li>
+<li><a class="hover:text-mint-mist transition-colors" href="workshops.html">סדנאות Sound Healing</a></li>
+<li><a class="hover:text-mint-mist transition-colors" href="workshops.html">הרצאות בריאות וניהול מתחים</a></li>
+<li><a class="hover:text-mint-mist transition-colors" href="healthy-bar.html">דוכני בריאות ושייקים</a></li>
 </ul>
 </div>
 <!-- Contact & Trust -->
@@ -865,4 +774,4 @@
 <p>© 2026 Green Therapy Beit Dagan. כל הזכויות שמורות. Restoring balance through nature.</p>
 </div>
 </footer>
-</body></html>
+<script defer="True" src="enhancements.js"></script></body></html>
