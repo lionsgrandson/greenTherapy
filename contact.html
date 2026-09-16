@@ -195,15 +195,15 @@
 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
 <div>
 <label class="block font-label-md text-label-md text-on-surface mb-1.5" for="fullName">שם מלא *</label>
-<input class="w-full bg-surface-container-lowest border border-outline-variant/60 rounded-lg px-4 py-3 text-body-md text-on-surface placeholder:text-outline/70 transition-all" id="fullName" placeholder="ישראל ישראלי" required="" type="text"/>
+<input class="w-full bg-surface-container-lowest border border-outline-variant/60 rounded-lg px-4 py-3 text-body-md text-on-surface placeholder:text-outline/70 transition-all" id="fullName" name="fullName" autocomplete="name" placeholder="ישראל ישראלי" required="" type="text"/>
 </div>
 <div>
 <label class="block font-label-md text-label-md text-on-surface mb-1.5" for="companyName">שם חברה / ארגון *</label>
-<input class="w-full bg-surface-container-lowest border border-outline-variant/60 rounded-lg px-4 py-3 text-body-md text-on-surface placeholder:text-outline/70 transition-all" id="companyName" placeholder="לדוגמה: Wix, Microsoft, הייטק בע״מ" required="" type="text"/>
+<input class="w-full bg-surface-container-lowest border border-outline-variant/60 rounded-lg px-4 py-3 text-body-md text-on-surface placeholder:text-outline/70 transition-all" id="companyName" name="companyName" autocomplete="organization" placeholder="לדוגמה: Wix, Microsoft, הייטק בע״מ" required="" type="text"/>
 </div>
 <div>
 <label class="block font-label-md text-label-md text-on-surface mb-1.5" for="role">תפקיד בארגון *</label>
-<select class="w-full bg-surface-container-lowest border border-outline-variant/60 rounded-lg px-4 py-3 text-body-md text-on-surface transition-all" id="role" required="">
+<select class="w-full bg-surface-container-lowest border border-outline-variant/60 rounded-lg px-4 py-3 text-body-md text-on-surface transition-all" id="role" name="role" required="">
 <option disabled="" selected="" value="">בחרו תפקיד</option>
 <option value="hr">מנהל/ת רווחה ו-HR</option>
 <option value="production">הפקה / Event Manager</option>
@@ -213,11 +213,11 @@
 </div>
 <div>
 <label class="block font-label-md text-label-md text-on-surface mb-1.5" for="phone">טלפון נייד *</label>
-<input class="w-full bg-surface-container-lowest border border-outline-variant/60 rounded-lg px-4 py-3 text-body-md text-on-surface placeholder:text-outline/70 transition-all text-left dir-ltr" id="phone" placeholder="050-0000000" required="" type="tel"/>
+<input class="w-full bg-surface-container-lowest border border-outline-variant/60 rounded-lg px-4 py-3 text-body-md text-on-surface placeholder:text-outline/70 transition-all text-left dir-ltr" id="phone" name="phone" autocomplete="tel" placeholder="050-0000000" required="" type="tel"/>
 </div>
 <div class="sm:col-span-2">
 <label class="block font-label-md text-label-md text-on-surface mb-1.5" for="email">מייל עסקי *</label>
-<input class="w-full bg-surface-container-lowest border border-outline-variant/60 rounded-lg px-4 py-3 text-body-md text-on-surface placeholder:text-outline/70 transition-all text-left dir-ltr" id="email" placeholder="name@company.com" required="" type="email"/>
+<input class="w-full bg-surface-container-lowest border border-outline-variant/60 rounded-lg px-4 py-3 text-body-md text-on-surface placeholder:text-outline/70 transition-all text-left dir-ltr" id="email" name="email" autocomplete="email" placeholder="name@company.com" required="" type="email"/>
 </div>
 </div>
 </div>
@@ -230,11 +230,11 @@
 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-5">
 <div>
 <label class="block font-label-md text-label-md text-on-surface mb-1.5" for="eventDate">תאריך משוער של האירוע *</label>
-<input class="w-full bg-surface-container-lowest border border-outline-variant/60 rounded-lg px-4 py-3 text-body-md text-on-surface transition-all" id="eventDate" required="" type="date"/>
+<input class="w-full bg-surface-container-lowest border border-outline-variant/60 rounded-lg px-4 py-3 text-body-md text-on-surface transition-all" id="eventDate" name="eventDate" required="" type="date"/>
 </div>
 <div>
 <label class="block font-label-md text-label-md text-on-surface mb-1.5" for="locationType">מיקום האירוע המתוכנן *</label>
-<select class="w-full bg-surface-container-lowest border border-outline-variant/60 rounded-lg px-4 py-3 text-body-md text-on-surface transition-all" id="locationType" required="">
+<select class="w-full bg-surface-container-lowest border border-outline-variant/60 rounded-lg px-4 py-3 text-body-md text-on-surface transition-all" id="locationType" name="locationType" required="">
 <option disabled="" selected="" value="">בחרו מיקום מועדף</option>
 <option value="degan">באתר האירוע שלכם</option>
 <option value="office">במשרדי החברה</option>
@@ -248,7 +248,7 @@
 <label class="block font-label-md text-label-md text-on-surface mb-2.5">כמות משתתפים משוערת</label>
 <div class="grid grid-cols-2 sm:grid-cols-5 gap-2.5">
 <label class="relative flex items-center justify-center p-3 rounded-lg border border-outline-variant/50 bg-surface-container-low cursor-pointer hover:bg-secondary-container/40 transition-colors text-center text-label-md">
-<input checked="" class="sr-only peer" name="participants" type="radio" value="10-30"/>
+<input class="sr-only peer" name="participants" required="" type="radio" value="10-30"/>
 <span class="peer-checked:font-bold peer-checked:text-tertiary">10-30 איש</span>
 <span class="absolute inset-0 rounded-lg border-2 border-transparent peer-checked:border-tertiary pointer-events-none"></span>
 </label>
@@ -284,14 +284,14 @@
 <p class="font-label-sm text-label-sm text-secondary/90 mb-4">הרכיבו את חבילת ה-Wellness המושלמת עבור הצוות שלכם:</p>
 <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
 <label class="flex items-start gap-3 p-3.5 rounded-lg border border-outline-variant/40 bg-surface-container-low/60 hover:bg-surface-container-low transition cursor-pointer">
-<input checked="" class="mt-1 rounded text-tertiary focus:ring-tertiary h-4 w-4" name="services" type="checkbox" value="massage"/>
+<input class="mt-1 rounded text-tertiary focus:ring-tertiary h-4 w-4" name="services" type="checkbox" value="massage"/>
 <div>
 <span class="font-label-md text-label-md text-on-surface block">מתחם עיסויים יוקרתי (Pop-Up Spa)</span>
 <span class="font-label-sm text-label-sm text-secondary">מיטות טיפול מקצועיות, סדינים נקיים, שמנים אתריים, תפאורה ואוהלי הצללה</span>
 </div>
 </label>
 <label class="flex items-start gap-3 p-3.5 rounded-lg border border-outline-variant/40 bg-surface-container-low/60 hover:bg-surface-container-low transition cursor-pointer">
-<input checked="" class="mt-1 rounded text-tertiary focus:ring-tertiary h-4 w-4" name="services" type="checkbox" value="ice-bath"/>
+<input class="mt-1 rounded text-tertiary focus:ring-tertiary h-4 w-4" name="services" type="checkbox" value="ice-bath"/>
 <div>
 <span class="font-label-md text-label-md text-on-surface block">אמבטיות קרח – Peak Energy Experience</span>
 <span class="font-label-sm text-label-sm text-secondary">טבילה מודרכת שמחברת אנרגיה, חוסן מנטלי וגיבוש צוותי</span>
@@ -323,7 +323,7 @@
 <!-- Group 4: Free notes -->
 <div class="pt-4 border-t border-outline-variant/20">
 <label class="block font-label-md text-label-md text-on-surface mb-1.5" for="specialNotes">הערות ובקשות מיוחדות</label>
-<textarea class="w-full bg-surface-container-lowest border border-outline-variant/60 rounded-lg px-4 py-3 text-body-md text-on-surface placeholder:text-outline/70 transition-all" id="specialNotes" placeholder="ספרו לנו על דגשים מיוחדים: אופי הצוות, מגבלות נגישות, שעות מבוקשות או טווח תקציב..." rows="3"></textarea>
+<textarea class="w-full bg-surface-container-lowest border border-outline-variant/60 rounded-lg px-4 py-3 text-body-md text-on-surface placeholder:text-outline/70 transition-all" id="specialNotes" name="specialNotes" placeholder="ספרו לנו על דגשים מיוחדים: אופי הצוות, מגבלות נגישות, שעות מבוקשות או טווח תקציב..." rows="3"></textarea>
 </div>
 <!-- Submit Button & Guarantee Note -->
 <div class="pt-2">
@@ -481,34 +481,33 @@
 </section>
 </main>
 <!-- ================= FOOTER (Shared Component JSON Conformance) ================= -->
-<footer class="full-width py-12 bg-primary text-surface-bone">
+<footer class="full-width py-12 bg-[#1d3326] text-[#f2e8d5]">
 <div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop max-w-container-max mx-auto text-right">
 <!-- Brand & Mission Column -->
 <div class="md:col-span-1 space-y-3">
 <div class="flex items-center gap-2">
-<span class="font-headline-md text-headline-md font-bold text-surface-bone">Green Therapy</span>
+<span class="font-headline-md text-headline-md font-bold text-[#f2e8d5]">Green Therapy</span>
 </div>
-<p class="font-body-sm text-body-sm text-surface-bone/80 leading-relaxed">
+<p class="font-body-sm text-body-sm text-[#f2e8d5]/80 leading-relaxed">
           מתחמי Wellness ו-Wellbeing פרימיום לאירועי חברה.
         </p>
-<p class="font-label-sm text-label-sm text-surface-bone/60">
+<p class="font-label-sm text-label-sm text-[#f2e8d5]/60">
           © 2026 Green Therapy Beit Dagan. Restoring balance through nature.
         </p>
 </div>
- Links Column (Mandated strings from JSON: "Pop-Up Spa", "Mind &amp; Body Workshops", "Ice Bath Experience", "Privacy Policy") 
+<!-- Service links -->
 <div>
-<span class="font-label-md text-label-md text-surface-bone block mb-3 font-bold uppercase tracking-wider">שירותי המרחב</span>
-<ul class="space-y-2 text-surface-bone/80 font-body-sm text-body-sm">
+<span class="font-label-md text-label-md text-[#f2e8d5] block mb-3 font-bold uppercase tracking-wider">שירותי המרחב</span>
+<ul class="space-y-2 text-[#f2e8d5]/80 font-body-sm text-body-sm">
 <li><a class="hover:text-primary-fixed transition-colors" href="spa.html">Pop-Up Spa</a></li>
 <li><a class="hover:text-primary-fixed transition-colors" href="workshops.html">Mind &amp; Body Workshops</a></li>
 <li><a class="hover:text-primary-fixed transition-colors" href="ice-bath.html">Ice Bath Experience</a></li>
-<li><span class="hover:text-primary-fixed transition-colors" >Privacy Policy</span></li>
 </ul>
 </div>
 <!-- Corporate Services Column -->
 <div>
-<span class="font-label-md text-label-md text-surface-bone block mb-3 font-bold uppercase tracking-wider">Corporate Wellness Events</span>
-<ul class="space-y-2 text-surface-bone/80 font-body-sm text-body-sm">
+<span class="font-label-md text-label-md text-[#f2e8d5] block mb-3 font-bold uppercase tracking-wider">Corporate Wellness Events</span>
+<ul class="space-y-2 text-[#f2e8d5]/80 font-body-sm text-body-sm">
 <li><a class="hover:text-primary-fixed transition-colors" href="#booking-form">ימי גיבוש והפגה</a></li>
 <li><a class="hover:text-primary-fixed transition-colors" href="#booking-form">פופ-אפ מסאז׳ במשרד</a></li>
 <li><a class="hover:text-primary-fixed transition-colors" href="#booking-form">סדנאות אמבטיות קרח</a></li>
@@ -517,8 +516,8 @@
 </div>
 <!-- Location & Reachability -->
 <div>
-<span class="font-label-md text-label-md text-surface-bone block mb-3 font-bold uppercase tracking-wider">כתובת וקשר</span>
-<div class="space-y-2 text-surface-bone/80 font-body-sm text-body-sm">
+<span class="font-label-md text-label-md text-[#f2e8d5] block mb-3 font-bold uppercase tracking-wider">כתובת וקשר</span>
+<div class="space-y-2 text-[#f2e8d5]/80 font-body-sm text-body-sm">
 <p>משרד • טבע • אתר האירוע</p>
 <a class="dir-ltr text-right hover:text-primary-fixed transition-colors" href="mailto:alongreentherapy@gmail.com">alongreentherapy@gmail.com</a>
 </div>
