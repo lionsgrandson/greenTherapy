@@ -108,7 +108,6 @@ def google_translate(text):
 
 def collect_strings(source):
     strings = set()
-    # Protect script/style contents from ordinary text-node extraction.
     protected = re.sub(r'<(script|style)\b[^>]*>.*?</\1>', '', source, flags=re.I|re.S)
     for m in re.finditer(r'>([^<>]+)<', protected, flags=re.S):
         s = norm(m.group(1))
@@ -117,10 +116,8 @@ def collect_strings(source):
         for m in re.finditer(rf'{attr}="([^"]+)"', protected, flags=re.I):
             s = norm(m.group(1))
             if s and HEBREW.search(s): strings.add(s)
-    # Dynamic UI strings in inline alert handlers.
     for m in re.finditer(r"alert\(\s*['\"]([^'\"]*[\u0590-\u05FF][^'\"]*)['\"]\s*\)", source, flags=re.I):
         strings.add(norm(m.group(1)))
-    # WhatsApp prefilled messages are also user-visible after clicking.
     for m in re.finditer(r'https://wa\.me/\?text=([^"&]+)', source, flags=re.I):
         decoded = urllib.parse.unquote(m.group(1))
         if HEBREW.search(decoded): strings.add(norm(decoded))
@@ -154,7 +151,8 @@ Path('en').mkdir(exist_ok=True)
 
 
 def translate_html(source, filename):
-    # Protect scripts/styles verbatim, then translate visible text and common visible attributes.
+    # The Hebrew page is the visual master. Preserve its exact DOM, classes and RTL layout;
+    # change only user-visible copy, language metadata, local paths and the language switch.
     blocks = []
     def protect(m):
         key = f'__GT_PROTECTED_BLOCK_{len(blocks)}__'
@@ -184,7 +182,6 @@ def translate_html(source, filename):
 
     for i, block in enumerate(blocks): out = out.replace(f'__GT_PROTECTED_BLOCK_{i}__', block)
 
-    # Translate inline confirmation alerts without changing their behavior.
     def alert_cb(m):
         quote, raw = m.group(1), m.group(2)
         s = norm(raw)
@@ -192,7 +189,6 @@ def translate_html(source, filename):
         return 'alert(' + quote + tr.replace('\\', '\\\\').replace(quote, '\\' + quote) + quote + ')'
     out = re.sub(r"alert\(\s*(['\"])([^'\"]*[\u0590-\u05FF][^'\"]*)\1\s*\)", alert_cb, out)
 
-    # Translate pre-filled WhatsApp messages and keep the same destination behavior.
     def wa_cb(m):
         raw = m.group(1)
         decoded = norm(urllib.parse.unquote(raw))
@@ -200,7 +196,8 @@ def translate_html(source, filename):
         return 'https://wa.me/?text=' + urllib.parse.quote(tr, safe=',.!?')
     out = re.sub(r'https://wa\.me/\?text=([^"&]+)', wa_cb, out, flags=re.I)
 
-    # English document direction and matching page-to-page language switch.
+    # Preserve the Hebrew page's RTL layout direction so the English design is visually identical.
+    # English characters still render left-to-right naturally inside their text runs.
     def html_tag_cb(m):
         tag = m.group(0)
         if re.search(r'\blang="[^"]*"', tag, re.I):
@@ -208,23 +205,22 @@ def translate_html(source, filename):
         else:
             tag = tag[:-1] + ' lang="en">'
         if re.search(r'\bdir="[^"]*"', tag, re.I):
-            tag = re.sub(r'\bdir="[^"]*"', 'dir="ltr"', tag, count=1, flags=re.I)
+            tag = re.sub(r'\bdir="[^"]*"', 'dir="rtl"', tag, count=1, flags=re.I)
         else:
-            tag = tag[:-1] + ' dir="ltr">'
+            tag = tag[:-1] + ' dir="rtl">'
         return tag
     out = re.sub(r'<html\b[^>]*>', html_tag_cb, out, count=1, flags=re.I)
     out = out.replace('data-lang-switch="en"', 'data-lang-switch="he"')
     out = re.sub(r'href="en/([^"]+\.html)"', r'href="../\1"', out)
     out = re.sub(r'(<a[^>]*data-lang-switch="he"[^>]*>)(\s*)EN(\s*</a>)', r'\1\2HE\3', out, flags=re.I)
 
-    # Shared local assets live one directory above /en.
     out = out.replace('href="enhancements.css"', 'href="../enhancements.css"')
     out = out.replace('src="enhancements.js"', 'src="../enhancements.js"')
     out = out.replace('src="assets/', 'src="../assets/')
     out = out.replace('href="assets/', 'href="../assets/')
 
-    # Direction-specific text alignment only; layout/grid structure stays identical.
-    out = out.replace('text-right', 'text-left')
+    # Do NOT alter layout classes such as text-right/text-left: the English page must retain
+    # the same visual composition as the Hebrew Stitch master.
     return out
 
 for page, source in all_sources.items():
@@ -232,8 +228,6 @@ for page, source in all_sources.items():
     Path('en', page).write_text(built, encoding='utf-8')
     print(f'Built en/{page}: {len(source)} -> {len(built)} bytes')
 
-# Visible English output must not contain Hebrew. Ignore comments and style/script blocks themselves,
-# but keep checking inline attributes such as href/onsubmit because users can see their results.
 leftovers = []
 for page in PAGES:
     text = Path('en', page).read_text(encoding='utf-8')
