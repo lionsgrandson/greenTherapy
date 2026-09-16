@@ -1,0 +1,41 @@
+name: Build exact English mirror
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/build_english_mirror.py'
+      - '.github/workflows/build-english-mirror.yml'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build English mirror
+        run: python3 scripts/build_english_mirror.py
+      - name: Verify structural parity
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+          pages=['index.html','spa.html','ice-bath.html','workshops.html','healthy-bar.html','about.html','gallery.html','contact.html']
+          for p in pages:
+              he=Path(p).read_text(encoding='utf-8')
+              en=Path('en',p).read_text(encoding='utf-8')
+              # Core design components should be effectively identical in quantity.
+              checks=['<section','<header','<footer','<form','<img','rounded-','grid ','flex ']
+              for token in checks:
+                  a,b=he.count(token),en.count(token)
+                  if a!=b:
+                      raise SystemExit(f'{p}: structural count differs for {token!r}: HE={a}, EN={b}')
+              print(f'{p}: structure OK; HE {len(he)} bytes / EN {len(en)} bytes')
+          PY
+      - name: Commit mirrored pages
+        run: |
+          git config user.name "Moshe Schwartzberg"
+          git config user.email "43815731+lionsgrandson@users.noreply.github.com"
+          git add en translations-he-en.json
+          git diff --cached --quiet && exit 0
+          git commit -m "Mirror Hebrew Stitch design across English site"
+          git push
