@@ -17,6 +17,18 @@ CACHE_PATH = Path('translations-he-en.json')
 # Brand-sensitive copy gets deliberate wording; everything else is translated and baked at build time.
 OVERRIDES = {
     'דף הבית': 'Home',
+    'ישראל ישראלי': 'Dana Cohen',
+    'משרד • טבע • אתר האירוע': 'Office • Outdoors • Event Venue',
+    'במשרד, בטבע או באתר האירוע': 'At the Office, Outdoors, or at the Event Venue',
+    'קבלת הצעה אישית': 'Get a Personal Quote',
+    'קבלת הצעה לאירוע': 'Get an Event Quote',
+    'קבלת הצעה לאירוע חברה': 'Get a Corporate Event Quote',
+    'שליחת פנייה נוספת': 'Send Another Inquiry',
+    'מנהל/ת רווחה ו-HR': 'HR / Employee Experience',
+    'אחר': 'Other',
+    'תודה. פרטי האירוע התקבלו ונוכל להמשיך משם להתאמה אישית.': 'Thanks. We received your event details and can continue with a tailored proposal.',
+    'באתר האירוע שלכם': 'At Your Event Venue',
+    'באתר האירוע שלכם.': 'At Your Event Venue.',
     'מתחמים': 'Experiences',
     'אודות': 'About',
     'גלריה': 'Gallery',
