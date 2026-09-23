@@ -26,7 +26,24 @@
       enableDyslexiaFont: true,
       enableBiggerCursor: true,
       enableLineHeight: true,
-      widgetPosition: { side: "left", left: "16px", bottom: "16px" }
+      widgetPosition: { side: "left", left: "16px", bottom: "16px" },
+      lang: location.pathname.startsWith("/en") ? {} : {
+        accessibilityMenu: "תפריט נגישות",
+        closeAccessibilityMenu: "סגירת תפריט נגישות",
+        accessibilityTools: "כלי נגישות",
+        resetAllSettings: "איפוס הגדרות",
+        screenReader: "קורא מסך",
+        highContrast: "ניגודיות גבוהה",
+        biggerText: "טקסט גדול",
+        textSpacing: "ריווח טקסט",
+        pauseAnimations: "עצירת אנימציות",
+        hideImages: "הסתרת תמונות",
+        dyslexiaFriendly: "גופן ידידותי לדיסלקציה",
+        biggerCursor: "סמן גדול",
+        lineHeight: "גובה שורה",
+        textAlign: "יישור טקסט",
+        textSize: "גודל טקסט"
+      }
     };
   </script>
   <script src="https://cdn.jsdelivr.net/npm/accessibility-widgets@latest/widget.js" defer></script>
