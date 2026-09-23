@@ -132,3 +132,8 @@ main h1{max-width:100%;text-wrap:balance;overflow-wrap:normal}main h2{max-width:
   main h3{line-height:1.2!important}
 }
 main p{overflow-wrap:break-word}.gt-header-phone bdi,.gt-mobile-phone bdi,.gt-footer-contact bdi{direction:ltr;unicode-bidi:isolate}
+
+/* Center uneven three/five-card groups without changing the original card design. */
+.gt-balanced-cards{display:flex!important;flex-wrap:wrap!important;justify-content:center!important;gap:1.5rem!important;max-width:1050px!important;margin-inline:auto!important}
+.gt-balanced-cards>div{flex:1 1 270px!important;max-width:330px!important;min-width:0}
+@media(max-width:767px){.gt-balanced-cards>div{flex-basis:100%!important;max-width:100%!important}}
