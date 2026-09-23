@@ -296,6 +296,7 @@ function Header({lang,slug}){
         <button className="menu-btn" aria-label={open?(lang==="he"?"סגירת תפריט":"Close menu"):(lang==="he"?"פתיחת תפריט":"Open menu")} aria-expanded={open} onClick={()=>setOpen(!open)}>{open?<X/>:<Menu/>}</button>
       </div>
     </div>
+    <a className="mobile-phone-bar" href={"tel:"+PHONE_TEL}><Phone size={16}/><span>{t.phone}:</span><strong dir="ltr">{PHONE_DISPLAY}</strong></a>
     <div className={"mobile-menu "+(open?"open":"")}>
       {t.nav.map(([s,label])=><a key={s} href={href(lang,s)}>{label}</a>)}
       <a className="mobile-phone" href={"tel:"+PHONE_TEL}><Phone size={18}/>{PHONE_DISPLAY}</a>
