@@ -189,6 +189,33 @@ function initReveal(){
   els.forEach(el=>io.observe(el));
 }
 
+function initMaterialIconFallback(){
+  if(!document.fonts||!document.fonts.ready)return;
+  document.fonts.ready.then(()=>{
+    if(document.fonts.check('16px "Material Symbols Outlined"'))return;
+    const map={
+      chat:"💬",call:"☎",phone:"☎",mail:"✉",location_on:"⌖",calendar_today:"▣",event_available:"▣",
+      spa:"✦",send:"➜",north_east:"↗",arrow_back:"←",arrow_forward:"→",chevron_left:"‹",
+      check:"✓",check_circle:"✓",verified:"✓",verified_user:"✓",award_star:"★",stars:"★",
+      ac_unit:"❄",air:"◌",all_inclusive:"∞",assignment_turned_in:"✓",bed:"▰",celebration:"✦",
+      devices:"▣",diversity_3:"●",dry_cleaning:"◇",dynamic_form:"▦",energy_savings_leaf:"❧",
+      fitness_center:"◆",forest:"♧",forum:"◌",graphic_eq:"≋",groups:"●",health_and_safety:"✚",
+      healing:"✚",humidity_mid:"◌",inventory_2:"□",local_florist:"✿",local_shipping:"▱",
+      military_tech:"★",nature_people:"♧",nutrition:"◉",palette:"◐",person_celebrate:"✦",
+      photo_camera:"▣",pin_drop:"⌖",potted_plant:"♧",psychology:"◌",psychology_alt:"◌",
+      recycling:"♻",restaurant_menu:"≡",rice_bowl:"◉",schedule:"◷",self_improvement:"◌",
+      sentiment_satisfied:"☺",sentiment_very_satisfied:"☺",thermostat:"◌",tune:"≡",
+      tungsten:"✦",volume_up:"◖",waves:"≈",wb_sunny:"☼",workspace_premium:"★",bolt:"ϟ",
+      bathtub:"▰",business_center:"▣",eco:"❧",emoji_food_beverage:"◉",hourglass_empty:"⌛"
+    };
+    document.querySelectorAll(".material-symbols-outlined").forEach(el=>{
+      const key=el.textContent.trim();
+      el.textContent=map[key]||"•";
+      el.setAttribute("aria-hidden","true");
+    });
+  });
+}
+
 function initLazy(){
   const imgs=[...document.querySelectorAll("main img")];
   imgs.forEach((img,i)=>{
@@ -219,4 +246,4 @@ if(headerRoot) createRoot(headerRoot).render(h(Header));
 if(footerRoot) createRoot(footerRoot).render(h(Footer));
 if(contactRoot) createRoot(contactRoot).render(h(ContactSection));
 const waRoot=document.createElement("div");waRoot.id="gt-wa-root";document.body.appendChild(waRoot);createRoot(waRoot).render(h(FloatingWhatsApp));
-initFaq();initReveal();initLazy();
+initFaq();initReveal();initLazy();initMaterialIconFallback();
