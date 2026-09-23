@@ -57,9 +57,8 @@ function withLang(path){
 }
 function switchHref(){
   const u=new URL(location.href);
-  if(LANG==="he") u.searchParams.set("lang","en");
-  else u.searchParams.delete("lang");
-  return u.pathname+(u.search?u.search:"");
+  u.searchParams.set("lang",LANG==="he"?"en":"he");
+  return u.pathname+u.search+u.hash;
 }
 
 function applyStaticTranslation(){
@@ -82,6 +81,24 @@ function applyStaticTranslation(){
   if(desc&&data.description) desc.content=data.description;
 }
 
+function USFlag(){
+  return h("svg",{viewBox:"0 0 28 20","aria-hidden":"true",focusable:"false"},
+    h("rect",{width:28,height:20,fill:"#fff"}),
+    ...[0,4,8,12,16].map(y=>h("rect",{key:"r"+y,x:0,y,width:28,height:2,fill:"#B22234"})),
+    h("rect",{x:0,y:0,width:12,height:10.5,fill:"#3C3B6E"}),
+    ...[[2,2],[5,2],[8,2],[2,5],[5,5],[8,5],[2,8],[5,8],[8,8]].map(([x,y],i)=>h("circle",{key:i,cx:x,cy:y,r:.6,fill:"#fff"}))
+  );
+}
+function ILFlag(){
+  return h("svg",{viewBox:"0 0 28 20","aria-hidden":"true",focusable:"false"},
+    h("rect",{width:28,height:20,fill:"#fff"}),
+    h("rect",{x:0,y:3,width:28,height:2,fill:"#0038B8"}),
+    h("rect",{x:0,y:15,width:28,height:2,fill:"#0038B8"}),
+    h("polygon",{points:"14,6.2 10.8,11.7 17.2,11.7",fill:"none",stroke:"#0038B8",strokeWidth:"1"}),
+    h("polygon",{points:"14,13.8 10.8,8.3 17.2,8.3",fill:"none",stroke:"#0038B8",strokeWidth:"1"})
+  );
+}
+
 function Header(){
   const [open,setOpen]=useState(false);
   return h("header",{className:"gt-react-header"},
@@ -94,7 +111,7 @@ function Header(){
       ),
       h("div",{className:"gt-react-actions"},
         h("a",{className:"gt-react-phone",dir:"ltr",href:"tel:"+TEL},PHONE),
-        h("a",{className:"gt-react-flag",href:switchHref(),"aria-label":T.language,title:T.language},LANG==="he"?"🇺🇸":"🇮🇱"),
+        h("a",{className:"gt-react-flag",href:switchHref(),"aria-label":T.language,title:T.language},LANG==="he"?h(USFlag):h(ILFlag)),
         h("a",{className:"gt-react-cta",href:withLang("contact.html")},T.plan),
         h("button",{className:"gt-react-menu-btn",type:"button","aria-expanded":open,"aria-label":open?T.close:T.menu,onClick:()=>setOpen(!open)},open?"×":"☰")
       )
@@ -189,6 +206,19 @@ function initReveal(){
   els.forEach(el=>io.observe(el));
 }
 
+function syncLanguageLinks(){
+  document.querySelectorAll("a[href]").forEach(a=>{
+    const raw=a.getAttribute("href");
+    if(!raw||raw.startsWith("#")||raw.startsWith("mailto:")||raw.startsWith("tel:")||raw.startsWith("javascript:")) return;
+    let u;
+    try{u=new URL(raw,location.href);}catch{return;}
+    if(u.origin!==location.origin)return;
+    if(LANG==="en") u.searchParams.set("lang","en");
+    else u.searchParams.delete("lang");
+    a.setAttribute("href",u.pathname+u.search+u.hash);
+  });
+}
+
 function initMaterialIconFallback(){
   if(!document.fonts||!document.fonts.ready)return;
   document.fonts.ready.then(()=>{
@@ -246,4 +276,4 @@ if(headerRoot) createRoot(headerRoot).render(h(Header));
 if(footerRoot) createRoot(footerRoot).render(h(Footer));
 if(contactRoot) createRoot(contactRoot).render(h(ContactSection));
 const waRoot=document.createElement("div");waRoot.id="gt-wa-root";document.body.appendChild(waRoot);createRoot(waRoot).render(h(FloatingWhatsApp));
-initFaq();initReveal();initLazy();initMaterialIconFallback();
+syncLanguageLinks();initFaq();initReveal();initLazy();initMaterialIconFallback();
