@@ -23,4 +23,4 @@ jobs:
           git rm -f .github/workflows/restore-stitch.yml
           git add -A
           git commit -m "Restore original Stitch design with focused fixes"
-          git push origin HEAD:main
+          git pull --rebase origin main\n          git push origin HEAD:main
