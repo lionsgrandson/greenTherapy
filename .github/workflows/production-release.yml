@@ -1,0 +1,53 @@
+name: Production release
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/production-release.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install release dependencies
+        run: pip install beautifulsoup4 pillow
+      - name: Download client media from approved email attachments
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p assets/client_raw
+          curl -fL --retry 3 'https://sdmntprnortheu.oaiusercontent.com/files/00000000-9d18-81f4-8019-3d8838fca656/raw?se=2026-09-23T08%3A57%3A57Z&sp=r&sv=2026-02-06&sr=b&scid=29cf7544-b320-551b-afcb-6d724c8c8842&skoid=9b41a688-1b44-4731-856e-b0efcf3660ed&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-23T06%3A57%3A09Z&ske=2026-09-24T06%3A57%3A09Z&sks=b&skv=2026-02-06&sig=t3BOvkifnc7nTFvYNqpdn0JDK9UcRmbSTKDqFjd21ys%3D' -o assets/client_raw/IMG_0220.jpg
+          curl -fL --retry 3 'https://sdmntprcacentral.oaiusercontent.com/files/00000000-5894-820d-a655-29517f90b901/raw?se=2026-09-23T08%3A58%3A03Z&sp=r&sv=2026-02-06&sr=b&scid=87d03c0d-975c-57b0-9fa7-559288ce3a95&skoid=9b41a688-1b44-4731-856e-b0efcf3660ed&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-23T04%3A25%3A54Z&ske=2026-09-24T04%3A25%3A54Z&sks=b&skv=2026-02-06&sig=%2BYo1QAt2xJ/misY6B2gKY41%2BgeIYRfXBG7%2BFVVyzVVs%3D' -o assets/client_raw/IMG_0227.jpg
+          curl -fL --retry 3 'https://sdmntprnortheu.oaiusercontent.com/files/00000000-24c0-81f4-a4b9-6148f3c21714/raw?se=2026-09-23T08%3A58%3A07Z&sp=r&sv=2026-02-06&sr=b&scid=49546c29-cb6f-5af0-aa7b-4f206456289e&skoid=9b41a688-1b44-4731-856e-b0efcf3660ed&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-23T05%3A50%3A07Z&ske=2026-09-24T05%3A50%3A07Z&sks=b&skv=2026-02-06&sig=pgHGQaPWon243erUUoX0I5siypsNHPEwgi%2BDJOfJdPM%3D' -o assets/client_raw/IMG_0226.jpg
+          curl -fL --retry 3 'https://sdmntpritalynorth.oaiusercontent.com/files/00000000-a260-8246-ae62-501624d89dea/raw?se=2026-09-23T08%3A58%3A09Z&sp=r&sv=2026-02-06&sr=b&scid=af1ad558-0861-56a6-925c-66f3dfb33b31&skoid=9b41a688-1b44-4731-856e-b0efcf3660ed&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-23T05%3A29%3A23Z&ske=2026-09-24T05%3A29%3A23Z&sks=b&skv=2026-02-06&sig=CtOQsq00o57nTkxOa65pkRoSiiSEbjIdVrkynTV9At0%3D' -o assets/client_raw/IMG_9301.jpg
+          curl -fL --retry 3 'https://sdmntprukwest.oaiusercontent.com/files/00000000-7dec-8243-96b1-fd2849199a70/raw?se=2026-09-23T08%3A58%3A11Z&sp=r&sv=2026-02-06&sr=b&scid=9de11da9-fbc2-5f33-9973-53eaf2f39f83&skoid=9b41a688-1b44-4731-856e-b0efcf3660ed&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-23T06%3A11%3A12Z&ske=2026-09-24T06%3A11%3A12Z&sks=b&skv=2026-02-06&sig=XqO4QgedmMl4h8hiCNlXdIWwrm8p3QcjrgRzQYHsLjQ%3D' -o assets/client_raw/IMG_9302.jpg
+          curl -fL --retry 3 'https://sdmntpritalynorth.oaiusercontent.com/files/00000000-fa90-8246-a49b-8b11a37b468d/raw?se=2026-09-23T08%3A58%3A13Z&sp=r&sv=2026-02-06&sr=b&scid=ae530bc9-2488-526c-a316-9cbcd543d154&skoid=9b41a688-1b44-4731-856e-b0efcf3660ed&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-23T03%3A27%3A19Z&ske=2026-09-24T03%3A27%3A19Z&sks=b&skv=2026-02-06&sig=oTsL1VCGBzdKF7pJHqv9rH3Fox17KRbyUIdeJkog0%2BI%3D' -o assets/client_raw/IMG_9298.jpg
+          curl -fL --retry 3 'https://sdmntprwestus2.oaiusercontent.com/files/00000000-ae30-81f8-bd09-4aea8af83724/raw?se=2026-09-23T08%3A58%3A17Z&sp=r&sv=2026-02-06&sr=b&scid=0f3b19bb-bc47-534d-8292-d86d57b345c5&skoid=9b41a688-1b44-4731-856e-b0efcf3660ed&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-23T05%3A50%3A16Z&ske=2026-09-24T05%3A50%3A16Z&sks=b&skv=2026-02-06&sig=nQLE/dgTa2vZHNqRFjPYRxRDiUJY19Qktfoj4IEuT0I%3D' -o assets/client_raw/f50174ac.jpg
+          curl -fL --retry 3 'https://sdmntprnortheu.oaiusercontent.com/files/00000000-6e50-81f4-a5ac-237ea2d8faf0/raw?se=2026-09-23T08%3A58%3A19Z&sp=r&sv=2026-02-06&sr=b&scid=dcfd3cbe-900e-53b9-b5b1-9fbf7f034419&skoid=9b41a688-1b44-4731-856e-b0efcf3660ed&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-23T08%3A24%3A28Z&ske=2026-09-24T08%3A24%3A28Z&sks=b&skv=2026-02-06&sig=6KbEEoouVXtBw05V5/PAIF3P5OM28ClrgeuIrfc1yJg%3D' -o assets/client_raw/ffe7beb5.jpg
+          curl -fL --retry 3 'https://sdmntprsouthcentralus.oaiusercontent.com/files/00000000-ef38-81f7-85b0-c3df2379a71b/raw?se=2026-09-23T08%3A58%3A22Z&sp=r&sv=2026-02-06&sr=b&scid=6ff94053-5c7c-59c1-b34a-c286854b410d&skoid=9b41a688-1b44-4731-856e-b0efcf3660ed&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-23T06%3A57%3A13Z&ske=2026-09-24T06%3A57%3A13Z&sks=b&skv=2026-02-06&sig=LucZtDRKFDyiDcWBNhdGF3zjJiuzD0MefxEyEbnGDBE%3D' -o assets/client_raw/d466fbd5.jpg
+          curl -fL --retry 3 'https://sdmntpreastus2.oaiusercontent.com/files/00000000-9c58-81f6-b3eb-a368f5603c0f/raw?se=2026-09-23T08%3A58%3A25Z&sp=r&sv=2026-02-06&sr=b&scid=2e1f6bc3-7b2d-5c1c-961e-de2da0168dc9&skoid=9b41a688-1b44-4731-856e-b0efcf3660ed&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-23T06%3A11%3A21Z&ske=2026-09-24T06%3A11%3A21Z&sks=b&skv=2026-02-06&sig=3JsBfmguUTrLF2xbeJ//YexDXJkgVJvHkGi734OiFQw%3D' -o assets/client_raw/c0752a07.jpg
+          curl -fL --retry 3 'https://sdmntprindiasocentral.oaiusercontent.com/files/00000000-079c-8211-8582-4a867e488a37/raw?se=2026-09-23T08%3A58%3A28Z&sp=r&sv=2026-02-06&sr=b&scid=cdf211ce-570d-55dd-a52e-89da920f2cb7&skoid=9b41a688-1b44-4731-856e-b0efcf3660ed&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-22T23%3A05%3A59Z&ske=2026-09-23T23%3A05%3A59Z&sks=b&skv=2026-02-06&sig=rMSK13b1Wa7vssz1Hj4zz85l9UHIbFz2ypRvsIiOK7w%3D' -o assets/client_raw/0c161919.jpg
+          curl -fL --retry 3 'https://sdmntprcacentral.oaiusercontent.com/files/00000000-6048-820d-9875-2ad4e3d8c131/raw?se=2026-09-23T08%3A58%3A39Z&sp=r&sv=2026-02-06&sr=b&scid=dd908507-39d9-5e6d-842a-df9c8587356b&skoid=9b41a688-1b44-4731-856e-b0efcf3660ed&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-23T07%3A05%3A41Z&ske=2026-09-24T07%3A05%3A41Z&sks=b&skv=2026-02-06&sig=AZM6Qe7UJ0DzCdx3mXbeTbTNYEVM0TcLo%2B2i3FWWENw%3D' -o assets/client_raw/b81924ad-900d-450b-9c1e-de84a9457a2f.jpg
+          curl -fL --retry 3 'https://sdmntprcentralus.oaiusercontent.com/files/00000000-8ff8-81f5-9399-c0cccd689a1e/raw?se=2026-09-23T08%3A58%3A44Z&sp=r&sv=2026-02-06&sr=b&scid=04721d26-f4fc-5105-8287-30b36f71b099&skoid=9b41a688-1b44-4731-856e-b0efcf3660ed&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-23T04%3A52%3A05Z&ske=2026-09-24T04%3A52%3A05Z&sks=b&skv=2026-02-06&sig=HYPDMgmcz0XjJgHbn7FvPoMNRofvNqwIIvDlJeB7qsY%3D' -o assets/client_raw/22707888-0538-4585-8d35-e02dd470cd3e.jpg
+          curl -fL --retry 3 'https://sdmntprnortheu.oaiusercontent.com/files/00000000-b2c0-81f4-907b-cca70648a555/raw?se=2026-09-23T08%3A58%3A45Z&sp=r&sv=2026-02-06&sr=b&scid=4f0ec6ab-0724-5a48-94f2-2b57697483f6&skoid=9b41a688-1b44-4731-856e-b0efcf3660ed&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-23T08%3A24%3A28Z&ske=2026-09-24T08%3A24%3A28Z&sks=b&skv=2026-02-06&sig=ufeoUE7u9P1Jp5ZE%2BJltgTXWHvBXiYVApOPD4CvIL78%3D' -o assets/client_raw/628d4bf1-b9b0-4b32-be09-7057ec105297.jpg
+          curl -fL --retry 3 'https://sdmntprnortheu.oaiusercontent.com/files/00000000-7fd4-81f4-a90b-601da11f4475/raw?se=2026-09-23T08%3A58%3A46Z&sp=r&sv=2026-02-06&sr=b&scid=3c911608-e731-5efd-ad7a-f1a8631c9fb5&skoid=9b41a688-1b44-4731-856e-b0efcf3660ed&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-22T22%3A56%3A20Z&ske=2026-09-23T22%3A56%3A20Z&sks=b&skv=2026-02-06&sig=rr%2BpfQ3X9PGEd7z6h1Jc2%2BFQ%2BS1PhYEFjSvGYsUlYDM%3D' -o assets/client_raw/78d1c5d1-a7f5-4c5a-a59f-6795b84a4636.jpg
+      - name: Apply client feedback and production hardening
+        run: python scripts/production_release.py
+      - name: Commit production release
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git rm -f .github/workflows/production-release.yml
+          git add -A
+          git commit -m "Production-ready client feedback release"
+          git push origin HEAD:main
