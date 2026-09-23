@@ -139,7 +139,7 @@ function ContactSection(){
       else setStatus(T.notConnected);
     }catch{setStatus(T.notConnected);}
   }
-  return h("section",{className:"gt-shared-contact",id:"contact"},
+  return h("section",{className:"gt-shared-contact",id:"contact-form"},
     h("div",{className:"gt-shared-contact-inner"},
       h("div",{className:"gt-shared-contact-copy"},
         h("h2",null,T.formTitle),
