@@ -178,3 +178,91 @@ details.gt-faq-item{overflow:hidden}details.gt-faq-item summary{user-select:none
  main h1{font-size:clamp(2rem,9.4vw,2.85rem)!important;line-height:1.08!important}main h2{font-size:clamp(1.6rem,7.2vw,2.15rem)!important;line-height:1.16!important}
 }
 @media(prefers-reduced-motion:reduce){.gt-animate-ready [data-gt-reveal]{opacity:1;transform:none}.gt-animate-ready [data-gt-reveal].gt-visible{transition:none}details.gt-faq-item[open]>:not(summary){animation:none}}
+
+
+/* Language switch + motion polish */
+.gt-react-flag{
+  overflow:hidden;
+  padding:0;
+  transition:transform .2s ease, box-shadow .2s ease, background-color .2s ease;
+}
+.gt-react-flag:hover{
+  transform:translateY(-1px) scale(1.03);
+  box-shadow:0 5px 14px rgba(29,51,38,.12);
+}
+.gt-react-flag svg{
+  width:23px!important;
+  height:16px!important;
+  max-width:23px!important;
+  max-height:16px!important;
+  display:block;
+  flex:0 0 auto;
+  border-radius:2px;
+  overflow:hidden;
+}
+html.gt-language-leaving body{
+  opacity:.08;
+  transform:translateY(3px);
+  transition:opacity .18s ease, transform .18s ease;
+}
+html.gt-page-enter body{
+  animation:gtPageEnter .34s cubic-bezier(.2,.8,.2,1) both;
+}
+@keyframes gtPageEnter{
+  from{opacity:.25;transform:translateY(5px)}
+  to{opacity:1;transform:none}
+}
+
+.gt-react-nav-link,
+.gt-react-cta,
+.gt-react-phone,
+.gt-shared-contact-links a,
+.gt-shared-contact-form button,
+.gt-react-footer a,
+main a,
+main button{
+  transition:transform .2s ease, box-shadow .2s ease, background-color .2s ease, color .2s ease, border-color .2s ease, opacity .2s ease;
+}
+.gt-react-cta:hover,
+.gt-shared-contact-form button:hover{
+  transform:translateY(-1px);
+  box-shadow:0 7px 18px rgba(29,51,38,.14);
+}
+.gt-shared-contact-links a:hover{
+  transform:translateY(-2px);
+  box-shadow:0 7px 18px rgba(29,51,38,.08);
+}
+main img{
+  transition:transform .45s cubic-bezier(.2,.8,.2,1), filter .35s ease;
+}
+main a:hover img,
+main article:hover img,
+main figure:hover img{
+  transform:scale(1.018);
+}
+.gt-animate-ready [data-gt-reveal]{
+  opacity:0;
+  transform:translateY(16px);
+  transition:opacity .58s ease, transform .58s cubic-bezier(.2,.8,.2,1);
+}
+.gt-animate-ready [data-gt-reveal].gt-visible{
+  opacity:1;
+  transform:none;
+}
+.gt-animate-ready [data-gt-reveal]:nth-child(2){transition-delay:.045s}
+.gt-animate-ready [data-gt-reveal]:nth-child(3){transition-delay:.09s}
+.gt-animate-ready [data-gt-reveal]:nth-child(4){transition-delay:.135s}
+.gt-animate-ready [data-gt-reveal]:nth-child(5){transition-delay:.18s}
+
+@media(max-width:640px){
+  .gt-react-flag svg{
+    width:21px!important;
+    height:15px!important;
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  html.gt-language-leaving body{opacity:1;transform:none;transition:none}
+  html.gt-page-enter body{animation:none}
+  .gt-react-flag,.gt-react-nav-link,.gt-react-cta,.gt-react-phone,.gt-shared-contact-links a,.gt-shared-contact-form button,.gt-react-footer a,main a,main button,main img{transition:none!important}
+  .gt-animate-ready [data-gt-reveal]{opacity:1!important;transform:none!important;transition:none!important}
+}
