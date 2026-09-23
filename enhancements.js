@@ -33,7 +33,22 @@ const ready=()=>{
      }catch(err){if(status){status.classList.add('is-error');status.textContent=isEn?'Unable to send right now. Please use the email address on this page.':'לא ניתן לשלוח כרגע. אפשר לפנות באמצעות כתובת המייל שבעמוד.'}}
    })
  });
- // Analytics is dormant until an ID is configured AND the visitor consents.
+
+ // Floating WhatsApp + accessibility controls.
+ if(!document.querySelector('.gt-floating-tools')){
+   const tools=document.createElement('div');tools.className='gt-floating-tools';
+   tools.innerHTML='<a class="gt-float-btn gt-wa-btn" href="https://wa.me/972535324962" target="_blank" rel="noopener noreferrer" aria-label="'+(isEn?'Chat on WhatsApp':'שיחה ב-WhatsApp')+'">WA</a><button type="button" class="gt-float-btn gt-a11y-btn" aria-expanded="false" aria-label="'+(isEn?'Accessibility options':'אפשרויות נגישות')+'">♿</button>';
+   document.body.appendChild(tools);
+   const panel=document.createElement('div');panel.className='gt-a11y-panel';panel.setAttribute('role','dialog');panel.setAttribute('aria-label',isEn?'Accessibility options':'אפשרויות נגישות');
+   panel.innerHTML='<h2>'+(isEn?'Accessibility':'נגישות')+'</h2><div class="gt-a11y-actions"><button type="button" data-a="text">'+(isEn?'Larger text':'טקסט גדול')+'</button><button type="button" data-a="contrast">'+(isEn?'High contrast':'ניגודיות גבוהה')+'</button><button type="button" data-a="motion">'+(isEn?'Reduce motion':'הפחתת תנועה')+'</button><button type="button" data-a="reset">'+(isEn?'Reset':'איפוס')+'</button></div><a style="display:block;margin-top:8px" href="'+(isEn?'accessibility.html':'accessibility.html')+'">'+(isEn?'Accessibility statement':'הצהרת נגישות')+'</a>';
+   document.body.appendChild(panel);
+   const btn=tools.querySelector('.gt-a11y-btn');
+   btn.addEventListener('click',()=>{const open=panel.classList.toggle('is-open');btn.setAttribute('aria-expanded',String(open))});
+   panel.addEventListener('click',e=>{const b=e.target.closest('button[data-a]');if(!b)return;const root=document.documentElement;const a=b.dataset.a;if(a==='text')root.classList.toggle('gt-large-text');if(a==='contrast')root.classList.toggle('gt-high-contrast');if(a==='motion')root.classList.toggle('gt-no-motion');if(a==='reset')root.classList.remove('gt-large-text','gt-high-contrast','gt-no-motion')});
+ }
+ // If Material Symbols fails to load, replace critical raw icon names instead of showing implementation words.
+ if(document.fonts){document.fonts.ready.then(()=>{if(document.fonts.check('16px "Material Symbols Outlined"'))return;const map={chat:'💬',call:'☎',phone:'☎',mail:'✉',location_on:'⌖',calendar_today:'▣',spa:'✦',send:'➜',north_east:'↗',arrow_back:'←',arrow_forward:'→',check_circle:'✓',verified:'✓'};document.querySelectorAll('.material-symbols-outlined').forEach(el=>{const k=el.textContent.trim();if(map[k])el.textContent=map[k];else el.textContent=''})})}
+\n // Analytics is dormant until an ID is configured AND the visitor consents.
  const cfg=window.GREEN_THERAPY_CONFIG||{}; const key='gt-analytics-consent';
  const loadGA=()=>{if(!cfg.googleAnalyticsId||window.gtag)return;const s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id='+encodeURIComponent(cfg.googleAnalyticsId);document.head.appendChild(s);window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments)};gtag('js',new Date());gtag('config',cfg.googleAnalyticsId,{anonymize_ip:true})};
  if(cfg.googleAnalyticsId){
