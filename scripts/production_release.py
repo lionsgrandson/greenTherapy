@@ -40,16 +40,16 @@ for src in list(client_dir.glob("*.jpeg")) + list(client_dir.glob("*.jpg")):
         print("image conversion skip", src, exc)
 
 PHOTO_SETS = {
-    "index.html": ["IMG_9301.webp","887e1d9b-94c2-49aa-b3b9-258f57aacf3c.webp","IMG_0227.webp","1c3d140a-38a4-4aff-8196-9fea60c15ae3.webp","IMG_9298.webp"],
-    "spa.html": ["887e1d9b-94c2-49aa-b3b9-258f57aacf3c.webp","1c3d140a-38a4-4aff-8196-9fea60c15ae3.webp","827ed1a7-ce8f-428f-91c1-20ac014453bf.webp","95941eaf-fc13-49b4-a515-c9d66f1fdb6e.webp","fe5e6cfc-8689-4287-8189-7286edf4bb30.webp","f50174ac.webp"],
-    "ice-bath.html": ["IMG_0227.webp","IMG_0226.webp","IMG_0220.webp"],
-    "workshops.html": ["IMG_9301.webp","IMG_9302.webp","IMG_9298.webp","f50174ac.webp"],
-    "healthy-bar.html": ["IMG_9302.webp","IMG_9298.webp","IMG_9301.webp"],
-    "about.html": ["IMG_0220.webp","887e1d9b-94c2-49aa-b3b9-258f57aacf3c.webp","IMG_0226.webp"],
-    "gallery.html": ["887e1d9b-94c2-49aa-b3b9-258f57aacf3c.webp","1c3d140a-38a4-4aff-8196-9fea60c15ae3.webp","827ed1a7-ce8f-428f-91c1-20ac014453bf.webp","IMG_0220.webp","IMG_0227.webp","IMG_0226.webp","IMG_9301.webp","IMG_9302.webp","IMG_9298.webp","f50174ac.webp","ffe7beb5.webp","d466fbd5.webp","c0752a07.webp","0c161919.webp"],
-    "contact.html": ["IMG_9301.webp","IMG_0220.webp"],
+    "index.html": ["887e1d9b-94c2-49aa-b3b9-258f57aacf3c.webp","1c3d140a-38a4-4aff-8196-9fea60c15ae3.webp","827ed1a7-ce8f-428f-91c1-20ac014453bf.webp","95941eaf-fc13-49b4-a515-c9d66f1fdb6e.webp","fe5e6cfc-8689-4287-8189-7286edf4bb30.webp"],
+    "spa.html": ["887e1d9b-94c2-49aa-b3b9-258f57aacf3c.webp","1c3d140a-38a4-4aff-8196-9fea60c15ae3.webp","827ed1a7-ce8f-428f-91c1-20ac014453bf.webp","95941eaf-fc13-49b4-a515-c9d66f1fdb6e.webp","fe5e6cfc-8689-4287-8189-7286edf4bb30.webp"],
+    "ice-bath.html": ["887e1d9b-94c2-49aa-b3b9-258f57aacf3c.webp","1c3d140a-38a4-4aff-8196-9fea60c15ae3.webp","827ed1a7-ce8f-428f-91c1-20ac014453bf.webp"],
+    "workshops.html": ["1c3d140a-38a4-4aff-8196-9fea60c15ae3.webp","827ed1a7-ce8f-428f-91c1-20ac014453bf.webp","95941eaf-fc13-49b4-a515-c9d66f1fdb6e.webp"],
+    "healthy-bar.html": ["95941eaf-fc13-49b4-a515-c9d66f1fdb6e.webp","fe5e6cfc-8689-4287-8189-7286edf4bb30.webp"],
+    "about.html": ["887e1d9b-94c2-49aa-b3b9-258f57aacf3c.webp","1c3d140a-38a4-4aff-8196-9fea60c15ae3.webp"],
+    "gallery.html": ["887e1d9b-94c2-49aa-b3b9-258f57aacf3c.webp","1c3d140a-38a4-4aff-8196-9fea60c15ae3.webp","827ed1a7-ce8f-428f-91c1-20ac014453bf.webp","95941eaf-fc13-49b4-a515-c9d66f1fdb6e.webp","fe5e6cfc-8689-4287-8189-7286edf4bb30.webp"],
+    "contact.html": ["887e1d9b-94c2-49aa-b3b9-258f57aacf3c.webp","1c3d140a-38a4-4aff-8196-9fea60c15ae3.webp"],
 }
-TESTIMONIALS = ["b81924ad-900d-450b-9c1e-de84a9457a2f.webp","22707888-0538-4585-8d35-e02dd470cd3e.webp","628d4bf1-b9b0-4b32-be09-7057ec105297.webp","78d1c5d1-a7f5-4c5a-a59f-6795b84a4636.webp"]
+TESTIMONIALS = []
 
 HE_REPL = {
     "במשרדים, בטבע או בסיור החברה": "במשרד, בטבע או באתר האירוע",
@@ -205,9 +205,7 @@ def fix_images(soup, page, en=False):
     for img in soup.find_all("img"):
         src=img.get("src","")
         if "client-message-" in src:
-            img["src"]=prefix+"assets/client/"+TESTIMONIALS[t_idx % len(TESTIMONIALS)]
-            img["alt"]="Client recommendation message" if en else "המלצה מלקוח"
-            img["loading"]="lazy"; t_idx += 1
+            img["loading"]="lazy"; img["decoding"]="async"
             continue
         if "googleusercontent.com" in src:
             img["src"]=prefix+"assets/client/"+photos[idx % len(photos)]
@@ -324,9 +322,9 @@ def add_wellness_space(soup, en=False):
   <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
     <div class="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
       <div class="grid grid-cols-2 gap-3">
-        <img class="rounded-2xl w-full h-56 md:h-72 object-cover col-span-2" src="{prefix}assets/client/IMG_0220.webp" alt="{htmlmod.escape(title)}" loading="lazy" decoding="async">
-        <img class="rounded-2xl w-full h-40 md:h-52 object-cover" src="{prefix}assets/client/IMG_0227.webp" alt="{htmlmod.escape(title)}" loading="lazy" decoding="async">
-        <img class="rounded-2xl w-full h-40 md:h-52 object-cover" src="{prefix}assets/client/IMG_0226.webp" alt="{htmlmod.escape(title)}" loading="lazy" decoding="async">
+        <img class="rounded-2xl w-full h-56 md:h-72 object-cover col-span-2" src="{prefix}assets/client/887e1d9b-94c2-49aa-b3b9-258f57aacf3c.webp" alt="{htmlmod.escape(title)}" loading="lazy" decoding="async">
+        <img class="rounded-2xl w-full h-40 md:h-52 object-cover" src="{prefix}assets/client/1c3d140a-38a4-4aff-8196-9fea60c15ae3.webp" alt="{htmlmod.escape(title)}" loading="lazy" decoding="async">
+        <img class="rounded-2xl w-full h-40 md:h-52 object-cover" src="{prefix}assets/client/827ed1a7-ce8f-428f-91c1-20ac014453bf.webp" alt="{htmlmod.escape(title)}" loading="lazy" decoding="async">
       </div>
       <div>
         <h2 class="font-display text-headline-lg md:text-[40px] md:leading-[48px] text-forest-deep font-bold mb-5">{title}</h2>
