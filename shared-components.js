@@ -60,6 +60,16 @@ function switchHref(){
   u.searchParams.set("lang",LANG==="he"?"en":"he");
   return u.pathname+u.search+u.hash;
 }
+function smoothLanguageSwitch(e){
+  e.preventDefault();
+  const target=e.currentTarget.href;
+  if(window.matchMedia("(prefers-reduced-motion: reduce)").matches){
+    location.assign(target);
+    return;
+  }
+  document.documentElement.classList.add("gt-language-leaving");
+  window.setTimeout(()=>location.assign(target),180);
+}
 
 function applyStaticTranslation(){
   document.documentElement.lang=LANG;
@@ -111,7 +121,7 @@ function Header(){
       ),
       h("div",{className:"gt-react-actions"},
         h("a",{className:"gt-react-phone",dir:"ltr",href:"tel:"+TEL},PHONE),
-        h("a",{className:"gt-react-flag",href:switchHref(),"aria-label":T.language,title:T.language},LANG==="he"?h(USFlag):h(ILFlag)),
+        h("a",{className:"gt-react-flag",href:switchHref(),"aria-label":T.language,title:T.language,onClick:smoothLanguageSwitch},LANG==="he"?h(USFlag):h(ILFlag)),
         h("a",{className:"gt-react-cta",href:withLang("contact.html")},T.plan),
         h("button",{className:"gt-react-menu-btn",type:"button","aria-expanded":open,"aria-label":open?T.close:T.menu,onClick:()=>setOpen(!open)},open?"×":"☰")
       )
@@ -198,7 +208,9 @@ function initFaq(){
 }
 
 function initReveal(){
-  const els=[...document.querySelectorAll("main > section, main article, main .tactile-card")].filter(el=>!el.closest("#gt-contact-root"));
+  const els=[...document.querySelectorAll(
+    "main > section, main article, main .tactile-card, main .grid > div, main .grid > article, main .grid > a, main figure"
+  )].filter((el,i,arr)=>!el.closest("#gt-contact-root") && arr.indexOf(el)===i);
   els.forEach(el=>el.dataset.gtReveal="");
   document.documentElement.classList.add("gt-animate-ready");
   if(!("IntersectionObserver" in window)){els.forEach(el=>el.classList.add("gt-visible"));return;}
@@ -269,6 +281,8 @@ function updateSeo(){
 
 applyStaticTranslation();
 updateSeo();
+document.documentElement.classList.add("gt-page-enter");
+window.setTimeout(()=>document.documentElement.classList.remove("gt-page-enter"),420);
 const headerRoot=document.getElementById("gt-header-root");
 const footerRoot=document.getElementById("gt-footer-root");
 const contactRoot=document.getElementById("gt-contact-root");
