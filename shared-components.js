@@ -230,7 +230,7 @@ function updateSeo(){
   let canonical=document.querySelector('link[rel="canonical"]');
   if(!canonical){canonical=document.createElement("link");canonical.rel="canonical";document.head.appendChild(canonical);}
   canonical.href=LANG==="en"?base+"?lang=en":base;
-  document.querySelectorAll('link[data-gt-hreflang]').forEach(x=>x.remove());
+  document.querySelectorAll('link[rel="alternate"][hreflang],link[data-gt-hreflang]').forEach(x=>x.remove());
   [["he",base],["en",base+"?lang=en"],["x-default",base]].forEach(([lang,url])=>{
     const l=document.createElement("link");l.rel="alternate";l.hreflang=lang;l.href=url;l.dataset.gtHreflang="1";document.head.appendChild(l);
   });
