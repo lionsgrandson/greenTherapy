@@ -1,0 +1,18 @@
+name: Deploy Green Therapy to Netlify
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/netlify-deploy.yml'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Deploy to Netlify
+        run: >-
+          npx -y @netlify/mcp@latest
+          --site-id 5a7aed51-996b-4be1-aea1-906bc30bb37b
+          --proxy-path "https://netlify-mcp.netlify.app/proxy/eyJhbGciOiJkaXIiLCJlbmMiOiJBMjU2R0NNIn0..Wpj8VkXvaNLV9M4G.2QSFSH8RWbjqfBKHb1UF6eNcrqybDYYKeOyv4hjJuFzW_qOjZlvtBvo9C-PE7DWA6urQUiW3675xPmnYG_W-VfcTIIvftFk0aaVH5Uj_lzvWzeKEPmmJSmH_vnwKLNYheaa0zl0ezb0XDJDwnYk6TNv5ZyMBZL3fGOaYwN6WysCqXhXGi40z-FXSk5kqsHuyXAJy1Lmon1VeMoHE1xY6dWd_XgWsKSqnWVmg7vs382vE39spQ0-aCj0NbKT_zA3JlOGDyAN0XCzdD-g-Pk5ma5AAVkFH7RC0YbuzQVv9bV1mGwHkNKJWfYaZq2SuNSvD8IZR8aLBO22Y0nVKT7ltfNX5yGY9Gu7EQHZDSf8f_pY-V-dnW1qzKFljEfSOLb7cmu8Y6OLJ.7vZH6t_oiFnjPC9a5gjFPA"
