@@ -1,4 +1,5 @@
-/gallery.html / 301
-/en/gallery.html /en/ 301
+/en /?lang=en 301
+/en/ /?lang=en 301
+/en/* /:splat?lang=en 301
 /gallery / 301
-/en/gallery /en/ 301
+/gallery.html / 301

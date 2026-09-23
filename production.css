@@ -132,3 +132,49 @@ main p{text-wrap:pretty}
  main h3{line-height:1.22!important}
  .gt-floating-wa{right:12px;bottom:calc(12px + env(safe-area-inset-bottom));width:50px;height:50px}
 }
+
+/* Shared React chrome over the original Stitch design */
+#gt-header-root{position:sticky;top:0;z-index:120}
+.gt-react-header{background:rgba(255,248,245,.96);backdrop-filter:blur(12px);border-bottom:1px solid rgba(204,198,187,.45);color:#211a14}
+.gt-react-header-inner{max-width:1280px;margin:auto;padding:9px 24px;min-height:76px;display:flex;align-items:center;gap:16px}
+.gt-react-brand{display:flex;align-items:center;flex:0 0 138px}.gt-react-brand img{width:132px;height:56px;object-fit:contain;border-radius:9px;background:#fff}
+.gt-react-nav{flex:1;display:flex;align-items:center;justify-content:center;gap:7px;min-width:0}
+.gt-react-nav-link{padding:9px 11px;border-radius:999px;text-decoration:none;color:#4a463e;font-weight:700;font-size:.86rem;white-space:nowrap;transition:.2s ease}
+.gt-react-nav-link:hover{background:#eef4ef;color:#1d3326}.gt-react-nav-link.active{background:#dfe9e1;color:#173c2b;box-shadow:inset 0 0 0 1px rgba(45,90,67,.18),0 2px 8px rgba(29,51,38,.08)}
+.gt-react-actions{display:flex;align-items:center;gap:7px;flex:0 0 auto}
+.gt-react-phone{direction:ltr;unicode-bidi:isolate;white-space:nowrap;text-decoration:none;border:1px solid #d6dfd8;background:#fff;color:#173c2b;border-radius:999px;padding:10px 12px;font-weight:800;font-size:.82rem}
+.gt-react-flag{width:42px;height:42px;display:flex;align-items:center;justify-content:center;border:1px solid #d6dfd8;background:#fff;border-radius:999px;text-decoration:none;font-size:1.25rem}
+.gt-react-cta{min-height:42px;display:inline-flex;align-items:center;justify-content:center;padding:0 17px;border-radius:999px;background:#2d5a43;color:#fff;text-decoration:none;font-weight:800;white-space:nowrap}
+.gt-react-menu-btn{display:none;width:42px;height:42px;border-radius:999px;border:1px solid #d6dfd8;background:#fff;color:#173c2b;font-size:1.45rem;align-items:center;justify-content:center}
+.gt-react-mobile-menu{display:none}.gt-react-mobile-phone{display:none}
+.gt-phone-isolate{direction:ltr!important;unicode-bidi:isolate!important;white-space:nowrap!important}
+
+.gt-react-footer{background:#1d3326;color:#fff;padding:46px 22px}.gt-react-footer-grid{max-width:1180px;margin:auto;display:grid;grid-template-columns:1.05fr 1fr .9fr 1.35fr;gap:34px}.gt-react-footer-brand img{width:190px;background:#fff;border-radius:14px}.gt-react-footer h2{font-size:1rem;color:#dcebe1;margin:0 0 14px;font-weight:800}.gt-react-footer ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}.gt-react-footer a{color:rgba(255,255,255,.84);text-decoration:none}.gt-react-footer a:hover{text-decoration:underline;text-underline-offset:3px}.gt-react-contact-list li{overflow-wrap:anywhere}.gt-react-contact-list strong{color:#fff}
+
+.gt-shared-contact{background:#eef4ef;border-top:1px solid #d6dfd8;padding:64px 22px}.gt-shared-contact-inner{max-width:1080px;margin:auto;display:grid;grid-template-columns:.85fr 1.15fr;gap:44px;align-items:start}.gt-shared-contact-copy h2{font-size:clamp(2rem,3.5vw,2.8rem);line-height:1.05;color:#1d3326;margin:0 0 14px}.gt-shared-contact-copy>p{font-size:1.05rem;line-height:1.7;color:#5f6c63}.gt-shared-contact-links{display:grid;gap:10px;margin-top:24px}.gt-shared-contact-links a{display:flex;align-items:center;justify-content:space-between;gap:12px;text-decoration:none;background:#fff;border:1px solid #d6dfd8;border-radius:14px;padding:13px 15px;color:#1d3326}.gt-shared-contact-links span{font-weight:700}.gt-shared-contact-links strong{font-weight:600;overflow-wrap:anywhere;text-align:end}
+.gt-shared-contact-form{display:grid;gap:13px;background:#fff;border:1px solid #d6dfd8;border-radius:22px;padding:25px;box-shadow:0 10px 30px rgba(29,51,38,.06)}.gt-shared-form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.gt-shared-contact-form label{display:grid;gap:6px;font-weight:700;color:#1d3326}.gt-shared-contact-form input,.gt-shared-contact-form textarea{width:100%;border:1px solid #cbd7ce;border-radius:11px;background:#fbfdfb;padding:12px 13px;color:#211a14;font:inherit}.gt-shared-contact-form input:focus,.gt-shared-contact-form textarea:focus{outline:3px solid rgba(45,90,67,.14);border-color:#2d5a43}.gt-shared-contact-form button{justify-self:start;min-width:105px;border:0;border-radius:999px;background:#2d5a43;color:#fff;padding:12px 24px;font:inherit;font-weight:800;cursor:pointer}.gt-shared-form-status{min-height:24px;color:#5f6c63;font-weight:600}.gt-honeypot{position:absolute!important;left:-9999px!important;width:1px!important;height:1px!important;opacity:0!important}
+
+.gt-floating-wa-react{position:fixed;right:18px;bottom:18px;z-index:150;width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#25D366;color:#fff!important;border:2px solid #fff;text-decoration:none!important;font-weight:900;box-shadow:0 10px 28px rgba(0,0,0,.24)}
+
+details.gt-faq-item{overflow:hidden}details.gt-faq-item summary{user-select:none}details.gt-faq-item[open]>summary .material-symbols-outlined{transform:rotate(180deg)}details.gt-faq-item>summary .material-symbols-outlined{transition:transform .25s ease}details.gt-faq-item[open]>:not(summary){animation:gtFaqReveal .28s cubic-bezier(.2,.8,.2,1) both}@keyframes gtFaqReveal{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+
+.gt-animate-ready [data-gt-reveal]{opacity:0;transform:translateY(14px)}.gt-animate-ready [data-gt-reveal].gt-visible{opacity:1;transform:none;transition:opacity .55s ease,transform .55s cubic-bezier(.2,.8,.2,1)}
+.gt-lang-en main{direction:ltr}.gt-lang-en main .text-right{text-align:left!important}.gt-lang-en main .right-4{right:auto!important;left:1rem!important}.gt-lang-en main .right-5{right:auto!important;left:1.25rem!important}
+.gt-legal-page{background:#fff8f5}.gt-legal-copy{font-size:1.05rem;line-height:1.8;color:#4a463e}.gt-legal-copy h2{color:#1d3326;font-size:1.35rem;margin:30px 0 8px;font-weight:800}.gt-legal-copy p{margin:0 0 12px}
+
+@media(max-width:1180px){.gt-react-nav-link{padding:8px 8px;font-size:.79rem}.gt-react-phone{display:none}.gt-react-header-inner{padding-left:16px;padding-right:16px}}
+@media(max-width:980px){
+ .gt-react-nav{display:none}.gt-react-cta{display:none}.gt-react-menu-btn{display:flex}.gt-react-header-inner{min-height:68px}.gt-react-brand{flex-basis:118px}.gt-react-brand img{width:112px;height:48px}
+ .gt-react-mobile-phone{display:block;direction:ltr;unicode-bidi:isolate;text-align:center;padding:5px 12px;background:#e3ece5;color:#173c2b;text-decoration:none;font-weight:800;font-size:.82rem;border-top:1px solid rgba(29,51,38,.08)}
+ .gt-react-mobile-menu.open{display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:10px 14px 14px;background:#fff8f5;border-top:1px solid #d6dfd8}.gt-react-mobile-menu a{padding:11px;border-radius:11px;background:#fff;text-decoration:none;color:#173c2b;font-weight:800}.gt-react-mobile-menu a.active{background:#dfe9e1}
+ .gt-shared-contact-inner{grid-template-columns:1fr}.gt-react-footer-grid{grid-template-columns:1fr 1fr}.gt-react-footer-brand{grid-column:1/-1}
+}
+@media(max-width:640px){
+ .gt-react-header-inner{padding:7px 11px;gap:8px}.gt-react-actions{gap:5px}.gt-react-flag,.gt-react-menu-btn{width:40px;height:40px}.gt-react-mobile-menu.open{grid-template-columns:1fr}
+ .gt-shared-contact{padding:50px 16px}.gt-shared-contact-inner{gap:26px}.gt-shared-contact-form{padding:20px}.gt-shared-form-grid{grid-template-columns:1fr}.gt-shared-contact-form button{width:100%}
+ .gt-shared-contact-links a{display:grid;gap:4px}.gt-shared-contact-links strong{text-align:start}
+ .gt-react-footer{padding:38px 17px}.gt-react-footer-grid{grid-template-columns:1fr;gap:26px}.gt-react-footer-brand{grid-column:auto}.gt-react-footer-brand img{width:165px}
+ .gt-floating-wa-react{right:12px;bottom:12px;width:52px;height:52px}
+ main h1{font-size:clamp(2rem,9.4vw,2.85rem)!important;line-height:1.08!important}main h2{font-size:clamp(1.6rem,7.2vw,2.15rem)!important;line-height:1.16!important}
+}
+@media(prefers-reduced-motion:reduce){.gt-animate-ready [data-gt-reveal]{opacity:1;transform:none}.gt-animate-ready [data-gt-reveal].gt-visible{transition:none}details.gt-faq-item[open]>:not(summary){animation:none}}
