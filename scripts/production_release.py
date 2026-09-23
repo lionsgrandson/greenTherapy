@@ -255,7 +255,7 @@ def fix_forms(soup, en=False):
                 elif "company" in fid: name="company"
                 else: name=f"field_{fi}_{n}"
                 field["name"]=name
-        hp=soup.new_tag("input", type="text", name="company_website", tabindex="-1", autocomplete="off")
+        hp=soup.new_tag("input", attrs={"type":"text","name":"company_website","tabindex":"-1","autocomplete":"off"})
         hp["class"]=["gt-honeypot"]; hp["aria-hidden"]="true"
         form.insert(0,hp)
         status=soup.new_tag("div")
