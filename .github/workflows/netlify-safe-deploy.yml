@@ -1,0 +1,25 @@
+name: Deploy Green Therapy safely
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/netlify-safe-deploy.yml'
+permissions:
+  contents: write
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check Netlify token
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+        run: |
+          if [ -z "$NETLIFY_AUTH_TOKEN" ]; then
+            echo "NETLIFY_AUTH_TOKEN is not configured"
+            exit 42
+          fi
+      - name: Deploy to Netlify
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+        run: npx -y netlify-cli@latest deploy --prod --dir . --site 5a7aed51-996b-4be1-aea1-906bc30bb37b --auth "$NETLIFY_AUTH_TOKEN"
