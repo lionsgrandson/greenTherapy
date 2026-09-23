@@ -324,8 +324,9 @@ insert=r"""
  // If Material Symbols fails to load, replace critical raw icon names instead of showing implementation words.
  if(document.fonts){document.fonts.ready.then(()=>{if(document.fonts.check('16px "Material Symbols Outlined"'))return;const map={chat:'💬',call:'☎',phone:'☎',mail:'✉',location_on:'⌖',calendar_today:'▣',spa:'✦',send:'➜',north_east:'↗',arrow_back:'←',arrow_forward:'→',check_circle:'✓',verified:'✓'};document.querySelectorAll('.material-symbols-outlined').forEach(el=>{const k=el.textContent.trim();if(map[k])el.textContent=map[k];else el.textContent=''})})}
 """
-const marker=" // Analytics is dormant until an ID is configured AND the visitor consents.";
-if(!js.includes("Floating WhatsApp + accessibility controls.")) js=js.replace(marker,insert+"\n"+marker);
+marker=" // Analytics is dormant until an ID is configured AND the visitor consents."
+if "Floating WhatsApp + accessibility controls." not in js:
+    js=js.replace(marker,insert+"\\n"+marker)
 js_path.write_text(js,encoding="utf-8")
 
 print("Final polish complete")
