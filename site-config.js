@@ -1,0 +1,1 @@
+window.GREEN_THERAPY_CONFIG={googleAnalyticsId:"",googleSearchConsoleVerification:"",contactBackendEnabled:false};

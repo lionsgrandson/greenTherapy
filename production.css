@@ -1,0 +1,46 @@
+
+/* Production hardening: accessibility, mobile, consistent brand */
+:root{--gt-green:#1d3326;--gt-green-2:#2d5a43;--gt-mint:#e3ece5}
+html{scroll-padding-top:92px}
+body{overflow-x:hidden}
+.gt-skip-link{position:fixed;z-index:9999;top:8px;left:8px;transform:translateY(-150%);background:#fff;color:#1d3326;padding:.75rem 1rem;border:2px solid #1d3326;border-radius:.5rem;font-weight:700}
+.gt-skip-link:focus{transform:none}
+:focus-visible{outline:3px solid #2d5a43!important;outline-offset:3px!important}
+.gt-brand-mark{font-size:1.8rem;line-height:1;color:#1d3326;display:flex;align-items:center;justify-content:center;width:100%;height:100%}
+footer{background:#1d3326!important;color:#fff!important}
+footer a{color:inherit}
+.gt-legal-links{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;padding:1rem 1rem 1.5rem;color:rgba(255,255,255,.78);font-size:.875rem}
+.gt-legal-links a{text-decoration:underline;text-underline-offset:3px}
+a[href^="mailto:"]{overflow-wrap:anywhere;word-break:break-word;max-width:100%}
+.gt-honeypot{position:absolute!important;left:-9999px!important;width:1px!important;height:1px!important;opacity:0!important}
+.gt-form-status{margin-top:.75rem;font-weight:600;line-height:1.5}
+.gt-form-status.is-error{color:#8b1e1e}.gt-form-status.is-success{color:#1d5a38}
+.gt-mobile-menu-toggle{display:none}
+.gt-mobile-panel{display:none}
+@media(max-width:767px){
+  header>div{padding:10px 14px!important;gap:10px!important;min-height:72px}
+  header a[aria-label="Green Therapy"]{flex:1;min-width:0;gap:8px!important}
+  header a[aria-label="Green Therapy"] .w-12{width:40px!important;height:40px!important;min-width:40px}
+  header a[aria-label="Green Therapy"] span.font-headline-md{font-size:1.2rem!important;line-height:1.1!important;white-space:normal}
+  header a[aria-label="Green Therapy"] span.font-label-sm{font-size:.7rem!important;line-height:1.2!important}
+  header a[href^="mailto:"]{display:none!important}
+  header [data-lang-switch]{width:44px!important;min-width:44px!important;padding:0!important}
+  .gt-mobile-menu-toggle{display:inline-flex!important;width:44px;height:44px;border-radius:999px;align-items:center;justify-content:center;background:#e3ece5;color:#1d3326;border:1px solid #ccc6bb;font-size:0}
+  .gt-mobile-menu-toggle:after{content:"☰";font-size:1.35rem}
+  .gt-mobile-panel{position:fixed;top:72px;left:12px;right:12px;z-index:80;background:#fff8f5;border:1px solid #ccc6bb;border-radius:18px;box-shadow:0 18px 45px rgba(29,51,38,.18);padding:10px}
+  .gt-mobile-panel.is-open{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+  .gt-mobile-panel a{padding:12px;border-radius:12px;color:#1d3326;font-weight:700;text-decoration:none;background:#e3ece5}
+  main h1{font-size:clamp(2rem,10vw,3.1rem)!important;line-height:1.05!important}
+  main h2{overflow-wrap:anywhere}
+  main .text-display{font-size:clamp(2rem,10vw,3.1rem)!important;line-height:1.08!important}
+  main .px-margin-mobile{padding-left:18px!important;padding-right:18px!important}
+  .gt-wellness-space .grid-cols-2{gap:8px}
+  .gt-wellness-space img{min-height:0}
+  a[href^="mailto:"]{font-size:clamp(.84rem,3.7vw,1rem)!important}
+  input,select,textarea{font-size:16px!important}
+}
+@media(max-width:380px){
+ header a[aria-label="Green Therapy"] span.font-label-sm{display:none}
+ .gt-mobile-panel.is-open{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
