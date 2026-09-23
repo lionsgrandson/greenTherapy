@@ -1,0 +1,26 @@
+name: Final bilingual polish
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/final-polish.yml'
+permissions:
+  contents: write
+jobs:
+  polish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install beautifulsoup4
+      - run: python scripts/final_polish_v3.py
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git rm -f .github/workflows/final-polish.yml
+          git add -A
+          git commit -m "Final bilingual production polish"
+          git push origin HEAD:main
