@@ -1,0 +1,26 @@
+name: Restore Stitch design and focused fixes
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/restore-stitch.yml'
+permissions:
+  contents: write
+jobs:
+  restore:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install beautifulsoup4
+      - run: python scripts/restore_stitch_cleanup.py
+      - name: Commit focused cleanup
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git rm -f .github/workflows/restore-stitch.yml
+          git add -A
+          git commit -m "Restore original Stitch design with focused fixes"
+          git push origin HEAD:main

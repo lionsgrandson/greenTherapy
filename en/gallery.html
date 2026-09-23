@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+
+<html dir="ltr" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Event Gallery | Green Therapy</title>
+<!-- Google Fonts: Manrope -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-variant": "#eee0d6",
+            "secondary-container": "#e3ece5",
+            "surface-container-low": "#fff1e7",
+            "surface-container": "#faebe1",
+            "background": "#fff8f5",
+            "on-error-container": "#93000a",
+            "surface-tint": "#4e6b58",
+            "on-primary": "#ffffff",
+            "on-background": "#211a14",
+            "surface-dim": "#e5d8ce",
+            "inverse-surface": "#372f28",
+            "tertiary-fixed-dim": "#efbc98",
+            "on-secondary-container": "#355140",
+            "on-primary-fixed-variant": "#4c4638",
+            "secondary-fixed": "#fbddca",
+            "on-surface": "#211a14",
+            "surface-bright": "#fff8f5",
+            "tertiary-container": "#ffe4d3",
+            "outline-variant": "#ccc6bb",
+            "on-secondary-fixed": "#28180d",
+            "on-tertiary-container": "#876042",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-high": "#f4e6db",
+            "tertiary-fixed": "#ffdcc4",
+            "secondary": "#506b58",
+            "on-error": "#ffffff",
+            "on-secondary": "#ffffff",
+            "on-tertiary": "#ffffff",
+            "inverse-primary": "#bfd2c3",
+            "primary-container": "#dfe9e1",
+            "tertiary": "#7c5639",
+            "inverse-on-surface": "#fceee4",
+            "on-tertiary-fixed-variant": "#613f24",
+            "on-secondary-fixed-variant": "#574335",
+            "error-container": "#ffdad6",
+            "surface-container-highest": "#eee0d6",
+            "secondary-fixed-dim": "#dec1af",
+            "primary-fixed-dim": "#bfd2c3",
+            "on-surface-variant": "#4a463e",
+            "error": "#ba1a1a",
+            "surface": "#fff8f5",
+            "primary-fixed": "#dbe8dd",
+            "outline": "#7c766d",
+            "on-primary-container": "#6f6859",
+            "on-tertiary-fixed": "#2f1501",
+            "on-primary-fixed": "#1f1b10",
+            "primary": "#645e4f",
+            // Additional brand anchors mapped to natural palette
+            "forest-deep": "#263e2b",
+            "surface-bone": "#fcf9f2",
+            "mint-mist": "#dde7df",
+            "sage-soft": "#7d9b80"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "margin-desktop": "48px",
+            "container-max": "1280px",
+            "gutter": "24px",
+            "margin-mobile": "16px",
+            "unit": "8px",
+            "base": "16px",
+            "section-gap": "64px"
+          },
+          "fontFamily": {
+            "headline-md": ["Manrope", "sans-serif"],
+            "body-md": ["Manrope", "sans-serif"],
+            "label-md": ["Manrope", "sans-serif"],
+            "body-lg": ["Manrope", "sans-serif"],
+            "headline-lg-mobile": ["Manrope", "sans-serif"],
+            "headline-lg": ["Manrope", "sans-serif"],
+            "display": ["Manrope", "sans-serif"],
+            "label-sm": ["Manrope", "sans-serif"],
+            "label-caps": ["Manrope", "sans-serif"]
+          },
+          "fontSize": {
+            "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+            "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "600" }],
+            "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "display": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+            "label-caps": ["13px", { "lineHeight": "18px", "letterSpacing": "0.04em", "fontWeight": "600" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      font-family: 'Manrope', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: #fff8f5;
+      color: #211a14;
+      overflow-x: hidden;
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .gallery-item {
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+    }
+    .gallery-item:hover {
+      transform: translateY(-4px);
+    }
+  </style>
+<link href="../enhancements.css" rel="stylesheet"/>
+<link href="../english.css" rel="stylesheet"/><meta content="Green Therapy creates corporate Wellness &amp; Wellbeing experiences including Pop-Up Spa, ice baths, mind-body workshops and healthy bars, tailored to each event." name="description"/><meta content="index,follow,max-image-preview:large" name="robots"/><link href="https://green-therapy.netlify.app/en/gallery.html" rel="canonical"/><link href="https://green-therapy.netlify.app/gallery.html" hreflang="he" rel="alternate"/><link href="https://green-therapy.netlify.app/en/gallery.html" hreflang="en" rel="alternate"/><link href="https://green-therapy.netlify.app/gallery.html" hreflang="x-default" rel="alternate"/><meta content="website" property="og:type"/><meta content="Green Therapy" property="og:site_name"/><meta content="Event Gallery | Green Therapy" property="og:title"/><meta content="Green Therapy creates corporate Wellness &amp; Wellbeing experiences including Pop-Up Spa, ice baths, mind-body workshops and healthy bars, tailored to each event." property="og:description"/><meta content="https://green-therapy.netlify.app/en/gallery.html" property="og:url"/><meta content="summary_large_image" name="twitter:card"/><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "Green Therapy", "url": "https://green-therapy.netlify.app", "email": "alongreentherapy@gmail.com", "description": "Green Therapy creates corporate Wellness & Wellbeing experiences including Pop-Up Spa, ice baths, mind-body workshops and healthy bars, tailored to each event.", "areaServed": {"@type": "Country", "name": "Israel"}, "knowsAbout": ["Corporate wellness", "Wellbeing", "Pop-Up Spa", "Ice baths", "Mindfulness", "Yoga", "Healthy bar"], "telephone": "+972 53-532-4962", "logo": "https://green-therapy.netlify.app/assets/green-therapy-logo.webp", "sameAs": ["https://share.google/hEvKhs5USb65ZEgi7"]}</script><script src="../site-config.js"></script><link href="../production.css" rel="stylesheet"/><link href="../assets/green-therapy-logo.webp" rel="icon" type="image/webp"/></head>
+<body class="gt-en-page bg-background text-on-surface antialiased selection:bg-secondary-container selection:text-on-secondary-container"><a class="gt-skip-link" href="#main-content">Skip to content</a>
+
+<header class="bg-surface-bone dark:bg-surface-dim docked full-width top-0 sticky z-50 border-b border-mint-mist dark:border-outline-variant flat no shadows transition-all duration-300">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-base max-w-container-max mx-auto">
+<!-- Brand Logo / ID -->
+<a aria-label="Green Therapy — Home" class="gt-brand-link" href="index.html"><img alt="Green Therapy" class="gt-header-logo" height="106" src="../assets/green-therapy-logo.webp" width="170"/></a>
+<!-- Desktop Nav Links -->
+<nav class="hidden md:flex items-center gap-8"><a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300 font-label-md text-label-md" href="index.html">Home</a><a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300 font-label-md text-label-md" href="spa.html">Pop-Up Spa</a><a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300 font-label-md text-label-md" href="ice-bath.html">Ice Baths</a><a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300 font-label-md text-label-md" href="workshops.html">Mind &amp; Body</a><a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300 font-label-md text-label-md" href="healthy-bar.html">Healthy Bar</a><a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300 font-label-md text-label-md" href="index.html#wellness-space">Our Space</a><a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300 font-label-md text-label-md" href="gallery.html">Gallery</a><a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300 font-label-md text-label-md" href="contact.html">Contact</a></nav>
+<!-- Trailing Action -->
+<div class="flex items-center gap-3"><a class="inline-flex items-center justify-center min-w-10 h-10 px-3 rounded-full bg-surface-container text-forest-deep border border-outline-variant/40 hover:bg-primary-container transition-all font-label-sm text-label-sm font-bold" data-lang-switch="he" href="../gallery.html">HE</a>
+<a class="inline-flex items-center justify-center px-5 py-2.5 rounded-full bg-forest-deep text-surface-bone font-label-md text-label-md font-medium hover:bg-opacity-90 active:scale-95 transition-all shadow-sm" href="#contact-form">
+<span>Plan an Event</span>
+<span class="material-symbols-outlined text-[18px] mr-1.5 transform rotate-180">arrow_forward</span>
+</a>
+</div>
+</div>
+</header>
+<!-- Hero Header / Contextual Title -->
+<section class="relative pt-12 pb-14 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto text-center border-b border-outline-variant/20">
+<h1 class="font-display text-headline-lg-mobile md:text-display font-bold text-on-surface tracking-tight max-w-4xl mx-auto mb-4">
+      Massages, ice baths, workshops and health stands at company events
+    </h1>
+<p class="font-body-lg text-body-md md:text-body-lg text-secondary max-w-2xl mx-auto font-normal leading-relaxed">
+      Green Therapy brings the world of spa, health and energy directly to the event site - in the office, in nature or at the company event.
+    </p>
+<!-- Interactive Filter Tabs -->
+<div class="flex flex-wrap items-center justify-center gap-2 md:gap-3 mt-10" id="filter-container">
+<button class="filter-btn active-filter px-5 py-2 rounded-full font-label-md text-label-md transition-all bg-forest-deep text-surface-bone shadow-sm" data-filter="all" onclick="filterGallery('all')">
+        everything
+      </button>
+<button class="filter-btn px-5 py-2 rounded-full font-label-md text-label-md transition-all bg-surface-container hover:bg-surface-variant text-on-surface-variant" data-filter="massage-popup" onclick="filterGallery('massage-popup')">
+        Pop-up massage complexes
+      </button>
+<button class="filter-btn px-5 py-2 rounded-full font-label-md text-label-md transition-all bg-surface-container hover:bg-surface-variant text-on-surface-variant" data-filter="ice-bath" onclick="filterGallery('ice-bath')">
+        Ice baths in nature
+      </button>
+<button class="filter-btn px-5 py-2 rounded-full font-label-md text-label-md transition-all bg-surface-container hover:bg-surface-variant text-on-surface-variant" data-filter="workshops" onclick="filterGallery('workshops')">
+        workshops and lectures
+      </button>
+<button class="filter-btn px-5 py-2 rounded-full font-label-md text-label-md transition-all bg-surface-container hover:bg-surface-variant text-on-surface-variant" data-filter="beit-dagan" onclick="filterGallery('beit-dagan')">
+        Company events
+      </button>
+</div>
+</section>
+<!-- Gallery Section: Bento & Editorial Asymmetry -->
+<main class="py-12 md:py-16 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto" id="main-content">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8" id="gallery-grid">
+<!-- Card 1: Pergola Haven (Feature Large Card - 8 Cols) -->
+<div class="gallery-item col-span-1 md:col-span-8 group rounded-xl overflow-hidden bg-surface-container-low border border-outline-variant/30 flex flex-col justify-between" data-category="beit-dagan">
+<div class="relative overflow-hidden aspect-[16/9] w-full bg-surface-variant">
+<img alt="Green Therapy wellness experience at a corporate event" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" decoding="async" fetchpriority="high" loading="eager" src="../assets/client/887e1d9b-94c2-49aa-b3b9-258f57aacf3c.webp"/>
+<div class="absolute top-4 right-4 bg-forest-deep/80 backdrop-blur-md text-surface-bone px-3 py-1 rounded-full font-label-sm text-label-sm">
+            Pop-Up Spa
+          </div>
+</div>
+<div class="p-6 md:p-8 flex flex-col justify-between flex-grow">
+<div>
+<div class="flex items-center gap-3 text-secondary font-label-sm text-label-sm mb-2">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">group</span> company event</span>
+<span>•</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">nature_people</span> A luxury massage complex</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface font-semibold mb-2">
+              Professional treatment beds, clean sheets, essential oils, rustic decor and shading tents.
+            </h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              A Pop-Up Spa complex that comes directly to the event with full equipment and a team of experienced and qualified therapists.
+            </p>
+</div>
+<div class="pt-4 mt-4 border-t border-outline-variant/20 flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-tertiary font-medium">Atmosphere: calmness, professionalism and meticulous appearance</span>
+<span class="material-symbols-outlined text-secondary group-hover:translate-x-[-4px] transition-transform">arrow_back</span>
+</div>
+</div>
+</div>
+<!-- Card 2: Ice Bath & Open Garden (4 Cols) -->
+<div class="gallery-item col-span-1 md:col-span-4 group rounded-xl overflow-hidden bg-surface-container-low border border-outline-variant/30 flex flex-col justify-between" data-category="ice-bath">
+<div class="relative overflow-hidden aspect-[4/3] w-full bg-surface-variant">
+<img alt="Green Therapy wellness experience at a corporate event" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" decoding="async" loading="lazy" src="../assets/client/1c3d140a-38a4-4aff-8196-9fea60c15ae3.webp"/>
+<div class="absolute top-4 right-4 bg-forest-deep/80 backdrop-blur-md text-surface-bone px-3 py-1 rounded-full font-label-sm text-label-sm">
+            Resilience and breathability
+          </div>
+</div>
+<div class="p-6 flex flex-col justify-between flex-grow">
+<div>
+<div class="flex items-center gap-3 text-secondary font-label-sm text-label-sm mb-2">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">group</span> Peak Energy</span>
+<span>•</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">ac_unit</span> ice baths</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface font-semibold mb-2">
+              Ice Bath Experience – Peak Energy Experience
+            </h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              An ice immersion workshop that stimulates the body and mind, relieves stress and teaches mental resilience.
+            </p>
+</div>
+<div class="pt-4 mt-4 border-t border-outline-variant/20 flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-tertiary font-medium">Atmosphere: energy, adrenaline and consolidation</span>
+<span class="material-symbols-outlined text-secondary group-hover:translate-x-[-4px] transition-transform">arrow_back</span>
+</div>
+</div>
+</div>
+<!-- Card 3: Mind & Body Experience (4 Cols) -->
+<div class="gallery-item col-span-1 md:col-span-4 group rounded-xl overflow-hidden bg-surface-container-low border border-outline-variant/30 flex flex-col justify-between" data-category="massage-popup">
+<div class="relative overflow-hidden aspect-[4/3] w-full bg-surface-variant">
+<img alt="Green Therapy wellness experience at a corporate event" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" decoding="async" loading="lazy" src="../assets/client/827ed1a7-ce8f-428f-91c1-20ac014453bf.webp"/>
+<div class="absolute top-4 right-4 bg-forest-deep/80 backdrop-blur-md text-surface-bone px-3 py-1 rounded-full font-label-sm text-label-sm">
+            Office pop-up
+          </div>
+</div>
+<div class="p-6 flex flex-col justify-between flex-grow">
+<div>
+<div class="flex items-center gap-3 text-secondary font-label-sm text-label-sm mb-2">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">group</span> Mind &amp; Body</span>
+<span>•</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">domain</span> Mind-body workshops and lectures</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface font-semibold mb-2">
+              Yoga, meditation, mindfulness and sound healing
+            </h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Experiential workshops that connect the team and provide practical tools for a healthy and balanced life.
+            </p>
+</div>
+<div class="pt-4 mt-4 border-t border-outline-variant/20 flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-tertiary font-medium">Atmosphere: relaxation, connection and reducing burnout</span>
+<span class="material-symbols-outlined text-secondary group-hover:translate-x-[-4px] transition-transform">arrow_back</span>
+</div>
+</div>
+</div>
+<!-- Card 4: Holistic Care & Atmosphere (4 Cols) -->
+<div class="gallery-item col-span-1 md:col-span-4 group rounded-xl overflow-hidden bg-surface-container-low border border-outline-variant/30 flex flex-col justify-between" data-category="beit-dagan">
+<div class="relative overflow-hidden aspect-[4/3] w-full bg-surface-variant">
+<img alt="Green Therapy wellness experience at a corporate event" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" decoding="async" loading="lazy" src="../assets/client/95941eaf-fc13-49b4-a515-c9d66f1fdb6e.webp"/>
+<div class="absolute top-4 right-4 bg-forest-deep/80 backdrop-blur-md text-surface-bone px-3 py-1 rounded-full font-label-sm text-label-sm">
+            Healthy Bar
+          </div>
+</div>
+<div class="p-6 flex flex-col justify-between flex-grow">
+<div>
+<div class="flex items-center gap-3 text-secondary font-label-sm text-label-sm mb-2">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">group</span> health bar</span>
+<span>•</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">self_improvement</span> Health stands and smoothies</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface font-semibold mb-2">
+              Natural smoothies and fruit bowls and superfood
+            </h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              A fresh, aesthetic and healthy culinary experience with seasonal fruits, nuts, seeds and superfoods.
+            </p>
+</div>
+<div class="pt-4 mt-4 border-t border-outline-variant/20 flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-tertiary font-medium">Atmosphere: fresh, colorful and beautiful for photography</span>
+<span class="material-symbols-outlined text-secondary group-hover:translate-x-[-4px] transition-transform">arrow_back</span>
+</div>
+</div>
+</div>
+<!-- Card 5: Workshop & Movement (4 Cols) -->
+<div class="gallery-item col-span-1 md:col-span-4 group rounded-xl overflow-hidden bg-surface-container-low border border-outline-variant/30 flex flex-col justify-between" data-category="workshops">
+<div class="relative overflow-hidden aspect-[4/3] w-full bg-surface-variant">
+<img alt="Green Therapy wellness experience at a corporate event" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" decoding="async" loading="lazy" src="../assets/client/fe5e6cfc-8689-4287-8189-7286edf4bb30.webp"/>
+<div class="absolute top-4 right-4 bg-forest-deep/80 backdrop-blur-md text-surface-bone px-3 py-1 rounded-full font-label-sm text-label-sm">
+            An experiential workshop
+          </div>
+</div>
+<div class="p-6 flex flex-col justify-between flex-grow">
+<div>
+<div class="flex items-center gap-3 text-secondary font-label-sm text-label-sm mb-2">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">group</span> Wellness</span>
+<span>•</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">diversity_3</span> customization</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface font-semibold mb-2">
+              Build the experience according to the event
+            </h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Combine massages, ice baths, workshops and health stands according to the nature of the event, the budget and the number of participants.
+            </p>
+</div>
+<div class="pt-4 mt-4 border-t border-outline-variant/20 flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-tertiary font-medium">Atmosphere: customized for the team and the event</span>
+<span class="material-symbols-outlined text-secondary group-hover:translate-x-[-4px] transition-transform">arrow_back</span>
+</div>
+</div>
+</div>
+<!-- Card 6: Therapeutic Precision Close-up (Full Banner / Asymmetric Accent - 12 Cols) -->
+<div class="gallery-item col-span-1 md:col-span-12 group rounded-xl overflow-hidden bg-surface-container border border-outline-variant/30 grid grid-cols-1 md:grid-cols-12 items-center" data-category="massage-popup">
+<div class="md:col-span-6 relative aspect-[16/9] md:aspect-auto h-full min-h-[300px] overflow-hidden bg-surface-variant">
+<img alt="Green Therapy wellness experience at a corporate event" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" decoding="async" loading="lazy" src="../assets/client/887e1d9b-94c2-49aa-b3b9-258f57aacf3c.webp"/>
+</div>
+<div class="md:col-span-6 p-8 md:p-12 flex flex-col justify-center">
+<h3 class="font-headline-lg text-headline-md md:text-headline-lg text-on-surface font-bold mb-4 leading-snug">
+            Experienced, qualified and service staff
+          </h3>
+<p class="font-body-lg text-body-md md:text-body-lg text-on-surface-variant mb-6 leading-relaxed">
+            The team of therapists is experienced, qualified and provides the highest level of service.
+          </p>
+<div class="grid grid-cols-3 gap-4 pt-4 border-t border-outline-variant/20">
+<div>
+<span class="block font-headline-md text-headline-md font-bold text-forest-deep">Full-service production</span>
+<span class="font-label-sm text-label-sm text-secondary">Equipment, logistics and operations</span>
+</div>
+<div>
+<span class="block font-headline-md text-headline-md font-bold text-forest-deep">Service</span>
+<span class="font-label-sm text-label-sm text-secondary">Warm service and a polished presentation</span>
+</div>
+<div>
+<span class="block font-headline-md text-headline-md font-bold text-forest-deep">Flexible</span>
+<span class="font-label-sm text-label-sm text-secondary">Tailored to the event and audience</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Social Proof: Welfare & HR Directors Reviews -->
+<section class="bg-surface-container py-16 px-margin-mobile md:px-margin-desktop border-y border-outline-variant/20">
+<div class="max-w-container-max mx-auto">
+<div class="text-center max-w-2xl mx-auto mb-12">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg font-bold text-on-surface">
+          The three principles that guide our service
+        </h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Review 1 -->
+<div class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/20 flex flex-col justify-between shadow-sm hover:border-secondary/30 transition-colors">
+<div>
+<div class="flex items-center gap-1 text-tertiary mb-4">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant italic mb-6 leading-relaxed">
+              Peace of mind: we take care of all the equipment, the setting, the logistics and the operation.
+            </p>
+</div>
+<div class="flex items-center gap-3 pt-4 border-t border-outline-variant/20">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center font-bold text-on-secondary-container text-sm">
+              Mag
+            </div>
+<div>
+<h4 class="font-label-md text-label-md font-semibold text-on-surface">Peace of mind</h4>
+<span class="font-label-sm text-label-sm text-secondary">Full-service production</span>
+</div>
+</div>
+</div>
+<!-- Review 2 -->
+<div class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/20 flex flex-col justify-between shadow-sm hover:border-secondary/30 transition-colors">
+<div>
+<div class="flex items-center gap-1 text-tertiary mb-4">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant italic mb-6 leading-relaxed">
+              High service standard: human relations, representativeness, meticulous visibility and professionalism.
+            </p>
+</div>
+<div class="flex items-center gap-3 pt-4 border-t border-outline-variant/20">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center font-bold text-on-primary-container text-sm">
+              Dov
+            </div>
+<div>
+<h4 class="font-label-md text-label-md font-semibold text-on-surface">service standard</h4>
+<span class="font-label-sm text-label-sm text-secondary">Professionalism and visibility</span>
+</div>
+</div>
+</div>
+<!-- Review 3 -->
+<div class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/20 flex flex-col justify-between shadow-sm hover:border-secondary/30 transition-colors">
+<div>
+<div class="flex items-center gap-1 text-tertiary mb-4">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant italic mb-6 leading-relaxed">
+              Flexibility and customization: build the menu of experiences according to the nature of the event, the budget and the number of participants.
+            </p>
+</div>
+<div class="flex items-center gap-3 pt-4 border-t border-outline-variant/20">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center font-bold text-on-secondary-container text-sm">
+              Resh
+            </div>
+<div>
+<h4 class="font-label-md text-label-md font-semibold text-on-surface">customization</h4>
+<span class="font-label-sm text-label-sm text-secondary">According to the event, the budget and the audience</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Call to Action Banner -->
+<section class="py-16 md:py-24 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto" id="contact-form">
+<div class="relative rounded-2xl bg-forest-deep text-surface-bone overflow-hidden p-8 md:p-14 shadow-lg flex flex-col md:flex-row items-center justify-between gap-8">
+<!-- Ambient background decoration -->
+<div class="absolute -right-20 -bottom-20 w-80 h-80 rounded-full bg-white/5 pointer-events-none blur-3xl"></div>
+<div class="absolute -left-20 -top-20 w-80 h-80 rounded-full bg-sage-soft/10 pointer-events-none blur-3xl"></div>
+<div class="relative z-10 max-w-xl">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg font-bold mb-4 text-surface-bone">
+          Want to see how it will look at your event?
+        </h2>
+<p class="font-body-md text-body-md text-surface-bone/80 font-normal leading-relaxed">
+          Tell us about the nature of the event, the budget and the number of participants, and together we will build the most accurate menu of experiences.
+        </p>
+</div>
+<div class="relative z-10 w-full md:w-auto flex flex-col sm:flex-row gap-3">
+<a class="inline-flex items-center justify-center px-7 py-3.5 rounded-full bg-surface-bone text-forest-deep font-label-md text-label-md font-semibold hover:bg-opacity-95 active:scale-95 transition-all shadow-md" href="tel:+972535324962">
+<span class="material-symbols-outlined text-[20px] ml-2">phone</span>
+<span>Consultation call and adjustment</span>
+</a>
+<a class="inline-flex items-center justify-center px-7 py-3.5 rounded-full border border-surface-bone/30 text-surface-bone font-label-md text-label-md font-semibold hover:bg-white/10 active:scale-95 transition-all" href="contact.html">
+<span>Leaving details to the concept</span>
+<span class="material-symbols-outlined text-[18px] mr-2 transform rotate-180">arrow_forward</span>
+</a>
+</div>
+</div>
+</section>
+
+<footer class="gt-footer">
+<div class="gt-footer-grid">
+<div class="gt-footer-brand">
+<a aria-label="Green Therapy" href="index.html"><img alt="Green Therapy" loading="lazy" src="../assets/green-therapy-logo.webp"/></a>
+</div>
+<div><h2>Links</h2><ul><li><a href="index.html">Home</a></li><li><a href="spa.html">Pop-Up Spa</a></li><li><a href="ice-bath.html">Ice Baths</a></li><li><a href="workshops.html">Mind &amp; Body</a></li><li><a href="healthy-bar.html">Healthy Bar</a></li><li><a href="gallery.html">Gallery</a></li></ul></div>
+<div><h2>Legal</h2><ul><li><a href="privacy.html">Privacy Policy</a></li><li><a href="accessibility.html">Accessibility</a></li></ul></div>
+<div><h2>Contact</h2><ul>
+<li><a dir="ltr" href="tel:+972535324962">+972 53-532-4962</a></li>
+<li><a href="https://wa.me/972535324962" rel="noopener noreferrer" target="_blank">WhatsApp</a></li>
+<li><a href="mailto:alongreentherapy@gmail.com">alongreentherapy@gmail.com</a></li>
+<li><a href="https://share.google/hEvKhs5USb65ZEgi7" rel="noopener noreferrer" target="_blank">Google Business</a></li>
+</ul></div>
+</div>
+</footer>
+<!-- Simple Gallery Filter Interaction Script -->
+<script>
+    function filterGallery(category) {
+      const items = document.querySelectorAll('.gallery-item');
+      const buttons = document.querySelectorAll('.filter-btn');
+
+      // Update button visual state
+      buttons.forEach(btn => {
+        if (btn.getAttribute('data-filter') === category) {
+          btn.classList.add('bg-forest-deep', 'text-surface-bone', 'shadow-sm');
+          btn.classList.remove('bg-surface-container', 'text-on-surface-variant');
+        } else {
+          btn.classList.remove('bg-forest-deep', 'text-surface-bone', 'shadow-sm');
+          btn.classList.add('bg-surface-container', 'text-on-surface-variant');
+        }
+      });
+
+      // Filter gallery cards
+      items.forEach(item => {
+        const itemCategory = item.getAttribute('data-category');
+        if (category === 'all' || itemCategory === category) {
+          item.style.display = 'flex';
+          setTimeout(() => {
+            item.style.opacity = '1';
+            item.style.transform = 'translateY(0)';
+          }, 50);
+        } else {
+          item.style.opacity = '0';
+          item.style.transform = 'translateY(10px)';
+          setTimeout(() => {
+            item.style.display = 'none';
+          }, 250);
+        }
+      });
+    }
+  </script>
+<script defer="True" src="../enhancements.js"></script></body></html>
