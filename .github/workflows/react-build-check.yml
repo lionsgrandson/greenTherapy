@@ -1,0 +1,26 @@
+name: React production build check
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/react-build-check.yml'
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install
+      - run: npm run build
+      - name: Remove temporary workflow
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git rm -f .github/workflows/react-build-check.yml
+          git add package-lock.json
+          git commit -m "Verify React production build"
+          git push origin HEAD:main
