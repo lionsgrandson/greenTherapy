@@ -55,11 +55,11 @@ HE_REPL = {
     "במשרדים, בטבע או בסיור החברה": "במשרד, בטבע או באתר האירוע",
     "במשרד, בטבע וב-Offsite": "במשרד, בטבע או באתר האירוע",
     "אירוע חברה / Offsite": "אירוע חברה / אתר אירוע",
-    "שקט נפשי מלא למנהלות רווחה": "שקט נפשי לצוותי Wellness ו-HR",
-    "מדוע מנהלות רווחה ומשאבי אנוש בוחרות בנו?": "למה צוותי Wellness ו-HR בוחרים בנו?",
+    "שקט נפשי מלא למנהלות רווחה": "שקט נפשי למפיקים ולצוותי משאבי אנוש",
+    "מדוע מנהלות רווחה ומשאבי אנוש בוחרות בנו?": "למה מפיקים וצוותי משאבי אנוש בוחרים בנו?",
     "מתחמי תוכן ורווחה בהתאמה אישית": "מתחמי Wellness בהתאמה אישית",
     "ימי רווחה מותאמים אישית": "ימי Wellness מותאמים אישית",
-    "שאלות נפוצות של מנהלות רווחה ומפיקים": "שאלות נפוצות לצוותי Wellness, HR והפקה",
+    "שאלות נפוצות של מנהלות רווחה ומפיקים": "שאלות נפוצות למפיקים ולצוותי משאבי אנוש",
     "מנהל/ת רווחה ו-HR": "Wellness / HR / Employee Experience",
     "Turnkey Solution": "מעטפת הפקה מלאה",
     "Turnkey": "מעטפת מלאה",
@@ -150,7 +150,7 @@ def add_head_meta(soup, page, en=False):
         "gallery.html":"Event Gallery | Green Therapy",
         "contact.html":"Plan a Wellness Event | Green Therapy",
     }
-    desc_he = "Green Therapy מפיקה מתחמי Wellness ו-Wellness לאירועי חברה: Pop-Up Spa, אמבטיות קרח, סדנאות גוף-נפש ובר בריאות, בהתאמה לאופי האירוע."
+    desc_he = "Green Therapy מפיקה מתחמי עיסויים, אמבטיות קרח, סדנאות גוף-נפש ובר שייקים לאירועי חברה, ימי גיבוש ורווחת עובדים — במשרד, בטבע ובאתרי אירועים."
     desc_en = "Green Therapy creates corporate Wellness experiences including Pop-Up Spa, ice baths, mind-body workshops and healthy bars, tailored to each event."
     title = (title_map_en if en else title_map_he)[slug]
     if soup.title: soup.title.string = title
