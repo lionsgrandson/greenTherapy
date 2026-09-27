@@ -273,9 +273,9 @@ main figure:hover img{
   #main-content > section{scroll-margin-top:104px}
   #main-content .grid > *,#main-content [class*="col-span-"]{min-width:0}
   #main-content a.inline-flex,#main-content button{max-width:100%;white-space:normal;text-align:center}
-  #wellness-space{padding-top:44px!important;padding-bottom:44px!important}
-  #wellness-space .grid-cols-2{gap:8px!important}
-  #wellness-space .grid-cols-2 img{max-width:100%;min-width:0}
+  #private-retreat{padding-top:44px!important;padding-bottom:44px!important}
+  #private-retreat .grid-cols-2{gap:8px!important}
+  #private-retreat .grid-cols-2 img{max-width:100%;min-width:0}
 }
 
 /* Mobile layout v2 */
