@@ -12,7 +12,7 @@ const STRINGS={
   he:{
     nav:[
       ["index.html","דף הבית"],["spa.html","ספא פופ-אפ"],["ice-bath.html","אמבטיות קרח"],
-      ["workshops.html","סדנאות גוף ונפש"],["healthy-bar.html","בר בריאות"],["index.html#wellness-space","הצימר"],["about.html","אודות"],["contact.html","צור קשר"]
+      ["workshops.html","סדנאות גוף ונפש"],["healthy-bar.html","בר בריאות"],["index.html#private-retreat","הצימר"],["about.html","אודות"],["contact.html","צור קשר"]
     ],
     plan:"לתכנון אירוע", links:"קישורים", legal:"משפטי", contact:"צור קשר",
     privacy:"מדיניות פרטיות", terms:"תנאי שימוש", accessibility:"הצהרת נגישות",
@@ -25,7 +25,7 @@ const STRINGS={
   en:{
     nav:[
       ["index.html","Home"],["spa.html","Pop-Up Spa"],["ice-bath.html","Ice Baths"],
-      ["workshops.html","Mind & Body"],["healthy-bar.html","Healthy Bar"],["index.html#wellness-space","Private Guesthouse"],["about.html","About"],["contact.html","Contact"]
+      ["workshops.html","Mind & Body"],["healthy-bar.html","Healthy Bar"],["index.html#private-retreat","Private Retreat"],["about.html","About"],["contact.html","Contact"]
     ],
     plan:"Plan an Event", links:"Links", legal:"Legal", contact:"Contact",
     privacy:"Privacy Policy", terms:"Terms of Use", accessibility:"Accessibility Statement",
