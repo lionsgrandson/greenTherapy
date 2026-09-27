@@ -344,8 +344,8 @@ def ensure_internal_nav(soup, en=False):
     if not header: return
     nav=header.find("nav")
     if not nav: return
-    links_en=[("index.html","Home"),("spa.html","Pop-Up Spa"),("ice-bath.html","Ice Baths"),("workshops.html","Mind & Body"),("healthy-bar.html","Healthy Bar"),("index.html#wellness-space","Our Space"),("gallery.html","Gallery"),("contact.html","Contact")]
-    links_he=[("index.html","דף הבית"),("spa.html","Pop-Up Spa"),("ice-bath.html","אמבטיות קרח"),("workshops.html","Mind & Body"),("healthy-bar.html","בר בריאות"),("index.html#wellness-space","המתחם שלנו"),("gallery.html","גלריה"),("contact.html","צור קשר")]
+    links_en=[("index.html","Home"),("spa.html","Pop-Up Spa"),("ice-bath.html","Ice Baths"),("workshops.html","Mind & Body"),("healthy-bar.html","Healthy Bar"),("index.html#private-retreat","Private Retreat"),("gallery.html","Gallery"),("contact.html","Contact")]
+    links_he=[("index.html","דף הבית"),("spa.html","Pop-Up Spa"),("ice-bath.html","אמבטיות קרח"),("workshops.html","Mind & Body"),("healthy-bar.html","בר בריאות"),("index.html#private-retreat","הצימר"),("gallery.html","גלריה"),("contact.html","צור קשר")]
     nav.clear()
     for href,label in (links_en if en else links_he):
         a=soup.new_tag("a", href=href)
