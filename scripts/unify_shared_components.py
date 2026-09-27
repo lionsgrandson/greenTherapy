@@ -10,9 +10,9 @@ PHONE="+972 53-532-4962"
 
 HE_REPL={
  "Green Therapy":"גרין תרפי",
- "Wellness & Wellbeing":"וולנס ווולביינג",
  "Wellness":"וולנס",
- "Wellbeing":"וולביינג",
+ "Wellness":"וולנס",
+ "Wellness":"רווחה",
  "Pop-Up Spa":"ספא פופ-אפ",
  "Pop Up Spa":"ספא פופ-אפ",
  "Mind & Body":"גוף ונפש",
@@ -28,7 +28,7 @@ HE_REPL={
  "Content & Email":"",
 }
 EN_REPL={
- "Frequently asked questions of welfare administrations and producers":"Frequently Asked Questions for Wellbeing, HR & Production Teams",
+ "Frequently asked questions of welfare administrations and producers":"Frequently Asked Questions for Wellness, HR & Production Teams",
  "Sewing specifications and pre-registration":"Planning and Treatment Scheduling",
  "Construction, operation and full dismantling":"Setup, Operation and Pack-Down",
  "full 360° shell":"full-service production",
@@ -37,7 +37,7 @@ EN_REPL={
  "in offices, in nature or on a company event":"at the office, outdoors or at your event venue",
  "in the office, in nature or on the event site":"at the office, outdoors or at your event venue",
  "the nature of the event":"the event",
- "welfare administrations":"Wellbeing teams",
+ "welfare administrations":"Wellness teams",
  "formation":"team connection",
  "Who handles the event?":"Who provides the treatments?",
  "Classic Swedish massage, relaxing Thai, Shiatsu":"Classic Swedish massage, Thai massage and stretching, Shiatsu",
