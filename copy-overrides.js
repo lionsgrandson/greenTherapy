@@ -59,7 +59,8 @@ window.GT_COPY={
         "index.html-t252":"לפרטים על המתחם",
         "index.html-t253":"טיפולים אישיים",
         "index.html-t254":"עיסויים וטיפולים ממוקדים עם אפשרות לתאם מטפל/ת לפי סוג הטיפול והזמינות.",
-        "index.html-t255":"לכל הטיפולים"
+        "index.html-t255":"לכל הטיפולים",
+        "index.html-t256":"חוויות לאירועי חברה"
       },
       alt:{
         "index.html-a20":"מיטות טיפול של Green Therapy באירוע חברה",
@@ -127,7 +128,8 @@ window.GT_COPY={
         "index.html-t252":"Explore the Retreat",
         "index.html-t253":"Personal Treatments",
         "index.html-t254":"Massage and focused treatments, with practitioners matched to the treatment and availability.",
-        "index.html-t255":"Explore Treatments"
+        "index.html-t255":"Explore Treatments",
+        "index.html-t256":"Corporate Event Experiences"
       },
       alt:{
         "index.html-a20":"Green Therapy treatment tables at a corporate event",
@@ -176,7 +178,9 @@ window.GT_COPY={
         "retreat.html-t32":"לא רק לקבל עיסוי — גם ללמוד איך להעניק אחד לשנייה מגע נעים ובטוח שאפשר לקחת הביתה.",
         "retreat.html-t33":"בסדנה פרטית לזוגות לומדים עקרונות בסיסיים של מגע, לחץ, קצב ותנוחות נוחות. הסדנה מתקיימת בתיאום מראש וניתן לשלב אותה כחלק מהשהות במתחם.",
         "retreat.html-t34":"מתאים במיוחד ליום זוגי, יום הולדת או חוויה משותפת שרוצים להפוך לאישית יותר.",
-        "retreat.html-t35":"בדיקת זמינות לסדנת עיסוי זוגית"
+        "retreat.html-t35":"בדיקת זמינות לסדנת עיסוי זוגית",
+        "retreat.html-t36":"המתחם הפרטי",
+        "retreat.html-t37":"חוויה לזוגות"
       }
     },
     en:{
@@ -217,7 +221,9 @@ window.GT_COPY={
         "retreat.html-t32":"Not only receive a massage — learn simple, comfortable ways to give each other relaxing touch you can take home with you.",
         "retreat.html-t33":"In a private couples workshop, you learn basic principles of touch, pressure, rhythm and comfortable positioning. The workshop is arranged in advance and can be added to your retreat visit.",
         "retreat.html-t34":"A good fit for a couples day, birthday or a shared experience you want to make more personal.",
-        "retreat.html-t35":"Check Couples Workshop Availability"
+        "retreat.html-t35":"Check Couples Workshop Availability",
+        "retreat.html-t36":"Private Retreat",
+        "retreat.html-t37":"Couples Experience"
       }
     }
   },
@@ -260,7 +266,8 @@ window.GT_COPY={
         "treatments.html-t32":"המידע באתר נועד להסביר את אפשרויות הטיפול ואינו ייעוץ רפואי. התאמת טיפול וטכניקות כמו דיקור או כוסות רוח נקבעת מול המטפל/ת ובהתאם להכשרה, למצב האישי ולשיקול מקצועי.",
         "treatments.html-t33":"רוצים לשלב טיפול ביום ספא פרטי?",
         "treatments.html-t34":"אפשר לקבוע טיפול כחלק מביקור במתחם הפרטי של Green Therapy, בהתאם לזמינות.",
-        "treatments.html-t35":"לצימר ולמתחם הפרטי"
+        "treatments.html-t35":"לצימר ולמתחם הפרטי",
+        "treatments.html-t36":"טיפולים"
       }
     },
     en:{
@@ -301,7 +308,8 @@ window.GT_COPY={
         "treatments.html-t32":"Website information explains available treatment options and is not medical advice. Suitability for a treatment or technique such as needling or cupping is decided with the practitioner according to training, individual circumstances and professional judgement.",
         "treatments.html-t33":"Want to add treatment to a private spa day?",
         "treatments.html-t34":"A treatment can also be booked as part of a visit to the Green Therapy private retreat, subject to availability.",
-        "treatments.html-t35":"Explore the Private Retreat"
+        "treatments.html-t35":"Explore the Private Retreat",
+        "treatments.html-t36":"Treatments"
       }
     }
   },
@@ -595,7 +603,8 @@ Object.assign(window.GT_COPY["about.html"].he.text,{
   "about.html-t216":"שקט מאחורי הקלעים",
   "about.html-t217":"חוויה רגועה דורשת הכנה ותפעול מדויקים.",
   "about.html-t218":"רוצים ליצור משהו יחד?",
-  "about.html-t219":"ספרו לנו מה אתם מתכננים ונעזור להבין איזה מסלול מתאים."
+  "about.html-t219":"ספרו לנו מה אתם מתכננים ונעזור להבין איזה מסלול מתאים.",
+  "about.html-t220":"צור קשר"
 });
 Object.assign(window.GT_COPY["about.html"].en.text,{
   "about.html-t200":"We Create the Moments People Are Glad They Experienced",
@@ -617,7 +626,8 @@ Object.assign(window.GT_COPY["about.html"].en.text,{
   "about.html-t216":"Calm Requires Good Preparation",
   "about.html-t217":"A relaxed experience depends on precise work behind the scenes.",
   "about.html-t218":"Planning Something?",
-  "about.html-t219":"Tell us what you have in mind and we’ll help you work out the right Green Therapy experience."
+  "about.html-t219":"Tell us what you have in mind and we’ll help you work out the right Green Therapy experience.",
+  "about.html-t220":"Contact Us"
 });
 
 Object.assign(window.GT_COPY["contact.html"].he.text,{
