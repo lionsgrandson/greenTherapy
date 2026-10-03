@@ -179,8 +179,9 @@ function ContactSection(){
   const [status,setStatus]=useState("");
   async function submit(e){
     e.preventDefault();
+    const form=e.currentTarget;
     setStatus(T.sending);
-    const payload=Object.fromEntries(new FormData(e.currentTarget));
+    const payload=Object.fromEntries(new FormData(form));
     const body=new URLSearchParams({"form-name":"contact",...payload}).toString();
     try{
       const res=await fetch("/",{
@@ -188,7 +189,7 @@ function ContactSection(){
         headers:{"content-type":"application/x-www-form-urlencoded"},
         body
       });
-      if(res.ok){setStatus(T.sent);e.currentTarget.reset();}
+      if(res.ok){setStatus(T.sent);form.reset();}
       else setStatus(T.notConnected);
     }catch{setStatus(T.notConnected);}
   }
