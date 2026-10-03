@@ -1,5 +1,6 @@
 import React, {useMemo, useState} from "https://esm.sh/react@19.1.1";
 import {createRoot} from "https://esm.sh/react-dom@19.1.1/client";
+import "./copy-overrides.js";
 
 const h=React.createElement;
 const PHONE="+972 53-532-4962";
@@ -11,27 +12,27 @@ const MAP="https://share.google/hEvKhs5USb65ZEgi7";
 const STRINGS={
   he:{
     nav:[
-      ["index.html","דף הבית"],["spa.html","ספא פופ-אפ"],["ice-bath.html","אמבטיות קרח"],
-      ["workshops.html","סדנאות גוף ונפש"],["healthy-bar.html","בר בריאות"],["index.html#private-retreat","הצימר"],["about.html","אודות"],["contact.html","צור קשר"]
+      ["index.html","דף הבית"],["retreat.html","הצימר"],["treatments.html","טיפולים"],
+      ["index.html#experiences","אירועי חברה"],["about.html","אודות"],["contact.html","צור קשר"]
     ],
     plan:"לתכנון אירוע", links:"קישורים", legal:"משפטי", contact:"צור קשר",
     privacy:"מדיניות פרטיות", terms:"תנאי שימוש", accessibility:"הצהרת נגישות",
     phone:"טלפון", email:"מייל", address:"כתובת", map:"לצפייה במפה",
-    formTitle:"יצירת קשר", formIntro:"השאירו כמה פרטים ונחזור אליכם כדי להתאים את החוויה לאירוע.",
-    name:"שם מלא", emailField:"מייל", phoneField:"טלפון", message:"ספרו לנו בקצרה על האירוע", send:"שלח",
+    formTitle:"יצירת קשר", formIntro:"השאירו כמה פרטים ונחזור אליכם לגבי אירוע, אירוח במתחם או טיפול.",
+    name:"שם מלא", emailField:"מייל", phoneField:"טלפון", message:"ספרו לנו בקצרה מה אתם מחפשים", send:"שלח",
     sent:"תודה, הפנייה נשלחה.", notConnected:"שליחת הטופס עדיין אינה מחוברת. אפשר להתקשר או לשלוח הודעה בוואטסאפ.",
     sending:"שולחים…", menu:"פתיחת תפריט", close:"סגירת תפריט", language:"Switch to English", wa:"שיחה בוואטסאפ"
   },
   en:{
     nav:[
-      ["index.html","Home"],["spa.html","Pop-Up Spa"],["ice-bath.html","Ice Baths"],
-      ["workshops.html","Mind & Body"],["healthy-bar.html","Healthy Bar"],["index.html#private-retreat","Private Retreat"],["about.html","About"],["contact.html","Contact"]
+      ["index.html","Home"],["retreat.html","Private Retreat"],["treatments.html","Treatments"],
+      ["index.html#experiences","Corporate Events"],["about.html","About"],["contact.html","Contact"]
     ],
     plan:"Plan an Event", links:"Links", legal:"Legal", contact:"Contact",
     privacy:"Privacy Policy", terms:"Terms of Use", accessibility:"Accessibility Statement",
     phone:"Phone", email:"Email", address:"Address", map:"View on map",
-    formTitle:"Contact Us", formIntro:"Leave a few details and we’ll get back to tailor the experience to your event.",
-    name:"Full name", emailField:"Email", phoneField:"Phone", message:"Tell us briefly about the event", send:"Send",
+    formTitle:"Contact Us", formIntro:"Leave a few details and we’ll get back to you about an event, private retreat visit or treatment.",
+    name:"Full name", emailField:"Email", phoneField:"Phone", message:"Tell us briefly what you are looking for", send:"Send",
     sent:"Thank you. Your inquiry was sent.", notConnected:"Form delivery is not connected yet. Please call or message us on WhatsApp.",
     sending:"Sending…", menu:"Open menu", close:"Close menu", language:"עבור לעברית", wa:"Chat on WhatsApp"
   }
@@ -73,13 +74,23 @@ function smoothLanguageSwitch(e){
   window.setTimeout(()=>location.assign(target),180);
 }
 
+function currentPageData(){
+  const base=LANG==="en" ? ((window.GT_I18N&&window.GT_I18N[PAGE])||{}) : {};
+  const copy=(window.GT_COPY&&window.GT_COPY[PAGE]&&window.GT_COPY[PAGE][LANG])||{};
+  return {
+    text:{...(base.text||{}),...(copy.text||{})},
+    alt:{...(base.alt||{}),...(copy.alt||{})},
+    title:copy.title||base.title||"",
+    description:copy.description||base.description||""
+  };
+}
+
 function applyStaticTranslation(){
   document.documentElement.lang=LANG;
   document.documentElement.dir=LANG==="he"?"rtl":"ltr";
   document.body.classList.toggle("gt-lang-en",LANG==="en");
   document.body.classList.toggle("gt-lang-he",LANG==="he");
-  if(LANG!=="en") return;
-  const data=(window.GT_I18N&&window.GT_I18N[PAGE])||{};
+  const data=currentPageData();
   document.querySelectorAll("[data-i18n]").forEach(el=>{
     const v=data.text&&data.text[el.dataset.i18n];
     if(typeof v==="string") el.textContent=v;
@@ -92,7 +103,6 @@ function applyStaticTranslation(){
   const desc=document.querySelector('meta[name="description"]');
   if(desc&&data.description) desc.content=data.description;
 }
-
 function USFlag(){
   return h("svg",{viewBox:"0 0 28 20","aria-hidden":"true",focusable:"false"},
     h("rect",{width:28,height:20,fill:"#fff"}),
@@ -113,24 +123,26 @@ function ILFlag(){
 
 function Header(){
   const [open,setOpen]=useState(false);
+  const actionLabel=PAGE==="retreat.html"?(LANG==="he"?"בדיקת זמינות":"Check Availability"):PAGE==="treatments.html"?(LANG==="he"?"קביעת טיפול":"Book a Treatment"):T.plan;
+  const actionHref=PAGE==="retreat.html"?"#retreat-booking":PAGE==="treatments.html"?"#practitioners":withLang("contact.html");
   return h("header",{className:"gt-react-header"},
     h("div",{className:"gt-react-header-inner"},
       h("a",{className:"gt-react-brand",href:withLang("index.html"),"aria-label":"Green Therapy"},
         h("img",{src:"assets/green-therapy-logo.webp",alt:"Green Therapy",width:170,height:106})
       ),
       h("nav",{className:"gt-react-nav","aria-label":LANG==="he"?"ניווט ראשי":"Primary navigation"},
-        ...T.nav.map(([path,label])=>h("a",{key:path,href:withLang(path),className:"gt-react-nav-link "+(PAGE===path?"active":"")},label))
+        ...T.nav.map(([path,label])=>h("a",{key:path,href:withLang(path),className:"gt-react-nav-link "+(PAGE===path.split("#")[0]?"active":"")},label))
       ),
       h("div",{className:"gt-react-actions"},
         h("a",{className:"gt-react-phone",dir:"ltr",href:"tel:"+TEL},PHONE),
         h("a",{className:"gt-react-flag",href:switchHref(),"aria-label":T.language,title:T.language,onClick:smoothLanguageSwitch},LANG==="he"?h(USFlag):h(ILFlag)),
-        h("a",{className:"gt-react-cta",href:withLang("contact.html")},T.plan),
+        h("a",{className:"gt-react-cta",href:actionHref},actionLabel),
         h("button",{className:"gt-react-menu-btn",type:"button","aria-expanded":open,"aria-label":open?T.close:T.menu,onClick:()=>setOpen(!open)},open?"×":"☰")
       )
     ),
     h("a",{className:"gt-react-mobile-phone",dir:"ltr",href:"tel:"+TEL},PHONE),
     h("nav",{className:"gt-react-mobile-menu "+(open?"open":""),"aria-label":LANG==="he"?"ניווט במובייל":"Mobile navigation"},
-      ...T.nav.map(([path,label])=>h("a",{key:path,href:withLang(path),className:PAGE===path?"active":""},label))
+      ...T.nav.map(([path,label])=>h("a",{key:path,href:withLang(path),className:PAGE===path.split("#")[0]?"active":""},label))
     )
   );
 }
@@ -277,7 +289,7 @@ function initLazy(){
 }
 
 function updateSeo(){
-  const data=(window.GT_I18N&&window.GT_I18N[PAGE])||{};
+  const data=currentPageData();
   const base="https://green-therapy.netlify.app/"+(PAGE==="index.html"?"":PAGE);
   let canonical=document.querySelector('link[rel="canonical"]');
   if(!canonical){canonical=document.createElement("link");canonical.rel="canonical";document.head.appendChild(canonical);}
@@ -286,18 +298,23 @@ function updateSeo(){
   [["he",base],["en",base+"?lang=en"],["x-default",base]].forEach(([lang,url])=>{
     const l=document.createElement("link");l.rel="alternate";l.hreflang=lang;l.href=url;l.dataset.gtHreflang="1";document.head.appendChild(l);
   });
-  if(LANG==="en"&&data.title) document.title=data.title;
-  if(LANG==="en"&&data.description){
-    const d=document.querySelector('meta[name="description"]'); if(d) d.content=data.description;
-  }
-  if(LANG==="en"&&data.title){
+  if(data.title){
+    document.title=data.title;
     const ogt=document.querySelector('meta[property="og:title"]'); if(ogt) ogt.content=data.title;
   }
-  if(LANG==="en"&&data.description){
+  if(data.description){
+    const d=document.querySelector('meta[name="description"]'); if(d) d.content=data.description;
     const ogd=document.querySelector('meta[property="og:description"]'); if(ogd) ogd.content=data.description;
   }
+  const ogu=document.querySelector('meta[property="og:url"]'); if(ogu) ogu.content=canonical.href;
 }
 
+function initContextualLinks(){
+  document.querySelectorAll("[data-wa-he],[data-wa-en]").forEach(el=>{
+    const msg=LANG==="he"?el.dataset.waHe:el.dataset.waEn;
+    if(msg) el.href=WA+"?text="+encodeURIComponent(msg);
+  });
+}
 applyStaticTranslation();
 updateSeo();
 document.documentElement.classList.add("gt-page-enter");
@@ -309,4 +326,4 @@ if(headerRoot) createRoot(headerRoot).render(h(Header));
 if(footerRoot) createRoot(footerRoot).render(h(Footer));
 if(contactRoot) createRoot(contactRoot).render(h(ContactSection));
 const waRoot=document.createElement("div");waRoot.id="gt-wa-root";document.body.appendChild(waRoot);createRoot(waRoot).render(h(FloatingWhatsApp));
-syncLanguageLinks();initFaq();initReveal();initLazy();initMaterialIconFallback();
+syncLanguageLinks();initContextualLinks();initFaq();initReveal();initLazy();initMaterialIconFallback();
