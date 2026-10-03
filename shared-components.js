@@ -131,7 +131,7 @@ function Header(){
         h("img",{src:"assets/green-therapy-logo.webp",alt:"Green Therapy",width:170,height:106})
       ),
       h("nav",{className:"gt-react-nav","aria-label":LANG==="he"?"ניווט ראשי":"Primary navigation"},
-        ...T.nav.map(([path,label])=>h("a",{key:path,href:withLang(path),className:"gt-react-nav-link "+(PAGE===path.split("#")[0]?"active":"")},label))
+        ...T.nav.map(([path,label])=>h("a",{key:path,href:withLang(path),className:"gt-react-nav-link "+(!path.includes("#")&&PAGE===path?"active":"")},label))
       ),
       h("div",{className:"gt-react-actions"},
         h("a",{className:"gt-react-phone",dir:"ltr",href:"tel:"+TEL},PHONE),
@@ -142,7 +142,7 @@ function Header(){
     ),
     h("a",{className:"gt-react-mobile-phone",dir:"ltr",href:"tel:"+TEL},PHONE),
     h("nav",{className:"gt-react-mobile-menu "+(open?"open":""),"aria-label":LANG==="he"?"ניווט במובייל":"Mobile navigation"},
-      ...T.nav.map(([path,label])=>h("a",{key:path,href:withLang(path),className:PAGE===path.split("#")[0]?"active":""},label))
+      ...T.nav.map(([path,label])=>h("a",{key:path,href:withLang(path),className:!path.includes("#")&&PAGE===path?"active":""},label))
     )
   );
 }
