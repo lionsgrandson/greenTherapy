@@ -181,8 +181,13 @@ function ContactSection(){
     e.preventDefault();
     setStatus(T.sending);
     const payload=Object.fromEntries(new FormData(e.currentTarget));
+    const body=new URLSearchParams({"form-name":"contact",...payload}).toString();
     try{
-      const res=await fetch("/api/contact",{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify(payload)});
+      const res=await fetch("/",{
+        method:"POST",
+        headers:{"content-type":"application/x-www-form-urlencoded"},
+        body
+      });
       if(res.ok){setStatus(T.sent);e.currentTarget.reset();}
       else setStatus(T.notConnected);
     }catch{setStatus(T.notConnected);}
