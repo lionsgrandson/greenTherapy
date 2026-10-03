@@ -685,3 +685,133 @@ Object.assign(window.GT_COPY["retreat.html"].he.text,{"retreat.html-t0":"דלג�
 Object.assign(window.GT_COPY["retreat.html"].en.text,{"retreat.html-t0":"Skip to content"});
 Object.assign(window.GT_COPY["treatments.html"].he.text,{"treatments.html-t0":"דלגו לתוכן"});
 Object.assign(window.GT_COPY["treatments.html"].en.text,{"treatments.html-t0":"Skip to content"});
+
+
+window.GT_COPY["privacy.html"]={
+  he:{
+    title:"מדיניות פרטיות | Green Therapy",
+    description:"מדיניות הפרטיות של Green Therapy: איזה מידע נאסף דרך האתר, כיצד הוא משמש, שמירה, אבטחה ושירותים חיצוניים.",
+    text:{
+      "privacy.html-skip":"דלגו לתוכן",
+      "privacy.html-t0":"מדיניות פרטיות",
+      "privacy.html-t1":"עודכן: ספטמבר 2026.",
+      "privacy.html-t2":"מי מפעיל את האתר",
+      "privacy.html-t3":"האתר מופעל עבור Green Therapy. לשאלות בנושא פרטיות ניתן לפנות בטלפון +972 53-532-4962 או במייל alongreentherapy@gmail.com.",
+      "privacy.html-t4":"מידע שנאסף",
+      "privacy.html-t5":"כאשר אתם פונים דרך האתר, ניתן למסור שם, מספר טלפון, כתובת מייל ופרטים שתבחרו לכתוב. בנוסף עשוי להיאסף מידע טכני בסיסי הנדרש לאבטחה ולתפעול האתר.",
+      "privacy.html-t6":"למה המידע משמש",
+      "privacy.html-t7":"המידע משמש למענה לפנייה, התאמת שירות, יצירת קשר ותפעול ואבטחת האתר.",
+      "privacy.html-t8":"עוגיות וניתוח שימוש",
+      "privacy.html-t9":"כלי ניתוח אופציונליים, אם יחוברו בעתיד, יופעלו בהתאם להגדרות ההסכמה באתר. יש לעדכן מדיניות זו בהתאם לשירותים שיחוברו.",
+      "privacy.html-t10":"שירותים חיצוניים",
+      "privacy.html-t11":"האתר מתארח בשירות חיצוני. לחיצה על קישור לוואטסאפ או למפה מעבירה את המשתמש לשירות של צד שלישי, הכפוף למדיניות הפרטיות שלו.",
+      "privacy.html-t12":"שמירת מידע ואבטחה",
+      "privacy.html-t13":"מידע יישמר רק למשך הזמן הנדרש לצורך הטיפול בפנייה, ניהול הקשר והתחייבויות החלות לפי דין. ננקטים אמצעים סבירים לצמצום גישה בלתי מורשית.",
+      "privacy.html-t14":"פניות בנושא פרטיות",
+      "privacy.html-t15":"ניתן לפנות אלינו כדי לבקש מידע, תיקון או בירור בנוגע למידע שמסרתם, בכפוף לדין החל."
+    }
+  },
+  en:{
+    title:"Privacy Policy | Green Therapy",
+    description:"Green Therapy privacy policy: what information the site collects, how it is used, retention, security and third-party services.",
+    text:{
+      "privacy.html-skip":"Skip to content",
+      "privacy.html-t0":"Privacy Policy",
+      "privacy.html-t1":"Updated: September 2026.",
+      "privacy.html-t2":"Who operates this site",
+      "privacy.html-t3":"This site is operated for Green Therapy. Privacy questions can be sent to alongreentherapy@gmail.com or raised by phone at +972 53-532-4962.",
+      "privacy.html-t4":"Information we collect",
+      "privacy.html-t5":"When you contact us, you may provide your name, phone number, email address and details you choose to include. Basic technical data may also be processed where needed for site operation and security.",
+      "privacy.html-t6":"How information is used",
+      "privacy.html-t7":"Information is used to respond to inquiries, tailor services, communicate with you, and operate and secure the site.",
+      "privacy.html-t8":"Cookies and analytics",
+      "privacy.html-t9":"Optional analytics, if enabled in the future, should operate according to the consent settings on the site. This policy should be updated when additional analytics or marketing services are connected.",
+      "privacy.html-t10":"External services",
+      "privacy.html-t11":"The site is hosted by a third-party hosting provider. Links to WhatsApp and map services take you to third-party services governed by their own privacy terms.",
+      "privacy.html-t12":"Retention and security",
+      "privacy.html-t13":"Information is kept only as long as reasonably required for the inquiry, business relationship and applicable legal obligations. Reasonable measures are used to reduce unauthorized access.",
+      "privacy.html-t14":"Privacy requests",
+      "privacy.html-t15":"You may contact us regarding access, correction or questions about information you provided, subject to applicable law."
+    }
+  }
+};
+
+window.GT_COPY["terms.html"]={
+  he:{
+    title:"תנאי שימוש | Green Therapy",
+    description:"תנאי השימוש באתר Green Therapy, כולל מידע על השירותים, זמינות, בריאות ובטיחות, קניין רוחני וקישורים לשירותים חיצוניים.",
+    text:{
+      "terms.html-skip":"דלגו לתוכן",
+      "terms.html-t0":"תנאי שימוש",
+      "terms.html-t1":"עודכן: ספטמבר 2026.",
+      "terms.html-t2":"השימוש באתר",
+      "terms.html-t3":"האתר מציג מידע כללי על שירותי Green Therapy. השימוש באתר מהווה הסכמה לתנאים אלה.",
+      "terms.html-t4":"מידע, זמינות והצעות",
+      "terms.html-t5":"המידע באתר אינו הצעה מחייבת. היקף השירות, המחיר, הזמינות, המיקום, הצוות ולוח הזמנים נקבעים רק לאחר תיאום ואישור בכתב מול הלקוח.",
+      "terms.html-t6":"בריאות ובטיחות",
+      "terms.html-t7":"פעילויות וטיפולים עשויים לדרוש התאמה אישית. המשתתפים אחראים למסור מידע רלוונטי ולפעול לפי הנחיות הצוות. אין לראות בתוכן האתר ייעוץ רפואי.",
+      "terms.html-t8":"קניין רוחני",
+      "terms.html-t9":"התוכן, העיצוב, התמונות והמיתוג באתר מוגנים בזכויות המתאימות ואין להעתיקם או לעשות בהם שימוש מסחרי ללא אישור.",
+      "terms.html-t10":"קישורים לשירותים חיצוניים",
+      "terms.html-t11":"קישורים למפה, וואטסאפ ושירותים חיצוניים ניתנים לנוחות בלבד. השימוש בהם כפוף לתנאים של אותם שירותים.",
+      "terms.html-t12":"שינויים ואחריות",
+      "terms.html-t13":"ניתן לעדכן את תוכן האתר והתנאים מעת לעת. האחריות לשירות בפועל נקבעת לפי ההסכמות בכתב מול הלקוח ובכפוף לדין החל.",
+      "terms.html-t14":"יצירת קשר",
+      "terms.html-t15":"טלפון: +972 53-532-4962",
+      "terms.html-t16":"מייל: alongreentherapy@gmail.com"
+    }
+  },
+  en:{
+    title:"Terms of Use | Green Therapy",
+    description:"Green Therapy website terms covering service information, availability, health and safety, intellectual property and third-party links.",
+    text:{
+      "terms.html-skip":"Skip to content",
+      "terms.html-t0":"Terms of Use",
+      "terms.html-t1":"Updated: September 2026.",
+      "terms.html-t2":"Using the site",
+      "terms.html-t3":"This site provides general information about Green Therapy services. By using the site, you agree to these terms.",
+      "terms.html-t4":"Information, availability and proposals",
+      "terms.html-t5":"Website content is not a binding offer. Scope, pricing, availability, venue, staffing and timing are agreed only through direct written confirmation with the client.",
+      "terms.html-t6":"Health and safety",
+      "terms.html-t7":"Activities and treatments may require individual suitability. Participants are responsible for providing relevant information and following staff guidance. Website content is not medical advice.",
+      "terms.html-t8":"Intellectual property",
+      "terms.html-t9":"Site content, design, images and branding are protected by applicable rights and may not be copied or used commercially without permission.",
+      "terms.html-t10":"Third-party links",
+      "terms.html-t11":"Links to maps, WhatsApp and other external services are provided for convenience and are governed by those services’ own terms.",
+      "terms.html-t12":"Changes and responsibility",
+      "terms.html-t13":"The website and these terms may be updated from time to time. Responsibility for services actually supplied is governed by the written agreement with the client and applicable law.",
+      "terms.html-t14":"Contact",
+      "terms.html-t15":"Phone: +972 53-532-4962",
+      "terms.html-t16":"Email: alongreentherapy@gmail.com"
+    }
+  }
+};
+
+window.GT_COPY["accessibility.html"]={
+  he:{
+    title:"הצהרת נגישות | Green Therapy",
+    description:"הצהרת הנגישות של Green Therapy, התאמות הנגישות באתר ופרטי יצירת קשר במקרה של קושי בשימוש.",
+    text:{
+      "accessibility.html-skip":"דלגו לתוכן",
+      "accessibility.html-t0":"הצהרת נגישות",
+      "accessibility.html-t1":"Green Therapy פועלת לשפר את נגישות האתר ולאפשר שימוש נוח ככל האפשר במקלדת, במסכי קורא ובתצוגות שונות.",
+      "accessibility.html-t2":"התאמות באתר",
+      "accessibility.html-t3":"האתר כולל מבנה סמנטי, קישור דילוג לתוכן, ניגודיות, טקסט חלופי לתמונות, תמיכה בהפחתת תנועה וכלי נגישות חיצוני. כלי הנגישות הוא אמצעי משלים ואינו מחליף את עבודת ההנגשה בקוד ובתוכן.",
+      "accessibility.html-t4":"נתקלתם בבעיה?",
+      "accessibility.html-t5":"אם מצאתם קושי בשימוש באתר, כתבו לנו באיזה עמוד נתקלתם בבעיה ומה ניסיתם לבצע. טלפון: +972 53-532-4962. מייל: alongreentherapy@gmail.com."
+    }
+  },
+  en:{
+    title:"Accessibility Statement | Green Therapy",
+    description:"Green Therapy accessibility statement, site accessibility features and contact details for reporting accessibility issues.",
+    text:{
+      "accessibility.html-skip":"Skip to content",
+      "accessibility.html-t0":"Accessibility Statement",
+      "accessibility.html-t1":"Green Therapy works to improve site accessibility and support comfortable use with keyboards, screen readers and different display settings.",
+      "accessibility.html-t2":"Accessibility features",
+      "accessibility.html-t3":"The site includes semantic structure, a skip link, contrast support, image alternatives, reduced-motion support and an external accessibility tool. The tool supplements rather than replaces accessibility work in the code and content.",
+      "accessibility.html-t4":"Found a problem?",
+      "accessibility.html-t5":"If you encounter an accessibility issue, tell us which page you were using and what you were trying to do. Phone: +972 53-532-4962. Email: alongreentherapy@gmail.com."
+    }
+  }
+};
