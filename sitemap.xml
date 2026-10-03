@@ -2,7 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://green-therapy.netlify.app/</loc></url>
   <url><loc>https://green-therapy.netlify.app/?lang=en</loc></url>
-  <url><loc>https://green-therapy.netlify.app/retreat.html</loc></url>\n  <url><loc>https://green-therapy.netlify.app/retreat.html?lang=en</loc></url>\n  <url><loc>https://green-therapy.netlify.app/treatments.html</loc></url>\n  <url><loc>https://green-therapy.netlify.app/treatments.html?lang=en</loc></url>\n  <url><loc>https://green-therapy.netlify.app/spa.html</loc></url>
+  <url><loc>https://green-therapy.netlify.app/retreat.html</loc></url>
+  <url><loc>https://green-therapy.netlify.app/retreat.html?lang=en</loc></url>
+  <url><loc>https://green-therapy.netlify.app/treatments.html</loc></url>
+  <url><loc>https://green-therapy.netlify.app/treatments.html?lang=en</loc></url>
+  <url><loc>https://green-therapy.netlify.app/spa.html</loc></url>
   <url><loc>https://green-therapy.netlify.app/spa.html?lang=en</loc></url>
   <url><loc>https://green-therapy.netlify.app/ice-bath.html</loc></url>
   <url><loc>https://green-therapy.netlify.app/ice-bath.html?lang=en</loc></url>
