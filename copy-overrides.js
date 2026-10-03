@@ -171,7 +171,12 @@ window.GT_COPY={
         "retreat.html-t27":"שלחו הודעה לבדיקת זמינות",
         "retreat.html-t28":"מחפשים טיפול בלי יום אירוח?",
         "retreat.html-t29":"אפשר גם לקבוע טיפול אישי בלבד עם מטפל/ת לפי סוג הטיפול והזמינות.",
-        "retreat.html-t30":"לעמוד הטיפולים"
+        "retreat.html-t30":"לעמוד הטיפולים",
+        "retreat.html-t31":"פינה לזוגות: סדנת עיסוי פרטית",
+        "retreat.html-t32":"לא רק לקבל עיסוי — גם ללמוד איך להעניק אחד לשנייה מגע נעים ובטוח שאפשר לקחת הביתה.",
+        "retreat.html-t33":"בסדנה פרטית לזוגות לומדים עקרונות בסיסיים של מגע, לחץ, קצב ותנוחות נוחות. הסדנה מתקיימת בתיאום מראש וניתן לשלב אותה כחלק מהשהות במתחם.",
+        "retreat.html-t34":"מתאים במיוחד ליום זוגי, יום הולדת או חוויה משותפת שרוצים להפוך לאישית יותר.",
+        "retreat.html-t35":"בדיקת זמינות לסדנת עיסוי זוגית"
       }
     },
     en:{
@@ -207,7 +212,12 @@ window.GT_COPY={
         "retreat.html-t27":"Message Us to Check Availability",
         "retreat.html-t28":"Looking for a treatment without a retreat day?",
         "retreat.html-t29":"You can also book an individual treatment with a practitioner based on treatment type and availability.",
-        "retreat.html-t30":"Explore Treatments"
+        "retreat.html-t30":"Explore Treatments",
+        "retreat.html-t31":"For Couples: Private Massage Workshop",
+        "retreat.html-t32":"Not only receive a massage — learn simple, comfortable ways to give each other relaxing touch you can take home with you.",
+        "retreat.html-t33":"In a private couples workshop, you learn basic principles of touch, pressure, rhythm and comfortable positioning. The workshop is arranged in advance and can be added to your retreat visit.",
+        "retreat.html-t34":"A good fit for a couples day, birthday or a shared experience you want to make more personal.",
+        "retreat.html-t35":"Check Couples Workshop Availability"
       }
     }
   },
