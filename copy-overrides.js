@@ -634,3 +634,8 @@ Object.assign(window.GT_COPY["contact.html"].en.text,{
   "contact.html-t208":"Helpful Details",
   "contact.html-t209":"Preferred date or date range, how many people are coming and what you would like to include."
 });
+
+Object.assign(window.GT_COPY["retreat.html"].he.text,{"retreat.html-t0":"דלגו לתוכן"});
+Object.assign(window.GT_COPY["retreat.html"].en.text,{"retreat.html-t0":"Skip to content"});
+Object.assign(window.GT_COPY["treatments.html"].he.text,{"treatments.html-t0":"דלגו לתוכן"});
+Object.assign(window.GT_COPY["treatments.html"].en.text,{"treatments.html-t0":"Skip to content"});
