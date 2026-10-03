@@ -121,6 +121,13 @@ function ILFlag(){
   );
 }
 
+function navActive(path){
+  const [base,hash=""]=path.split("#");
+  if(PAGE!==base) return false;
+  if(hash) return location.hash==="#"+hash;
+  return !location.hash || !T.nav.some(([p])=>p.startsWith(base+"#")&&location.hash==="#"+p.split("#")[1]);
+}
+
 function Header(){
   const [open,setOpen]=useState(false);
   const actionLabel=PAGE==="retreat.html"?(LANG==="he"?"בדיקת זמינות":"Check Availability"):PAGE==="treatments.html"?(LANG==="he"?"קביעת טיפול":"Book a Treatment"):T.plan;
