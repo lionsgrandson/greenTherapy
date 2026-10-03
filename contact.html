@@ -1,168 +1,21 @@
 <!DOCTYPE html>
-
-<html dir="rtl" lang="he"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
-<title>צור קשר | Green Therapy לאירועי חברה</title>
-<!-- Fonts -->
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;family=Rubik:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<!-- Material Symbols -->
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<!-- Tailwind CSS -->
+<html class="scroll-smooth" dir="rtl" lang="he"><head>
+<meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>צור קשר | Green Therapy</title><meta name="description" content="צרו קשר עם Green Therapy לתכנון אירוע חברה, בדיקת זמינות במתחם הפרטי או קביעת טיפול."/><meta name="robots" content="index,follow,max-image-preview:large"/>
+<link rel="canonical" href="https://green-therapy.netlify.app/contact.html"/>
+<meta property="og:type" content="website"/><meta property="og:site_name" content="Green Therapy"/><meta property="og:title" content="צור קשר | Green Therapy"/><meta property="og:description" content="צרו קשר עם Green Therapy לתכנון אירוע חברה, בדיקת זמינות במתחם הפרטי או קביעת טיפול."/><meta property="og:url" content="https://green-therapy.netlify.app/contact.html"/><meta name="twitter:card" content="summary_large_image"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;600;700;800&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script id="tailwind-config">
-    tailwind.config = {
-      darkMode: "class",
-      theme: {
-        extend: {
-          "colors": {
-            "surface-variant": "#eee0d6",
-            "secondary-container": "#e3ece5",
-            "surface-container-low": "#fff1e7",
-            "surface-container": "#faebe1",
-            "background": "#fff8f5",
-            "on-error-container": "#93000a",
-            "surface-tint": "#4e6b58",
-            "on-primary": "#ffffff",
-            "on-background": "#211a14",
-            "surface-dim": "#e5d8ce",
-            "inverse-surface": "#372f28",
-            "tertiary-fixed-dim": "#efbc98",
-            "on-secondary-container": "#355140",
-            "on-primary-fixed-variant": "#4c4638",
-            "secondary-fixed": "#fbddca",
-            "on-surface": "#211a14",
-            "surface-bright": "#fff8f5",
-            "tertiary-container": "#ffe4d3",
-            "outline-variant": "#ccc6bb",
-            "on-secondary-fixed": "#28180d",
-            "on-tertiary-container": "#876042",
-            "surface-container-lowest": "#ffffff",
-            "surface-container-high": "#f4e6db",
-            "tertiary-fixed": "#ffdcc4",
-            "secondary": "#506b58",
-            "on-error": "#ffffff",
-            "on-secondary": "#ffffff",
-            "on-tertiary": "#ffffff",
-            "inverse-primary": "#bfd2c3",
-            "primary-container": "#dfe9e1",
-            "tertiary": "#7c5639",
-            "inverse-on-surface": "#fceee4",
-            "on-tertiary-fixed-variant": "#613f24",
-            "on-secondary-fixed-variant": "#574335",
-            "error-container": "#ffdad6",
-            "surface-container-highest": "#eee0d6",
-            "secondary-fixed-dim": "#dec1af",
-            "primary-fixed-dim": "#bfd2c3",
-            "on-surface-variant": "#4a463e",
-            "error": "#ba1a1a",
-            "surface": "#fff8f5",
-            "primary-fixed": "#dbe8dd",
-            "outline": "#7c766d",
-            "on-primary-container": "#6f6859",
-            "on-tertiary-fixed": "#2f1501",
-            "on-primary-fixed": "#1f1b10",
-            "primary": "#645e4f"
-          },
-          "borderRadius": {
-            "DEFAULT": "0.25rem",
-            "lg": "0.5rem",
-            "xl": "0.75rem",
-            "full": "9999px"
-          },
-          "spacing": {
-            "margin-desktop": "48px",
-            "container-max": "1280px",
-            "gutter": "24px",
-            "margin-mobile": "16px",
-            "unit": "8px"
-          },
-          "fontFamily": {
-            "headline-md": ["Rubik", "Manrope", "sans-serif"],
-            "body-md": ["Rubik", "Manrope", "sans-serif"],
-            "label-md": ["Rubik", "Manrope", "sans-serif"],
-            "body-lg": ["Rubik", "Manrope", "sans-serif"],
-            "headline-lg-mobile": ["Rubik", "Manrope", "sans-serif"],
-            "headline-lg": ["Rubik", "Manrope", "sans-serif"],
-            "display": ["Rubik", "Manrope", "sans-serif"],
-            "label-sm": ["Rubik", "Manrope", "sans-serif"]
-          },
-          "fontSize": {
-            "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
-            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
-            "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "600" }],
-            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
-            "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "600" }],
-            "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
-            "display": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
-            "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }]
-          }
-        }
-      }
-    }
-  </script>
-<style>
-    .material-symbols-outlined {
-      font-family: 'Material Symbols Outlined';
-      font-weight: normal;
-      font-style: normal;
-      font-size: 20px;
-      line-height: 1;
-      display: inline-block;
-      text-transform: none;
-      letter-spacing: normal;
-      word-wrap: normal;
-      white-space: nowrap;
-      direction: ltr;
-    }
-    /* Soft tactile textures & custom subtle focus */
-    .tactile-card {
-      background-color: #ffffff;
-      border: 1px solid rgba(124, 118, 109, 0.18);
-      box-shadow: 0 4px 20px -4px rgba(61, 43, 31, 0.04);
-    }
-    input:focus, select:focus, textarea:focus {
-      outline: none;
-      border-color: #7c5639 !important;
-      box-shadow: 0 0 0 1px #7c5639 !important;
-    }
-  </style>
-<link href="enhancements.css" rel="stylesheet"/><meta content="מתכננים אירוע חברה או יום גיבוש? צרו קשר עם Green Therapy להתאמת מתחם עיסויים, אמבטיות קרח, סדנאות או בר שייקים." name="description"/><meta content="index,follow,max-image-preview:large" name="robots"/><link href="https://green-therapy.netlify.app/contact.html" rel="canonical"/><link href="https://green-therapy.netlify.app/contact.html" hreflang="he" rel="alternate"/><link href="https://green-therapy.netlify.app/contact.html?lang=en" hreflang="en" rel="alternate"/><link href="https://green-therapy.netlify.app/contact.html" hreflang="x-default" rel="alternate"/><meta content="website" property="og:type"/><meta content="Green Therapy" property="og:site_name"/><meta content="צור קשר | Green Therapy לאירועי חברה" property="og:title"/><meta content="מתכננים אירוע חברה או יום גיבוש? צרו קשר עם Green Therapy להתאמת מתחם עיסויים, אמבטיות קרח, סדנאות או בר שייקים." property="og:description"/><meta content="https://green-therapy.netlify.app/contact.html" property="og:url"/><meta content="summary_large_image" name="twitter:card"/><script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Green Therapy","url":"https://green-therapy.netlify.app","email":"alongreentherapy@gmail.com","description":"מתכננים אירוע חברה או יום גיבוש? צרו קשר עם Green Therapy להתאמת מתחם עיסויים, אמבטיות קרח, סדנאות או בר שייקים.","areaServed":{"@type":"Country","name":"Israel"},"knowsAbout":["Corporate events","Wellness","Pop-Up Spa","Ice baths","Mindfulness","Yoga","Healthy bar"],"telephone":"+972 53-532-4962","logo":"https://green-therapy.netlify.app/assets/green-therapy-logo.webp","sameAs":["https://share.google/hEvKhs5USb65ZEgi7"]}</script><script src="site-config.js"></script><link href="production.css" rel="stylesheet"/><link href="assets/green-therapy-logo.webp" rel="icon" type="image/webp"/></head>
-<body class="bg-background text-on-surface font-body-md text-body-md antialiased min-h-screen flex flex-col justify-between selection:bg-tertiary-container selection:text-on-tertiary-container" data-page="contact.html"><a class="gt-skip-link" href="#main-content"><span data-i18n="contact.html-t0">דלגו לתוכן</span></a><div id="gt-header-root"></div>
-<!-- ================= HERO & INTRO HEADER ================= -->
-<main class="flex-grow" id="main-content">
-<section class="relative pt-12 pb-8 md:pt-16 md:pb-12 bg-surface-container-low border-b border-outline-variant/30">
-<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop text-center">
-<h1 class="font-display text-display text-on-surface mb-4 max-w-4xl mx-auto leading-tight"><span data-i18n="contact.html-t1">מתכננים אירוע חברה, יום גיבוש או פעילות לעובדים?</span></h1>
-<p class="font-body-lg text-body-lg text-secondary max-w-2xl mx-auto"><span data-i18n="contact.html-t2">ספרו לנו איפה האירוע, כמה משתתפים צפויים ומה תרצו לשלב. נחזור אליכם כדי לבנות הצעה שמתאימה לאירוע ולתקציב.</span></p>
-</div>
-</section>
-<!-- ================= MAIN CONTENT: FORM + SIDEBAR ================= -->
-<!-- ================= FAQ SECTION (Frequently Asked Questions Before Booking) ================= -->
-</main>
-<!-- Micro-interaction JS -->
-<script>
-    function showSuccessState() {
-      const form = document.getElementById('corporateForm');
-      const successBlock = document.getElementById('formSuccess');
-      if (form && successBlock) {
-        form.classList.add('hidden');
-        successBlock.classList.remove('hidden');
-        successBlock.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      }
-    }
-
-    function resetForm() {
-      const form = document.getElementById('corporateForm');
-      const successBlock = document.getElementById('formSuccess');
-      if (form && successBlock) {
-        form.reset();
-        successBlock.classList.add('hidden');
-        form.classList.remove('hidden');
-      }
-    }
-  </script>
-<div data-contact-anchor="true" id="gt-contact-root"></div><div id="gt-footer-root"></div><script src="i18n-data.js"></script><script src="shared-components.js" type="module"></script><script>window.ACCESSIBILITY_WIDGET_CONFIG={enableVoiceControl:false,enableScreenReader:true,enableHighContrast:true,enableBiggerText:true,enableTextSpacing:true,enablePauseAnimations:true,enableHideImages:true,enableDyslexiaFont:true,enableBiggerCursor:true,enableLineHeight:true,widgetPosition:{side:"left",left:"16px",bottom:"16px"},lang:{accessibilityMenu:"תפריט נגישות",closeAccessibilityMenu:"סגירת תפריט נגישות",accessibilityTools:"כלי נגישות",resetAllSettings:"איפוס הגדרות",screenReader:"קורא מסך",highContrast:"ניגודיות גבוהה",biggerText:"טקסט גדול",textSpacing:"ריווח טקסט",pauseAnimations:"עצירת אנימציות",hideImages:"הסתרת תמונות",dyslexiaFriendly:"גופן ידידותי לדיסלקציה",biggerCursor:"סמן גדול",lineHeight:"גובה שורה"}};</script><script defer="True" src="https://cdn.jsdelivr.net/npm/accessibility-widgets@latest/widget.js"></script></body></html>
+<style>body{font-family:'Assistant','Manrope',sans-serif;background:#fff8f5;color:#211a14}.gt-green{color:#2d5a43}.gt-forest{color:#1d3326}.gt-bg{background:#edf4ef}</style>
+<link href="enhancements.css" rel="stylesheet"/><link href="production.css" rel="stylesheet"/><link href="assets/green-therapy-logo.webp" rel="icon" type="image/webp"/>
+</head><body data-page="contact.html" class="antialiased"><a class="gt-skip-link" href="#main-content">דלגו לתוכן</a><div id="gt-header-root"></div><main id="main-content">
+<section class="py-14 md:py-24"><div class="max-w-6xl mx-auto px-4 md:px-8 text-center"><h1 class="text-4xl md:text-6xl font-extrabold gt-forest" data-i18n="contact.html-t200"></h1><p class="mt-6 text-xl leading-8 text-black/65 max-w-3xl mx-auto" data-i18n="contact.html-t201"></p></div></section>
+<section class="pb-16 md:pb-24"><div class="max-w-6xl mx-auto px-4 md:px-8 grid md:grid-cols-3 gap-5">
+<article class="rounded-3xl gt-bg p-7"><span class="material-symbols-outlined gt-green text-3xl">celebration</span><h2 class="mt-4 text-2xl font-extrabold gt-forest" data-i18n="contact.html-t202"></h2><p class="mt-3 text-black/60" data-i18n="contact.html-t203"></p></article>
+<article class="rounded-3xl gt-bg p-7"><span class="material-symbols-outlined gt-green text-3xl">cottage</span><h2 class="mt-4 text-2xl font-extrabold gt-forest" data-i18n="contact.html-t204"></h2><p class="mt-3 text-black/60" data-i18n="contact.html-t205"></p></article>
+<article class="rounded-3xl gt-bg p-7"><span class="material-symbols-outlined gt-green text-3xl">spa</span><h2 class="mt-4 text-2xl font-extrabold gt-forest" data-i18n="contact.html-t206"></h2><p class="mt-3 text-black/60" data-i18n="contact.html-t207"></p></article>
+</div><div class="max-w-4xl mx-auto px-4 md:px-8 mt-10 rounded-3xl border border-[#2d5a43]/15 bg-white p-7"><h2 class="text-2xl font-extrabold gt-forest" data-i18n="contact.html-t208"></h2><p class="mt-2 text-black/60" data-i18n="contact.html-t209"></p></div></section><div data-contact-anchor="true" id="gt-contact-root"></div></main><div id="gt-footer-root"></div>
+<script src="i18n-data.js"></script><script src="shared-components.js" type="module"></script>
+<script>window.ACCESSIBILITY_WIDGET_CONFIG={enableVoiceControl:false,enableScreenReader:true,enableHighContrast:true,enableBiggerText:true,enableTextSpacing:true,enablePauseAnimations:true,enableHideImages:true,enableDyslexiaFont:true,enableBiggerCursor:true,enableLineHeight:true,widgetPosition:{side:"left",left:"16px",bottom:"16px"},lang:{accessibilityMenu:"תפריט נגישות",closeAccessibilityMenu:"סגירת תפריט נגישות",accessibilityTools:"כלי נגישות",resetAllSettings:"איפוס הגדרות",screenReader:"קורא מסך",highContrast:"ניגודיות גבוהה",biggerText:"טקסט גדול",textSpacing:"ריווח טקסט",pauseAnimations:"עצירת אנימציות",hideImages:"הסתרת תמונות",dyslexiaFriendly:"גופן ידידותי לדיסלקציה",biggerCursor:"סמן גדול",lineHeight:"גובה שורה"}};</script><script defer src="https://cdn.jsdelivr.net/npm/accessibility-widgets@latest/widget.js"></script></body></html>
