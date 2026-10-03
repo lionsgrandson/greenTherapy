@@ -144,6 +144,7 @@ window.GT_COPY={
       title:"הצימר והמתחם הפרטי של Green Therapy | בית דגן",
       description:"מתחם Green Therapy הפרטי בבית דגן ליום זוגי, קבוצה קטנה או ריטריט, עם סאונה, ג׳קוזי ואמבטיית קרח ואפשרות להוסיף חוויית ספא בתיאום מראש.",
       text:{
+        "retreat.html-t0":"דלגו לתוכן",
         "retreat.html-t1":"הצימר והמתחם הפרטי של Green Therapy",
         "retreat.html-t2":"מקום אינטימי בבית דגן שבו אפשר לעצור, לנוח ולהוסיף חוויית ספא לפי מה שמתאים לכם.",
         "retreat.html-t3":"בדיקת זמינות",
@@ -181,12 +182,19 @@ window.GT_COPY={
         "retreat.html-t35":"בדיקת זמינות לסדנת עיסוי זוגית",
         "retreat.html-t36":"המתחם הפרטי",
         "retreat.html-t37":"חוויה לזוגות"
+      },
+      alt:{
+        "retreat.html-a0":"המתחם הפרטי של Green Therapy",
+        "retreat.html-a1":"אזור הספא במתחם Green Therapy",
+        "retreat.html-a2":"המרחב הירוק של Green Therapy",
+        "retreat.html-a3":"סדנת עיסוי זוגית ב-Green Therapy"
       }
     },
     en:{
       title:"Green Therapy Private Retreat | Beit Dagan",
       description:"A private Green Therapy setting in Beit Dagan with sauna, jacuzzi and ice bath, plus optional spa experiences arranged in advance.",
       text:{
+        "retreat.html-t0":"Skip to content",
         "retreat.html-t1":"Green Therapy Private Retreat",
         "retreat.html-t2":"An intimate setting in Beit Dagan where you can slow down, switch off and add a spa experience that fits your visit.",
         "retreat.html-t3":"Check Availability",
@@ -224,6 +232,12 @@ window.GT_COPY={
         "retreat.html-t35":"Check Couples Workshop Availability",
         "retreat.html-t36":"Private Retreat",
         "retreat.html-t37":"Couples Experience"
+      },
+      alt:{
+        "retreat.html-a0":"Green Therapy private retreat",
+        "retreat.html-a1":"Green Therapy spa area",
+        "retreat.html-a2":"Green Therapy private green setting",
+        "retreat.html-a3":"Private couples massage workshop at Green Therapy"
       }
     }
   },
@@ -232,6 +246,7 @@ window.GT_COPY={
       title:"טיפולים ועיסויים | Green Therapy",
       description:"עיסוי שוודי ואבנים חמות, עיסוי רפואי, דיקור מערבי, כוסות רוח, עיסוי תאילנדי, שיאצו וטיפולים נוספים ב-Green Therapy בתיאום מראש.",
       text:{
+        "treatments.html-t0":"דלגו לתוכן",
         "treatments.html-t1":"טיפולים ועיסויים ב-Green Therapy",
         "treatments.html-t2":"מטיפול רגוע ומפנק ועד עבודה ממוקדת יותר — בוחרים את סוג הטיפול לפי מה שמתאים לכם ומתאמים מטפל/ת בהתאם להתמחות ולזמינות.",
         "treatments.html-t3":"קביעת טיפול",
@@ -268,12 +283,18 @@ window.GT_COPY={
         "treatments.html-t34":"אפשר לקבוע טיפול כחלק מביקור במתחם הפרטי של Green Therapy, בהתאם לזמינות.",
         "treatments.html-t35":"לצימר ולמתחם הפרטי",
         "treatments.html-t36":"טיפולים"
+      },
+      alt:{
+        "treatments.html-a0":"מטפלת Green Therapy במהלך טיפול",
+        "treatments.html-a1":"כרטיס המטפל אלון גרין",
+        "treatments.html-a2":"מטפלת מצוות Green Therapy"
       }
     },
     en:{
       title:"Massage & Treatments | Green Therapy",
       description:"Swedish massage with hot stones, medical massage, Western needling, cupping, Thai massage, Shiatsu and other Green Therapy treatments by advance booking.",
       text:{
+        "treatments.html-t0":"Skip to content",
         "treatments.html-t1":"Massage & Treatments at Green Therapy",
         "treatments.html-t2":"From a relaxed massage to more focused bodywork — choose the type of treatment you are looking for and we’ll match the practitioner according to expertise and availability.",
         "treatments.html-t3":"Book a Treatment",
@@ -310,6 +331,11 @@ window.GT_COPY={
         "treatments.html-t34":"A treatment can also be booked as part of a visit to the Green Therapy private retreat, subject to availability.",
         "treatments.html-t35":"Explore the Private Retreat",
         "treatments.html-t36":"Treatments"
+      },
+      alt:{
+        "treatments.html-a0":"Green Therapy practitioner during a treatment",
+        "treatments.html-a1":"Alon Green practitioner card",
+        "treatments.html-a2":"Green Therapy practitioner"
       }
     }
   },
