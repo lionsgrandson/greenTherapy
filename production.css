@@ -266,3 +266,50 @@ main figure:hover img{
   .gt-react-flag,.gt-react-nav-link,.gt-react-cta,.gt-react-phone,.gt-shared-contact-links a,.gt-shared-contact-form button,.gt-react-footer a,main a,main button,main img{transition:none!important}
   .gt-animate-ready [data-gt-reveal]{opacity:1!important;transform:none!important;transition:none!important}
 }
+
+/* 2026-09 mobile reliability pass */
+@media(max-width:767px){
+  .gt-animate-ready [data-gt-reveal]{opacity:1!important;transform:none!important}
+  #main-content > section{scroll-margin-top:104px}
+  #main-content .grid > *,#main-content [class*="col-span-"]{min-width:0}
+  #main-content a.inline-flex,#main-content button{max-width:100%;white-space:normal;text-align:center}
+  #private-retreat{padding-top:44px!important;padding-bottom:44px!important}
+  #private-retreat .grid-cols-2{gap:8px!important}
+  #private-retreat .grid-cols-2 img{max-width:100%;min-width:0}
+}
+
+/* Mobile layout v2 */
+@media(max-width:640px){
+  html{scroll-padding-top:112px}
+  body{width:100%;max-width:100vw;overflow-x:hidden}
+  #gt-header-root{width:100%}
+  .gt-react-header-inner{padding:8px 12px;min-height:64px;gap:8px}
+  .gt-react-brand{flex:1 1 auto;min-width:0}
+  .gt-react-brand img{width:108px;height:46px}
+  .gt-react-actions{flex:0 0 auto;gap:6px}
+  .gt-react-flag,.gt-react-menu-btn{width:42px;height:42px;min-width:42px;flex:0 0 42px}
+  .gt-react-mobile-phone{padding:7px 12px;font-size:.9rem}
+  .gt-react-mobile-menu.open{grid-template-columns:1fr;padding:8px 12px 12px}
+  main{width:100%;overflow:hidden}
+  main>section{padding-top:42px!important;padding-bottom:42px!important}
+  main>section:first-child{padding-top:20px!important}
+  main [class~="p-8"]{padding:1.25rem!important}
+  main [class~="p-6"]{padding:1.1rem!important}
+  main [class~="gap-12"],main [class~="gap-10"]{gap:1.5rem!important}
+  main h1{font-size:clamp(1.95rem,8.7vw,2.5rem)!important;line-height:1.1!important}
+  main h2{font-size:clamp(1.5rem,6.8vw,1.95rem)!important;line-height:1.18!important}
+  main h3{line-height:1.25!important}
+  main p,main li{line-height:1.72}
+  main .flex.flex-wrap.items-center.gap-4>a{max-width:100%}
+  main [class*="h-[460px]"],main [class*="h-[420px]"],main [class*="h-[400px]"],main [class*="h-[360px]"],main [class*="h-[320px]"],main [class*="h-[300px]"]{height:280px!important}
+  .gt-retreat-space{padding:46px 18px!important}
+  .gt-retreat-space>.max-w-container-max{padding-left:0!important;padding-right:0!important}
+  .gt-retreat-space>.max-w-container-max>.grid{grid-template-columns:1fr!important;gap:24px!important}
+  .gt-retreat-space .grid.grid-cols-2{grid-template-columns:1fr 1fr!important;gap:8px!important}
+  .gt-retreat-space img{height:170px!important;min-height:0!important}
+  .gt-retreat-space img.col-span-2{height:220px!important}
+  .gt-floating-wa-react{width:48px;height:48px;right:10px;bottom:10px}
+}
+@media(max-width:420px){
+  main .flex.flex-wrap.items-center.gap-4>a{width:100%;justify-content:center}
+}

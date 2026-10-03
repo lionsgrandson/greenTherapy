@@ -55,12 +55,12 @@ HE_REPL = {
     "במשרדים, בטבע או בסיור החברה": "במשרד, בטבע או באתר האירוע",
     "במשרד, בטבע וב-Offsite": "במשרד, בטבע או באתר האירוע",
     "אירוע חברה / Offsite": "אירוע חברה / אתר אירוע",
-    "שקט נפשי מלא למנהלות רווחה": "שקט נפשי לצוותי Wellbeing ו-HR",
-    "מדוע מנהלות רווחה ומשאבי אנוש בוחרות בנו?": "למה צוותי Wellbeing ו-HR בוחרים בנו?",
-    "מתחמי תוכן ורווחה בהתאמה אישית": "מתחמי Wellness & Wellbeing בהתאמה אישית",
-    "ימי רווחה מותאמים אישית": "ימי Wellbeing מותאמים אישית",
-    "שאלות נפוצות של מנהלות רווחה ומפיקים": "שאלות נפוצות לצוותי Wellbeing, HR והפקה",
-    "מנהל/ת רווחה ו-HR": "Wellbeing / HR / Employee Experience",
+    "שקט נפשי מלא למנהלות רווחה": "שקט נפשי למפיקים ולצוותי משאבי אנוש",
+    "מדוע מנהלות רווחה ומשאבי אנוש בוחרות בנו?": "למה מפיקים וצוותי משאבי אנוש בוחרים בנו?",
+    "מתחמי תוכן ורווחה בהתאמה אישית": "מתחמי Wellness בהתאמה אישית",
+    "ימי רווחה מותאמים אישית": "ימי Wellness מותאמים אישית",
+    "שאלות נפוצות של מנהלות רווחה ומפיקים": "שאלות נפוצות למפיקים ולצוותי משאבי אנוש",
+    "מנהל/ת רווחה ו-HR": "Wellness / HR / Employee Experience",
     "Turnkey Solution": "מעטפת הפקה מלאה",
     "Turnkey": "מעטפת מלאה",
     "Restoring balance through nature.": "",
@@ -131,27 +131,27 @@ def add_head_meta(soup, page, en=False):
     path = "/" if slug == "index.html" else "/" + slug
     en_path = "/en/" if slug == "index.html" else "/en/" + slug
     title_map_he = {
-        "index.html":"Green Therapy | Wellness & Wellbeing לאירועי חברה",
+        "index.html":"Green Therapy | Wellness לאירועי חברה",
         "spa.html":"Pop-Up Spa לאירועי חברה | Green Therapy",
         "ice-bath.html":"אמבטיות קרח לאירועי חברה | Green Therapy",
-        "workshops.html":"סדנאות Wellness & Wellbeing | Green Therapy",
+        "workshops.html":"סדנאות Wellness | Green Therapy",
         "healthy-bar.html":"בר בריאות לאירועים | Green Therapy",
         "about.html":"אודות Green Therapy | Wellness לאירועי חברה",
         "gallery.html":"גלריית אירועים | Green Therapy",
         "contact.html":"תכנון אירוע Wellness | Green Therapy",
     }
     title_map_en = {
-        "index.html":"Green Therapy | Corporate Wellness & Wellbeing",
+        "index.html":"Green Therapy | Corporate Wellness",
         "spa.html":"Pop-Up Spa for Corporate Events | Green Therapy",
         "ice-bath.html":"Corporate Ice Bath Experience | Green Therapy",
-        "workshops.html":"Wellness & Wellbeing Workshops | Green Therapy",
+        "workshops.html":"Wellness Workshops | Green Therapy",
         "healthy-bar.html":"Healthy Bar for Events | Green Therapy",
         "about.html":"About Green Therapy | Corporate Wellness",
         "gallery.html":"Event Gallery | Green Therapy",
         "contact.html":"Plan a Wellness Event | Green Therapy",
     }
-    desc_he = "Green Therapy מפיקה מתחמי Wellness ו-Wellbeing לאירועי חברה: Pop-Up Spa, אמבטיות קרח, סדנאות גוף-נפש ובר בריאות, בהתאמה לאופי האירוע."
-    desc_en = "Green Therapy creates corporate Wellness & Wellbeing experiences including Pop-Up Spa, ice baths, mind-body workshops and healthy bars, tailored to each event."
+    desc_he = "Green Therapy מפיקה מתחמי עיסויים, אמבטיות קרח, סדנאות גוף-נפש ובר שייקים לאירועי חברה, ימי גיבוש ורווחת עובדים — במשרד, בטבע ובאתרי אירועים."
+    desc_en = "Green Therapy creates corporate Wellness experiences including Pop-Up Spa, ice baths, mind-body workshops and healthy bars, tailored to each event."
     title = (title_map_en if en else title_map_he)[slug]
     if soup.title: soup.title.string = title
     else:
@@ -176,7 +176,7 @@ def add_head_meta(soup, page, en=False):
       "url":BASE_URL,"email":"alongreentherapy@gmail.com",
       "description": desc_en if en else desc_he,
       "areaServed":{"@type":"Country","name":"Israel"},
-      "knowsAbout":["Corporate wellness","Wellbeing","Pop-Up Spa","Ice baths","Mindfulness","Yoga","Healthy bar"]
+      "knowsAbout":["Corporate wellness","Wellness","Pop-Up Spa","Ice baths","Mindfulness","Yoga","Healthy bar"]
     }
     ld=soup.new_tag("script", type="application/ld+json"); ld.string=json.dumps(schema,ensure_ascii=False); head.append(ld)
     # Site config before enhancements
@@ -344,8 +344,8 @@ def ensure_internal_nav(soup, en=False):
     if not header: return
     nav=header.find("nav")
     if not nav: return
-    links_en=[("index.html","Home"),("spa.html","Pop-Up Spa"),("ice-bath.html","Ice Baths"),("workshops.html","Mind & Body"),("healthy-bar.html","Healthy Bar"),("index.html#wellness-space","Our Space"),("gallery.html","Gallery"),("contact.html","Contact")]
-    links_he=[("index.html","דף הבית"),("spa.html","Pop-Up Spa"),("ice-bath.html","אמבטיות קרח"),("workshops.html","Mind & Body"),("healthy-bar.html","בר בריאות"),("index.html#wellness-space","המתחם שלנו"),("gallery.html","גלריה"),("contact.html","צור קשר")]
+    links_en=[("index.html","Home"),("spa.html","Pop-Up Spa"),("ice-bath.html","Ice Baths"),("workshops.html","Mind & Body"),("healthy-bar.html","Healthy Bar"),("index.html#private-retreat","Private Retreat"),("gallery.html","Gallery"),("contact.html","Contact")]
+    links_he=[("index.html","דף הבית"),("spa.html","Pop-Up Spa"),("ice-bath.html","אמבטיות קרח"),("workshops.html","Mind & Body"),("healthy-bar.html","בר בריאות"),("index.html#private-retreat","הצימר"),("gallery.html","גלריה"),("contact.html","צור קשר")]
     nav.clear()
     for href,label in (links_en if en else links_he):
         a=soup.new_tag("a", href=href)

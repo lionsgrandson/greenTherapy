@@ -12,7 +12,7 @@ const STRINGS={
   he:{
     nav:[
       ["index.html","דף הבית"],["spa.html","ספא פופ-אפ"],["ice-bath.html","אמבטיות קרח"],
-      ["workshops.html","סדנאות גוף ונפש"],["healthy-bar.html","בר בריאות"],["about.html","אודות"],["contact.html","צור קשר"]
+      ["workshops.html","סדנאות גוף ונפש"],["healthy-bar.html","בר בריאות"],["index.html#private-retreat","הצימר"],["about.html","אודות"],["contact.html","צור קשר"]
     ],
     plan:"לתכנון אירוע", links:"קישורים", legal:"משפטי", contact:"צור קשר",
     privacy:"מדיניות פרטיות", terms:"תנאי שימוש", accessibility:"הצהרת נגישות",
@@ -25,7 +25,7 @@ const STRINGS={
   en:{
     nav:[
       ["index.html","Home"],["spa.html","Pop-Up Spa"],["ice-bath.html","Ice Baths"],
-      ["workshops.html","Mind & Body"],["healthy-bar.html","Healthy Bar"],["about.html","About"],["contact.html","Contact"]
+      ["workshops.html","Mind & Body"],["healthy-bar.html","Healthy Bar"],["index.html#private-retreat","Private Retreat"],["about.html","About"],["contact.html","Contact"]
     ],
     plan:"Plan an Event", links:"Links", legal:"Legal", contact:"Contact",
     privacy:"Privacy Policy", terms:"Terms of Use", accessibility:"Accessibility Statement",
@@ -53,7 +53,9 @@ const PAGE=pageName();
 
 function withLang(path){
   if(LANG!=="en") return path;
-  return path+"?lang=en";
+  const hashIndex=path.indexOf("#");
+  if(hashIndex===-1) return path+"?lang=en";
+  return path.slice(0,hashIndex)+"?lang=en"+path.slice(hashIndex);
 }
 function switchHref(){
   const u=new URL(location.href);
@@ -213,9 +215,17 @@ function initReveal(){
   )].filter((el,i,arr)=>!el.closest("#gt-contact-root") && arr.indexOf(el)===i);
   els.forEach(el=>el.dataset.gtReveal="");
   document.documentElement.classList.add("gt-animate-ready");
+  if(window.matchMedia("(max-width: 767px)").matches){
+    els.forEach(el=>el.classList.add("gt-visible"));
+    return;
+  }
+  if(els[0]) els[0].classList.add("gt-visible");
   if(!("IntersectionObserver" in window)){els.forEach(el=>el.classList.add("gt-visible"));return;}
-  const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add("gt-visible");io.unobserve(e.target);}}),{threshold:.06,rootMargin:"0px 0px -5% 0px"});
+  const io=new IntersectionObserver(entries=>entries.forEach(e=>{
+    if(e.isIntersecting){e.target.classList.add("gt-visible");io.unobserve(e.target);}
+  }),{threshold:.04,rootMargin:"0px 0px -3% 0px"});
   els.forEach(el=>io.observe(el));
+  window.setTimeout(()=>els.forEach(el=>el.classList.add("gt-visible")),1200);
 }
 
 function syncLanguageLinks(){
@@ -277,6 +287,15 @@ function updateSeo(){
     const l=document.createElement("link");l.rel="alternate";l.hreflang=lang;l.href=url;l.dataset.gtHreflang="1";document.head.appendChild(l);
   });
   if(LANG==="en"&&data.title) document.title=data.title;
+  if(LANG==="en"&&data.description){
+    const d=document.querySelector('meta[name="description"]'); if(d) d.content=data.description;
+  }
+  if(LANG==="en"&&data.title){
+    const ogt=document.querySelector('meta[property="og:title"]'); if(ogt) ogt.content=data.title;
+  }
+  if(LANG==="en"&&data.description){
+    const ogd=document.querySelector('meta[property="og:description"]'); if(ogd) ogd.content=data.description;
+  }
 }
 
 applyStaticTranslation();
