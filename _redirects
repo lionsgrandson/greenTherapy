@@ -3,3 +3,6 @@
 /en/* /:splat?lang=en 301
 /gallery / 301
 /gallery.html / 301
+
+/retreat /retreat.html 200
+/treatments /treatments.html 200
