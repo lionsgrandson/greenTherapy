@@ -173,10 +173,10 @@ window.GT_COPY={
         "retreat.html-t28":"מחפשים טיפול בלי יום אירוח?",
         "retreat.html-t29":"אפשר גם לקבוע טיפול אישי בלבד עם מטפל/ת לפי סוג הטיפול והזמינות.",
         "retreat.html-t30":"לעמוד הטיפולים",
-        "retreat.html-t31":"פינה לזוגות: סדנת עיסוי פרטית",
-        "retreat.html-t32":"לא רק לקבל עיסוי — גם ללמוד איך להעניק אחד לשנייה מגע נעים ובטוח שאפשר לקחת הביתה.",
-        "retreat.html-t33":"בסדנה פרטית לזוגות לומדים עקרונות בסיסיים של מגע, לחץ, קצב ותנוחות נוחות. הסדנה מתקיימת בתיאום מראש וניתן לשלב אותה כחלק מהשהות במתחם.",
-        "retreat.html-t34":"מתאים במיוחד ליום זוגי, יום הולדת או חוויה משותפת שרוצים להפוך לאישית יותר.",
+        "retreat.html-t31":"סדנא חוויתית לעיסוי זוגי (פרטית ולקבוצות)",
+        "retreat.html-t32":"חוויה שמכניסה יותר רוגע, חיבור ואינטימיות, וגם נותנת לכם כלים פשוטים שאפשר לקחת הביתה ולהשתמש בהם ביום יום.",
+        "retreat.html-t33":"בסדנא לומדים טכניקות עיסוי פשוטות ונעימות ליום יום, איך לעבוד בקלילות בלי להתעייף, ואיך להשתמש במגע כדי לחזק את החיבור והתקשורת. אפשר גם לשלב טכניקות עיסוי עם שמן למי שרוצה להעמיק את החוויה.",
+        "retreat.html-t34":"מתאים לזוגות שרוצים זמן איכות מסוג אחר, וגם לקבוצות שמחפשות פעילות חוויתית, רגועה ומחברת.",
         "retreat.html-t35":"בדיקת זמינות לסדנת עיסוי זוגית",
         "retreat.html-t36":"המתחם הפרטי",
         "retreat.html-t37":"חוויה לזוגות"
@@ -185,7 +185,7 @@ window.GT_COPY={
         "retreat.html-a0":"המתחם הפרטי של Green Therapy",
         "retreat.html-a1":"אזור הספא במתחם Green Therapy",
         "retreat.html-a2":"המרחב הירוק של Green Therapy",
-        "retreat.html-a3":"סדנת עיסוי זוגית ב-Green Therapy"
+        "retreat.html-a3":"סדנא חוויתית לעיסוי זוגי ב-Green Therapy"
       }
     },
     en:{
@@ -221,10 +221,10 @@ window.GT_COPY={
         "retreat.html-t28":"Looking for a treatment without a retreat day?",
         "retreat.html-t29":"You can also book an individual treatment with a practitioner based on treatment type and availability.",
         "retreat.html-t30":"Explore Treatments",
-        "retreat.html-t31":"For Couples: Private Massage Workshop",
-        "retreat.html-t32":"Not only receive a massage — learn simple, comfortable ways to give each other relaxing touch you can take home with you.",
-        "retreat.html-t33":"In a private couples workshop, you learn basic principles of touch, pressure, rhythm and comfortable positioning. The workshop is arranged in advance and can be added to your retreat visit.",
-        "retreat.html-t34":"A good fit for a couples day, birthday or a shared experience you want to make more personal.",
+        "retreat.html-t31":"Experiential Couples Massage Workshop (Private or Groups)",
+        "retreat.html-t32":"A relaxed, connecting experience that gives you simple techniques you can take home and use in everyday life.",
+        "retreat.html-t33":"Learn simple everyday massage techniques, how to keep the experience light and comfortable without tiring yourself out, and how touch can support connection and communication. Oil-based techniques can also be included for those who want a deeper spa-style experience.",
+        "retreat.html-t34":"Suitable for couples looking for a different kind of quality time, and for groups looking for a calm, interactive and connecting activity.",
         "retreat.html-t35":"Check Couples Workshop Availability",
         "retreat.html-t36":"Private Retreat",
         "retreat.html-t37":"Couples Experience"
@@ -233,7 +233,7 @@ window.GT_COPY={
         "retreat.html-a0":"Green Therapy private retreat",
         "retreat.html-a1":"Green Therapy spa area",
         "retreat.html-a2":"Green Therapy private green setting",
-        "retreat.html-a3":"Private couples massage workshop at Green Therapy"
+        "retreat.html-a3":"Experiential couples massage workshop at Green Therapy"
       }
     }
   },
