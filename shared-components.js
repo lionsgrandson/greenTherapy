@@ -12,8 +12,8 @@ const MAP="https://share.google/hEvKhs5USb65ZEgi7";
 const STRINGS={
   he:{
     nav:[
-      ["index.html","דף הבית"],["retreat.html","הצימר"],["treatments.html","טיפולים"],
-      ["index.html#experiences","אירועי חברה"],["about.html","אודות"],["contact.html","צור קשר"]
+      ["index.html#experiences","אירועי חברה"],["index.html","דף הבית"],
+      ["retreat.html","הצימר"],["treatments.html","טיפולים"],["about.html","אודות"],["contact.html","צור קשר"]
     ],
     plan:"לתכנון אירוע", links:"קישורים", legal:"משפטי", contact:"צור קשר",
     privacy:"מדיניות פרטיות", terms:"תנאי שימוש", accessibility:"הצהרת נגישות",
@@ -25,8 +25,8 @@ const STRINGS={
   },
   en:{
     nav:[
-      ["index.html","Home"],["retreat.html","Private Retreat"],["treatments.html","Treatments"],
-      ["index.html#experiences","Corporate Events"],["about.html","About"],["contact.html","Contact"]
+      ["index.html#experiences","Corporate Events"],["index.html","Home"],
+      ["retreat.html","Private Retreat"],["treatments.html","Treatments"],["about.html","About"],["contact.html","Contact"]
     ],
     plan:"Plan an Event", links:"Links", legal:"Legal", contact:"Contact",
     privacy:"Privacy Policy", terms:"Terms of Use", accessibility:"Accessibility Statement",
