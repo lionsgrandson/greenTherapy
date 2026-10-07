@@ -876,3 +876,46 @@ window.GT_COPY["accessibility.html"]={
     }
   }
 })();
+
+// Alternative text for the full client photo collection.
+(function(){
+  const images={
+  "he": {
+    "client-photo-1c3d140a-38a4-4aff-8196-9fea60c15ae3": "עיסוי באירוע במתחם מוצל",
+    "client-photo-827ed1a7-ce8f-428f-91c1-20ac014453bf": "מטפלת במהלך עיסוי באירוע",
+    "client-photo-887e1d9b-94c2-49aa-b3b9-258f57aacf3c": "טיפול עיסוי במתחם אירוע",
+    "client-photo-95941eaf-fc13-49b4-a515-c9d66f1fdb6e": "מטפלת מצוות Green Therapy במהלך עיסוי",
+    "client-photo-fe5e6cfc-8689-4287-8189-7286edf4bb30": "טיפול עיסוי בשכיבה",
+    "client-photo-garden-massage-event": "מתחם עיסוי באירוע בגינה",
+    "client-photo-garden-treatment-tables": "מיטות טיפול בצל העצים באירוע",
+    "client-photo-outdoor-massage-team": "צוות מטפלים באירוע תחת כיפת השמיים",
+    "client-photo-seaside-massage-event": "מתחם עיסוי באירוע מול הים",
+    "client-photo-massage-workshop-guidance": "הדרכת עיסוי מעשית בסדנת Green Therapy",
+    "client-photo-massage-workshop-practice": "תרגול עיסוי בסדנת Green Therapy",
+    "client-photo-massage-workshop-hands-on": "לימוד טכניקות עיסוי בסדנה",
+    "client-photo-massage-workshop-demonstration": "הדגמת עיסוי למשתתף בסדנה",
+    "client-photo-massage-workshop-participants": "משתתפים בתרגול עיסוי מודרך"
+  },
+  "en": {
+    "client-photo-1c3d140a-38a4-4aff-8196-9fea60c15ae3": "Massage at an event in a shaded setting",
+    "client-photo-827ed1a7-ce8f-428f-91c1-20ac014453bf": "Practitioner giving a massage at an event",
+    "client-photo-887e1d9b-94c2-49aa-b3b9-258f57aacf3c": "Massage treatment at an event",
+    "client-photo-95941eaf-fc13-49b4-a515-c9d66f1fdb6e": "Green Therapy practitioner giving a massage",
+    "client-photo-fe5e6cfc-8689-4287-8189-7286edf4bb30": "Massage treatment on a treatment table",
+    "client-photo-garden-massage-event": "Massage area at a garden event",
+    "client-photo-garden-treatment-tables": "Treatment tables in the shade of trees at an event",
+    "client-photo-outdoor-massage-team": "Massage practitioners at an outdoor event",
+    "client-photo-seaside-massage-event": "Massage area at a seaside event",
+    "client-photo-massage-workshop-guidance": "Hands-on massage guidance at a Green Therapy workshop",
+    "client-photo-massage-workshop-practice": "Massage practice at a Green Therapy workshop",
+    "client-photo-massage-workshop-hands-on": "Learning massage techniques at a workshop",
+    "client-photo-massage-workshop-demonstration": "Demonstrating massage techniques to a workshop participant",
+    "client-photo-massage-workshop-participants": "Participants practicing massage with guidance"
+  }
+};
+  for(const page of Object.values(window.GT_COPY)){
+    for(const lang of ["he","en"]){
+      if(page[lang]) page[lang].alt={...page[lang].alt,...images[lang]};
+    }
+  }
+})();
