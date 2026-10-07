@@ -821,3 +821,58 @@ window.GT_COPY["accessibility.html"]={
     }
   }
 };
+
+// Shared labels for the supplied event photos and original review screenshots.
+(function(){
+  const photos={
+  "he": {
+    "text": {
+      "photos-events": "רגעים מהאירועים שלנו",
+      "photos-workshop": "מגע, למידה ותרגול משותף",
+      "photos-reviews": "המלצות מהסדנאות והאירועים",
+      "photos-reviews-intro": "צילומי המסך המקוריים של ההמלצות, בעברית.",
+      "photos-reviews-open": "לצפייה בצילומי ההמלצות"
+    },
+    "alt": {
+      "photo-massage-workshop-guidance": "הדרכת עיסוי מעשית בסדנת Green Therapy",
+      "photo-massage-workshop-practice": "תרגול עיסוי בסדנת Green Therapy",
+      "photo-massage-workshop-hands-on": "לימוד טכניקות עיסוי בסדנה",
+      "photo-garden-massage-event": "מתחם עיסוי באירוע בגינה",
+      "photo-garden-treatment-tables": "מיטות טיפול בצל העצים באירוע",
+      "photo-outdoor-massage-team": "צוות מטפלים באירוע תחת כיפת השמיים",
+      "photo-seaside-massage-event": "מתחם עיסוי באירוע מול הים",
+      "photo-workshop-review": "צילום מסך של המלצה על סדנת עיסוי בעברית",
+      "photo-corporate-event-review": "צילום מסך של המלצה מאירוע חברה בעברית",
+      "photo-garden-workshop-review": "צילום מסך של המלצות על סדנה בגינה בעברית"
+    }
+  },
+  "en": {
+    "text": {
+      "photos-events": "Moments from our events",
+      "photos-workshop": "Touch, learning and practice together",
+      "photos-reviews": "Workshop and event reviews",
+      "photos-reviews-intro": "Original screenshots of the reviews, in Hebrew.",
+      "photos-reviews-open": "View the review screenshots"
+    },
+    "alt": {
+      "photo-massage-workshop-guidance": "Hands-on massage guidance at a Green Therapy workshop",
+      "photo-massage-workshop-practice": "Massage practice at a Green Therapy workshop",
+      "photo-massage-workshop-hands-on": "Learning massage techniques at a workshop",
+      "photo-garden-massage-event": "Massage area at a garden event",
+      "photo-garden-treatment-tables": "Treatment tables in the shade of trees at an event",
+      "photo-outdoor-massage-team": "Massage practitioners at an outdoor event",
+      "photo-seaside-massage-event": "Massage area at a seaside event",
+      "photo-workshop-review": "Screenshot of a massage workshop review in Hebrew",
+      "photo-corporate-event-review": "Screenshot of a corporate event review in Hebrew",
+      "photo-garden-workshop-review": "Screenshot of garden workshop reviews in Hebrew"
+    }
+  }
+};
+  for(const page of Object.values(window.GT_COPY)){
+    for(const lang of ["he","en"]){
+      if(!page[lang]) continue;
+      page[lang].text={...page[lang].text,...photos[lang].text};
+      page[lang].alt={...page[lang].alt,...photos[lang].alt};
+    }
+  }
+})();

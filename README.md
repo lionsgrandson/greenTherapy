@@ -29,6 +29,12 @@ The site is published directly from the static files in the repository; `netlify
 
 The Python scripts under `scripts/` are legacy migration/release utilities from the earlier Stitch-based version. They are **not part of the Netlify build** and should not be run against the restructured pages without reviewing/updating them first, because several of them rewrite page markup and navigation.
 
+## Supplied photography
+
+Website copies of selected photos and public review screenshots from `images/` live in `assets/gallery/`. Originals remain untouched. `assets/gallery/manifest.json` records each source and its output dimensions. Run `python scripts/prepare_site_images.py` (requires Pillow) to regenerate these WebP copies; this utility does not rewrite pages.
+
+Photos are placed by subject across the homepage, spa, workshops, personal treatments, retreat workshop, about, and contact pages. Reviews remain in their original Hebrew in expandable sections. Private WhatsApp conversations are not used in these sections.
+
 ## October 2026 restructure
 
 The primary hierarchy is now:
