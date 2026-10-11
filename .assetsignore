@@ -1,0 +1,15 @@
+# Source and deployment files are not public website assets
+.git/
+.github/
+scripts/
+cloudflare/
+node_modules/
+wrangler.jsonc
+wrangler.toml
+netlify.toml
+DEPLOYMENT.md
+README.md
+.gitignore
+.assetsignore
+translations-he-en.json
+_redirects
