@@ -13,7 +13,7 @@ const STRINGS={
   he:{
     nav:[
       ["index.html#experiences","אירועי חברה"],["index.html","דף הבית"],
-      ["retreat.html","הצימר"],["treatments.html","טיפולים"],["about.html","אודות"],["contact.html","צור קשר"]
+      ["retreat.html","המתחמים שלנו"],["treatments.html","טיפולים"],["about.html","אודות"],["contact.html","צור קשר"]
     ],
     plan:"לתכנון אירוע", links:"קישורים", legal:"משפטי", contact:"צור קשר",
     privacy:"מדיניות פרטיות", terms:"תנאי שימוש", accessibility:"הצהרת נגישות",
@@ -26,7 +26,7 @@ const STRINGS={
   en:{
     nav:[
       ["index.html#experiences","Corporate Events"],["index.html","Home"],
-      ["retreat.html","Private Retreat"],["treatments.html","Treatments"],["about.html","About"],["contact.html","Contact"]
+      ["retreat.html","Our Venues"],["treatments.html","Treatments"],["about.html","About"],["contact.html","Contact"]
     ],
     plan:"Plan an Event", links:"Links", legal:"Legal", contact:"Contact",
     privacy:"Privacy Policy", terms:"Terms of Use", accessibility:"Accessibility Statement",
