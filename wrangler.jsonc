@@ -1,5 +1,5 @@
 {
-  "name": "green-therapy",
+  "name": "greentherapy",
   "main": "cloudflare/worker.js",
   "compatibility_date": "2026-10-11",
   "assets": {
