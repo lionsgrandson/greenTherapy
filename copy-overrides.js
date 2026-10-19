@@ -925,3 +925,34 @@ window.GT_COPY["accessibility.html"]={
 ;(()=>{const altText={he:{"gt-ice-photo":"משתתפת באמבטיית קרח עם מדריך באירוע Green Therapy","gt-smoothie-original":"איור מקורי של שייקים וקערות סופר פוד"},en:{"gt-ice-photo":"A guest in an ice bath with an instructor at a Green Therapy event","gt-smoothie-original":"Original illustration of smoothies and superfood bowls"}};for(const page of ["index.html","ice-bath.html","healthy-bar.html"]){for(const lang of ["he","en"]){const p=window.GT_COPY?.[page]?.[lang];if(p)p.alt={...(p.alt||{}),...altText[lang]};}}})();
 
 ;(()=>{const textByLanguage={he:{"index.html-t223":"שיעורי יוגה באירועים, מדיטציה, מיינדפולנס, Sound Healing והרצאות בהתאמה ליום חברה או כנס.","index.html-t239":"עיסויים, שיעורי יוגה וסדנאות גוף־נפש, מתחמים מעוצבים ורגעים מהאירועים שלנו."},en:{"index.html-t223":"Yoga classes at corporate events, meditation, mindfulness, Sound Healing and talks tailored to team days and conferences.","index.html-t239":"Massage treatments, group yoga and mind-body workshops, styled event spaces and highlights from our events."}};const alt={he:"מדריכת יוגה וקבוצת משתתפים בשיעור יוגה באירוע",en:"Yoga instructor guiding a group session at a Green Therapy event"};for(const lang of ["he","en"]){const c=window.GT_COPY?.["index.html"]?.[lang];if(c)c.text={...(c.text||{}),...textByLanguage[lang]};for(const page of ["index.html","workshops.html"]){const v=window.GT_COPY?.[page]?.[lang];if(v)v.alt={...(v.alt||{}),"gt-yoga-event":alt[lang]};}}})();
+
+
+;(()=>{
+  // Green Therapy event services, Hebrew and English: group yoga is available for events.
+  const updates={
+    "contact.html":{
+      he:{"contact.html-t203":"מתחמי עיסוי, אמבטיות קרח, שיעורי יוגה, סדנאות ובר שייקים."},
+      en:{"contact.html-t203":"Massage stations, ice baths, group yoga, workshops and healthy bars."}
+    },
+    "retreat.html":{
+      he:{
+        "retreat.html-t6":"מתחם בית דגן מתאים לאירועים עד 35 איש, ימי גיבוש ומפגשים פרטיים, וגם להשכרה זוגית בתיאום מראש. ניתן לשלב עמדות עיסוי, שיעורי יוגה ופעילויות בריאות בהתאם לצורך ולזמינות.",
+        "retreat.html-t16":"ניתן לשלב עמדות עיסוי, שיעורי יוגה, אמבטיות קרח וסדנאות בריאות לפי אופי האירוע והזמינות, בתיאום מראש.",
+        "gt-venue-info":"לאירועים וימי גיבוש, עם אפשרות להשכרה זוגית. ניתן להוסיף עמדות עיסוי, שיעורי יוגה וטיפולים לפי תיאום וזמינות."
+      },
+      en:{
+        "retreat.html-t6":"The Beit Dagan venue hosts events for up to 35 guests, team days and private gatherings, and is available for couples bookings by arrangement. Massage stations, yoga classes and wellness activities can be included, subject to availability.",
+        "retreat.html-t16":"Massage stations, group yoga classes, guided ice baths and wellness workshops can be arranged for your event, subject to availability.",
+        "gt-venue-info":"For events and team days, with optional couples bookings, massage stations, group yoga classes and spa treatments by arrangement."
+      }
+    }
+  };
+  for(const [page,langs] of Object.entries(updates)){
+    const pageCopy=window.GT_COPY?.[page];
+    if(!pageCopy)continue;
+    for(const [lang,strings] of Object.entries(langs)){
+      if(!pageCopy[lang])continue;
+      pageCopy[lang].text={...(pageCopy[lang].text||{}),...strings};
+    }
+  }
+})();
