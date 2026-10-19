@@ -958,3 +958,22 @@ window.GT_COPY["accessibility.html"]={
 })();
 
 ;(()=>{const updates={"he":{"text":{"gt-venues-intro":"ל-Green Therapy מתחם אירועים בבית דגן עד 35 איש, לצד מתחם אירועים גדול נוסף. לכל מתחם אופי משלו, ונשמח לעזור לכם לבחור את המקום המתאים לאירוע.","gt-upcoming-title":"מתחם האירועים הגדול","gt-upcoming-info":"מתחם מקורה הכולל אזורי ישיבה, שולחנות ואזור אירוח. לפרטים על המיקום, התאמה לאירוע וזמינות, צרו קשר.","gt-large-contact":"בירור פרטים וזמינות","gt-large-gallery-heading":"עוד תמונות מהמתחם הגדול","gt-beit-dagan-gallery-heading":"עוד תמונות ממתחם בית דגן"},"alt":{"gt-large-photo-overview":"מבט רחב על מתחם האירועים הגדול בשעות הערב, עם פינות ישיבה תחת קירוי","gt-large-photo-seating":"פינת הבר והישיבה לאורך צד מתחם האירועים המקורה","gt-large-photo-tables":"שולחנות גבוהים ואזורי ישיבה במתחם הגדול","gt-large-photo-evening":"תאורת ערב, שולחנות ופינות ישיבה במתחם האירועים הגדול"}},"en":{"text":{"gt-venues-intro":"Green Therapy offers an event venue in Beit Dagan for up to 35 guests, as well as another larger event venue. Each space has its own atmosphere; contact us to find the best fit for your event.","gt-upcoming-title":"Larger Event Venue","gt-upcoming-info":"A covered venue with seating areas, tables and space for gathering. Contact us to confirm the location, suitability and availability.","gt-large-contact":"Ask About Details & Availability","gt-large-gallery-heading":"More Photos of the Larger Venue","gt-beit-dagan-gallery-heading":"More Photos of the Beit Dagan Venue"},"alt":{"gt-large-photo-overview":"Wide view of the larger covered event venue in the evening","gt-large-photo-seating":"Lounge seating and refreshments counter along the covered venue","gt-large-photo-tables":"High tables and lounge seating in the larger event venue","gt-large-photo-evening":"Larger event venue with evening lighting, tables and seating"}}};const page=window.GT_COPY?.['retreat.html'];if(!page)return;for(const lang of ['he','en']){const target=page[lang];if(!target)continue;target.text={...(target.text||{}),...updates[lang].text};target.alt={...(target.alt||{}),...updates[lang].alt};}})();
+
+;(()=>{
+  const alts={
+    he:{
+      "gt-contact-large-venue":"מתחם האירועים הגדול, אזורי ישיבה ושולחנות תחת קירוי בשעות הערב",
+      "gt-treatments-hero":"אורחת נהנית מטיפול עיסוי באירוע Green Therapy"
+    },
+    en:{
+      "gt-contact-large-venue":"The larger covered event venue with seating and tables in the evening",
+      "gt-treatments-hero":"Guest enjoying a massage treatment at a Green Therapy event"
+    }
+  };
+  for(const page of ["contact.html","treatments.html"]){
+    for(const lang of ["he","en"]){
+      const copy=window.GT_COPY?.[page]?.[lang];
+      if(copy)copy.alt={...(copy.alt||{}),...alts[lang]};
+    }
+  }
+})();

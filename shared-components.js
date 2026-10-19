@@ -328,6 +328,51 @@ function initContextualLinks(){
     if(msg) el.href=WA+"?text="+encodeURIComponent(msg);
   });
 }
+
+// Keep in-page navigation accurate when React renders the sticky header after
+// the browser's initial fragment scroll, especially on mobile.
+function initHashAnchorNavigation(){
+  const root=document.documentElement;
+  const header=document.getElementById("gt-header-root");
+  const headerOffset=()=>Math.ceil((header?.getBoundingClientRect().height||0)+16);
+  const updateOffset=()=>root.style.setProperty("--gt-header-anchor-offset",headerOffset()+"px");
+  const alignToHash=()=>{
+    if(!location.hash)return;
+    let id;
+    try{id=decodeURIComponent(location.hash.slice(1));}catch{return;}
+    const target=document.getElementById(id);
+    if(!target)return;
+    updateOffset();
+    const top=Math.max(0,window.scrollY+target.getBoundingClientRect().top-headerOffset());
+    if(Math.abs(window.scrollY-top)>3)window.scrollTo({top,behavior:"instant"});
+  };
+  const scheduleAlign=()=>window.requestAnimationFrame(
+    ()=>window.requestAnimationFrame(alignToHash)
+  );
+  updateOffset();
+  if(header&&typeof ResizeObserver!=="undefined"){
+    let firstResize=true;
+    new ResizeObserver(()=>{
+      updateOffset();
+      if(firstResize&&location.hash){
+        firstResize=false;
+        scheduleAlign();
+      }
+    }).observe(header);
+  }
+  window.addEventListener("resize",updateOffset,{passive:true});
+  window.addEventListener("hashchange",scheduleAlign);
+  if(location.hash){
+    const started=performance.now();
+    scheduleAlign();
+    if(document.readyState!=="complete"){
+      window.addEventListener("load",()=>{
+        if(performance.now()-started<2500)scheduleAlign();
+      },{once:true});
+    }
+  }
+}
+
 applyStaticTranslation();
 updateSeo();
 document.documentElement.classList.add("gt-page-enter");
@@ -339,4 +384,4 @@ if(headerRoot) createRoot(headerRoot).render(h(Header));
 if(footerRoot) createRoot(footerRoot).render(h(Footer));
 if(contactRoot) createRoot(contactRoot).render(h(ContactSection));
 const waRoot=document.createElement("div");waRoot.id="gt-wa-root";document.body.appendChild(waRoot);createRoot(waRoot).render(h(FloatingWhatsApp));
-syncLanguageLinks();initContextualLinks();initFaq();initReveal();initLazy();initMaterialIconFallback();
+syncLanguageLinks();initContextualLinks();initFaq();initReveal();initLazy();initMaterialIconFallback();initHashAnchorNavigation();
