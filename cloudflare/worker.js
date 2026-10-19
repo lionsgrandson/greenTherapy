@@ -27,7 +27,10 @@ export default {
 
     const rewrites = { "/retreat": "/retreat.html", "/treatments": "/treatments.html" };
     const target = new URL(request.url);
-    if (rewrites[path]) target.pathname = rewrites[path];
+    // Wrangler's html_handling is "none", so explicitly map the domain root.
+    // Without this, /index.html works but / can return an asset 404.
+    if (path === "/") target.pathname = "/index.html";
+    else if (rewrites[path]) target.pathname = rewrites[path];
     const response = await env.ASSETS.fetch(new Request(target, request));
     const headers = new Headers(response.headers);
     for (const [name, value] of Object.entries(SECURITY_HEADERS)) headers.set(name, value);
