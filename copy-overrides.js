@@ -376,9 +376,9 @@ window.GT_COPY={
       "about.html-t1":"אנחנו יוצרים רגעים שאנשים שמחים לקחת איתם",
       "about.html-t2":"Green Therapy מחברת בין חוויות לאירועי חברה, מתחם אירועים בבית דגן וטיפולים אישיים — עם דגש על מקצועיות, אנשים ותפעול מסודר."
     }},
-    en:{title:"About Green Therapy | Events, Event Venue & Treatments",description:"Green Therapy brings together corporate event experiences, a event venue in Beit Dagan and personal massage and bodywork treatments.",text:{
+    en:{title:"About Green Therapy | Events, Event Venue & Treatments",description:"Green Therapy brings together corporate event experiences, an event venue in Beit Dagan and personal massage and bodywork treatments.",text:{
       "about.html-t1":"We Create the Moments People Are Glad They Experienced",
-      "about.html-t2":"Green Therapy brings together corporate event experiences, a event setting in Beit Dagan and personal treatments — with a focus on people, professionalism and organised delivery."
+      "about.html-t2":"Green Therapy brings together corporate event experiences, an event venue in Beit Dagan and personal treatments — with a focus on people, professionalism and organised delivery."
     }}
   },
   "contact.html":{
@@ -386,7 +386,7 @@ window.GT_COPY={
       "contact.html-t1":"אירוע חברה, יום במתחם האירועים או טיפול?",
       "contact.html-t2":"ספרו לנו מה אתם מחפשים, מתי וכמה אנשים מגיעים. נחזור אליכם עם האפשרות המתאימה ועם זמינות."
     }},
-    en:{title:"Contact Green Therapy | Events, Retreat & Treatments",description:"Contact Green Therapy to plan a company event, check event venue availability or book a treatment.",text:{
+    en:{title:"Contact Green Therapy | Events, Venues & Treatments",description:"Contact Green Therapy to plan a company event, check event venue availability or book a treatment.",text:{
       "contact.html-t1":"Company Event, Event Venue or Treatment?",
       "contact.html-t2":"Tell us what you are looking for, your preferred date and how many people are coming. We’ll come back with the relevant options and availability."
     }}
@@ -640,7 +640,7 @@ Object.assign(window.GT_COPY["about.html"].he.text,{
 });
 Object.assign(window.GT_COPY["about.html"].en.text,{
   "about.html-t200":"We Create the Moments People Are Glad They Experienced",
-  "about.html-t201":"Green Therapy brings together corporate event experiences, a event setting in Beit Dagan and personal treatments — with a focus on people, professionalism and organised delivery.",
+  "about.html-t201":"Green Therapy brings together corporate event experiences, an event venue in Beit Dagan and personal treatments — with a focus on people, professionalism and organised delivery.",
   "about.html-t202":"Three Sides of the Same Green Therapy",
   "about.html-t203":"Corporate Events",
   "about.html-t204":"Massage areas, ice baths, workshops and healthy bars delivered to the event.",
@@ -652,7 +652,7 @@ Object.assign(window.GT_COPY["about.html"].en.text,{
   "about.html-t210":"Professional Without Feeling Corporate",
   "about.html-t211":"Clear communication, organised delivery and a team that works well with people.",
   "about.html-t212":"Tailored Rather Than Templated",
-  "about.html-t213":"Event, retreat visit or treatment — each experience is adapted to the people and purpose.",
+  "about.html-t213":"Event, venue booking or treatment — each experience is adapted to the people and purpose.",
   "about.html-t214":"Experience Over Buzzwords",
   "about.html-t215":"We focus on creating something people genuinely enjoy.",
   "about.html-t216":"Calm Requires Good Preparation",
@@ -676,7 +676,7 @@ Object.assign(window.GT_COPY["contact.html"].he.text,{
 });
 Object.assign(window.GT_COPY["contact.html"].en.text,{
   "contact.html-t200":"Let’s Build Something That Fits",
-  "contact.html-t201":"Company event, event venue visit or treatment — you do not need to know the exact package before getting in touch.",
+  "contact.html-t201":"Company event, venue booking or treatment — you do not need to know the exact package before getting in touch.",
   "contact.html-t202":"Corporate Events",
   "contact.html-t203":"Massage, ice baths, workshops and healthy bars.",
   "contact.html-t204":"Event Venue",
