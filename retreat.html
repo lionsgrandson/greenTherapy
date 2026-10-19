@@ -67,23 +67,45 @@ tailwind.config={theme:{extend:{colors:{forest:"#1d3326",green:"#2d5a43",sage:"#
   </div>
 </section>
 
-<section class="py-14 md:py-20 bg-[#edf4ef]" id="venues"><div class="max-w-7xl mx-auto px-4 md:px-8">
-<h2 class="text-3xl md:text-5xl font-extrabold text-forest" data-i18n="gt-venues-title">המתחמים שלנו</h2>
-<p class="mt-4 text-lg leading-8 text-black/65" data-i18n="gt-venues-intro">מתחם האירועים בבית דגן מתאים לעד 35 משתתפים וניתן להזמין אותו גם לזוג בתיאום מראש. מתחם גדול נוסף יוצג בהמשך.</p>
-<div class="grid lg:grid-cols-3 gap-5 mt-9">
-<article class="lg:col-span-2 rounded-[2rem] bg-white overflow-hidden border border-green/10">
-<img src="assets/client/venue-courtyard.jpg" alt="אזור החצר במתחם בית דגן" data-i18n-alt="gt-venue-courtyard" class="w-full h-56 md:h-80 object-cover" loading="lazy"/>
-<div class="p-7"><h3 class="text-2xl md:text-3xl font-extrabold text-forest" data-i18n="gt-venue-name">מתחם בית דגן | עד 35 איש</h3>
-<p class="mt-3 leading-7 text-black/65" data-i18n="gt-venue-info">לאירועים וימי גיבוש, עם אפשרות להשכרה זוגית. ניתן להוסיף עמדות עיסוי, שיעורי יוגה וטיפולים לפי תיאום וזמינות.</p></div></article>
-<article class="rounded-[2rem] bg-white border border-green/10 p-8 flex flex-col justify-center">
-<span class="material-symbols-outlined text-green text-4xl">add_location_alt</span>
-<h3 class="mt-5 text-2xl font-extrabold text-forest" data-i18n="gt-upcoming-title">מתחם אירועים גדול נוסף</h3>
-<p class="mt-3 leading-7 text-black/65" data-i18n="gt-upcoming-info">תמונות ופרטים יפורסמו בקרוב.</p></article></div>
-<div class="grid sm:grid-cols-3 gap-4 mt-5">
-<img src="assets/client/venue-garden-seating.jpg" alt="פינת ישיבה במתחם בית דגן" data-i18n-alt="gt-venue-seating" class="rounded-[1.5rem] w-full h-56 object-cover" loading="lazy"/>
-<img src="assets/client/venue-treatment-room.jpg" alt="חדר הטיפולים בבית דגן" data-i18n-alt="gt-venue-room" class="rounded-[1.5rem] w-full h-56 object-cover" loading="lazy"/>
-<img src="assets/client/venue-sauna.jpg" alt="סאונה במתחם" data-i18n-alt="gt-venue-sauna" class="rounded-[1.5rem] w-full h-56 object-cover" loading="lazy"/>
-</div></div></section>
+<section class="py-14 md:py-20 bg-[#edf4ef]" id="venues">
+  <div class="max-w-7xl mx-auto px-4 md:px-8">
+    <h2 class="text-3xl md:text-5xl font-extrabold text-forest" data-i18n="gt-venues-title">המתחמים שלנו</h2>
+    <p class="mt-4 text-lg leading-8 text-black/65 max-w-4xl" data-i18n="gt-venues-intro">ל-Green Therapy מתחם אירועים בבית דגן עד 35 איש, לצד מתחם אירועים גדול נוסף. לכל מתחם אופי משלו, ונשמח לעזור לכם לבחור את המקום המתאים לאירוע.</p>
+    <div class="grid lg:grid-cols-2 gap-5 mt-9 items-stretch">
+      <article class="rounded-[2rem] bg-white overflow-hidden border border-green/10 flex flex-col">
+        <img src="assets/client/venue-courtyard.jpg" alt="החצר המקורה במתחם בית דגן" data-i18n-alt="gt-venue-courtyard" class="w-full h-56 md:h-80 object-cover" loading="lazy" decoding="async"/>
+        <div class="p-7">
+          <h3 class="text-2xl md:text-3xl font-extrabold text-forest" data-i18n="gt-venue-name">מתחם בית דגן | עד 35 איש</h3>
+          <p class="mt-3 leading-7 text-black/65" data-i18n="gt-venue-info">לאירועים וימי גיבוש, עם אפשרות להשכרה זוגית. ניתן להוסיף עמדות עיסוי, שיעורי יוגה וטיפולים לפי תיאום וזמינות.</p>
+        </div>
+      </article>
+      <article class="rounded-[2rem] bg-white overflow-hidden border border-green/10 flex flex-col">
+        <img src="assets/client/venue-large-overview.webp" alt="מבט רחב על מתחם האירועים הגדול בשעות הערב, עם פינות ישיבה תחת קירוי" data-i18n-alt="gt-large-photo-overview" class="w-full h-56 md:h-80 object-cover" loading="lazy" decoding="async" width="1600" height="1200"/>
+        <div class="p-7">
+          <h3 class="text-2xl md:text-3xl font-extrabold text-forest" data-i18n="gt-upcoming-title">מתחם האירועים הגדול</h3>
+          <p class="mt-3 leading-7 text-black/65" data-i18n="gt-upcoming-info">מתחם מקורה הכולל אזורי ישיבה, שולחנות ואזור אירוח. לפרטים על המיקום, התאמה לאירוע וזמינות, צרו קשר.</p>
+          <a href="contact.html" class="inline-flex mt-5 items-center justify-center rounded-full px-6 py-3 bg-forest text-white font-bold hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2" data-i18n="gt-large-contact">בירור פרטים וזמינות</a>
+        </div>
+      </article>
+    </div>
+    <div class="mt-9">
+      <h3 class="text-xl md:text-2xl font-bold text-forest" data-i18n="gt-large-gallery-heading">עוד תמונות מהמתחם הגדול</h3>
+      <div class="grid sm:grid-cols-3 gap-4 mt-4">
+        <img src="assets/client/venue-large-seating.webp" alt="פינת הבר והישיבה לאורך צד מתחם האירועים המקורה" data-i18n-alt="gt-large-photo-seating" class="rounded-[1.5rem] w-full h-64 md:h-72 object-cover" width="1200" height="1600" loading="lazy" decoding="async"/>
+        <img src="assets/client/venue-large-event-tables.webp" alt="שולחנות גבוהים ואזורי ישיבה במתחם הגדול" data-i18n-alt="gt-large-photo-tables" class="rounded-[1.5rem] w-full h-64 md:h-72 object-cover" width="1200" height="1600" loading="lazy" decoding="async"/>
+        <img src="assets/client/venue-large-evening.webp" alt="תאורת ערב, שולחנות ופינות ישיבה במתחם האירועים הגדול" data-i18n-alt="gt-large-photo-evening" class="rounded-[1.5rem] w-full h-64 md:h-72 object-cover" width="896" height="1195" loading="lazy" decoding="async"/>
+      </div>
+    </div>
+    <div class="mt-10">
+      <h3 class="text-xl md:text-2xl font-bold text-forest" data-i18n="gt-beit-dagan-gallery-heading">עוד תמונות ממתחם בית דגן</h3>
+      <div class="grid sm:grid-cols-3 gap-4 mt-4">
+        <img src="assets/client/venue-garden-seating.jpg" alt="פינת ישיבה במתחם בית דגן" data-i18n-alt="gt-venue-seating" class="rounded-[1.5rem] w-full h-56 object-cover" loading="lazy" decoding="async"/>
+        <img src="assets/client/venue-treatment-room.jpg" alt="חדר הטיפולים בבית דגן" data-i18n-alt="gt-venue-room" class="rounded-[1.5rem] w-full h-56 object-cover" loading="lazy" decoding="async"/>
+        <img src="assets/client/venue-sauna.jpg" alt="סאונה במתחם בית דגן" data-i18n-alt="gt-venue-sauna" class="rounded-[1.5rem] w-full h-56 object-cover" loading="lazy" decoding="async"/>
+      </div>
+    </div>
+  </div>
+</section>
 <section class="py-16 md:py-24" id="spa-addons">
   <div class="max-w-7xl mx-auto px-4 md:px-8">
     <div class="grid lg:grid-cols-[.8fr_1.2fr] gap-10 items-start">
