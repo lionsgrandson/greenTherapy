@@ -27,7 +27,7 @@ window.GT_COPY={
         "index.html-t220":"אנרגיה, אתגר וחוויה קבוצתית עם אמבטיות ייעודיות והדרכה מקצועית לאורך הפעילות.",
         "index.html-t221":"לאמבטיות הקרח",
         "index.html-t222":"סדנאות גוף־נפש והרצאות",
-        "index.html-t223":"יוגה, מדיטציה, מיינדפולנס, Sound Healing והרצאות שאפשר לשלב בתוך יום חברה או כנס.",
+        "index.html-t223":"שיעורי יוגה באירועים, מדיטציה, מיינדפולנס, Sound Healing והרצאות בהתאמה ליום חברה או כנס.",
         "index.html-t224":"לסדנאות ולהרצאות",
         "index.html-t225":"בר שייקים ובריאות",
         "index.html-t226":"שייקים טבעיים, פירות וקערות סופר־פוד בעמדה צבעונית שמוכנה במקום.",
@@ -43,7 +43,7 @@ window.GT_COPY={
         "index.html-t236":"אתם לא צריכים לנהל את המתחם",
         "index.html-t237":"אנחנו מגיעים כדי להפעיל אותו.",
         "index.html-t238":"כך זה נראה באירוע",
-        "index.html-t239":"מיטות טיפול, מטפלות ומטפלים, מתחמים מעוצבים ורגעים מהאירועים שלנו.",
+        "index.html-t239":"עיסויים, שיעורי יוגה וסדנאות גוף־נפש, מתחמים מעוצבים ורגעים מהאירועים שלנו.",
         "index.html-t240":"מה לקוחות כתבו אחרי האירוע",
         "index.html-t241":"הודעות אמיתיות שקיבלנו אחרי אירועי Green Therapy.",
         "index.html-t242":"מבסוטים לאללה, היו תגובות חמות. תודה רבה על הכל. נדבר עוד באירוע הבא 😉",
@@ -52,9 +52,9 @@ window.GT_COPY={
         "index.html-t245":"פידבק מלקוח/ה לאחר אירוע",
         "index.html-t246":"היה מעולה ממש. פידבקים מעולים על המטפלות והיחס. תודה רבה 🙏",
         "index.html-t247":"פידבק מלקוח/ה לאחר אירוע",
-        "index.html-t248":"מחפשים חוויה פרטית יותר?",
-        "index.html-t249":"לצד אירועי החברה, Green Therapy מציעה גם מתחם פרטי בבית דגן וטיפולים אישיים שאפשר לקבוע מראש.",
-        "index.html-t250":"הצימר והמתחם הפרטי",
+        "index.html-t248":"מחפשים מתחם לאירוע שלכם?",
+        "index.html-t249":"לצד אירועי החברה, Green Therapy מציעה גם מתחם אירועים בבית דגן וטיפולים אישיים שאפשר לקבוע מראש.",
+        "index.html-t250":"מתחם האירועים בבית דגן",
         "index.html-t251":"אירוח אינטימי עם אפשרות להוסיף חוויית ספא.",
         "index.html-t252":"לפרטים על המתחם",
         "index.html-t253":"טיפולים אישיים",
@@ -123,8 +123,8 @@ window.GT_COPY={
         "index.html-t247":"Client feedback after an event",
         "index.html-t248":"Looking for something more private?",
         "index.html-t249":"Alongside corporate events, Green Therapy also offers a private space in Beit Dagan and personal treatments that can be booked in advance.",
-        "index.html-t250":"Private Retreat",
-        "index.html-t251":"An intimate private setting with the option to add a spa experience.",
+        "index.html-t250":"Event Venue",
+        "index.html-t251":"An intimate event setting with the option to add a spa experience.",
         "index.html-t252":"Explore the Retreat",
         "index.html-t253":"Personal Treatments",
         "index.html-t254":"Massage and focused treatments, with practitioners matched to the treatment and availability.",
@@ -141,11 +141,11 @@ window.GT_COPY={
   },
   "retreat.html":{
     he:{
-      title:"הצימר והמתחם הפרטי של Green Therapy | בית דגן",
+      title:"המתחמים שלנו | Green Therapy | בית דגן",
       description:"מתחם Green Therapy הפרטי בבית דגן ליום זוגי, קבוצה קטנה או ריטריט, עם סאונה, ג׳קוזי ואמבטיית קרח ואפשרות להוסיף חוויית ספא בתיאום מראש.",
       text:{
         "retreat.html-t0":"דלגו לתוכן",
-        "retreat.html-t1":"הצימר והמתחם הפרטי של Green Therapy",
+        "retreat.html-t1":"המתחמים שלנו | Green Therapy",
         "retreat.html-t2":"מקום אינטימי בבית דגן שבו אפשר לעצור, לנוח ולהוסיף חוויית ספא לפי מה שמתאים לכם.",
         "retreat.html-t3":"בדיקת זמינות",
         "retreat.html-t4":"הוסיפו חוויית ספא",
@@ -178,29 +178,29 @@ window.GT_COPY={
         "retreat.html-t33":"בסדנא לומדים טכניקות עיסוי פשוטות ונעימות ליום יום, איך לעבוד בקלילות בלי להתעייף, ואיך להשתמש במגע כדי לחזק את החיבור והתקשורת. אפשר גם לשלב טכניקות עיסוי עם שמן למי שרוצה להעמיק את החוויה.",
         "retreat.html-t34":"מתאים לזוגות שרוצים זמן איכות מסוג אחר, וגם לקבוצות שמחפשות פעילות חוויתית, רגועה ומחברת.",
         "retreat.html-t35":"בדיקת זמינות לסדנת עיסוי זוגית",
-        "retreat.html-t36":"המתחם הפרטי",
+        "retreat.html-t36":"מתחם האירועים",
         "retreat.html-t37":"חוויה לזוגות"
       },
       alt:{
-        "retreat.html-a0":"המתחם הפרטי של Green Therapy",
+        "retreat.html-a0":"מתחם האירועים של Green Therapy",
         "retreat.html-a1":"אזור הספא במתחם Green Therapy",
         "retreat.html-a2":"המרחב הירוק של Green Therapy",
         "retreat.html-a3":"סדנא חוויתית לעיסוי זוגי ב-Green Therapy"
       }
     },
     en:{
-      title:"Green Therapy Private Retreat | Beit Dagan",
+      title:"Green Therapy Event Venue | Beit Dagan",
       description:"A private Green Therapy setting in Beit Dagan with sauna, jacuzzi and ice bath, plus optional spa experiences arranged in advance.",
       text:{
         "retreat.html-t0":"Skip to content",
-        "retreat.html-t1":"Green Therapy Private Retreat",
+        "retreat.html-t1":"Green Therapy Event Venue",
         "retreat.html-t2":"An intimate setting in Beit Dagan where you can slow down, switch off and add a spa experience that fits your visit.",
         "retreat.html-t3":"Check Availability",
         "retreat.html-t4":"Add a Spa Experience",
         "retreat.html-t5":"A private experience at a different pace",
         "retreat.html-t6":"The space works for couples, small groups and intimate team days. Arrive to a quiet, green setting and shape the visit around the time and experience you want.",
         "retreat.html-t7":"Dry Sauna",
-        "retreat.html-t8":"A warm, comfortable part of the private retreat experience.",
+        "retreat.html-t8":"A warm, comfortable part of the event venue experience.",
         "retreat.html-t9":"Jacuzzi",
         "retreat.html-t10":"Time to slow down and enjoy the space without a packed schedule.",
         "retreat.html-t11":"Ice Bath",
@@ -226,11 +226,11 @@ window.GT_COPY={
         "retreat.html-t33":"Learn simple everyday massage techniques, how to keep the experience light and comfortable without tiring yourself out, and how touch can support connection and communication. Oil-based techniques can also be included for those who want a deeper spa-style experience.",
         "retreat.html-t34":"Suitable for couples looking for a different kind of quality time, and for groups looking for a calm, interactive and connecting activity.",
         "retreat.html-t35":"Check Couples Workshop Availability",
-        "retreat.html-t36":"Private Retreat",
+        "retreat.html-t36":"Event Venue",
         "retreat.html-t37":"Couples Experience"
       },
       alt:{
-        "retreat.html-a0":"Green Therapy private retreat",
+        "retreat.html-a0":"Green Therapy event venue",
         "retreat.html-a1":"Green Therapy spa area",
         "retreat.html-a2":"Green Therapy private green setting",
         "retreat.html-a3":"Experiential couples massage workshop at Green Therapy"
@@ -273,8 +273,8 @@ window.GT_COPY={
         "treatments.html-t31":"חשוב לדעת",
         "treatments.html-t32":"המידע באתר נועד להסביר את אפשרויות הטיפול ואינו ייעוץ רפואי. התאמת טיפול וטכניקות כמו דיקור או כוסות רוח נקבעת מול המטפל/ת ובהתאם להכשרה, למצב האישי ולשיקול מקצועי.",
         "treatments.html-t33":"רוצים לשלב טיפול ביום ספא פרטי?",
-        "treatments.html-t34":"אפשר לקבוע טיפול כחלק מביקור במתחם הפרטי של Green Therapy, בהתאם לזמינות.",
-        "treatments.html-t35":"לצימר ולמתחם הפרטי",
+        "treatments.html-t34":"אפשר לקבוע טיפול כחלק מביקור במתחם האירועים של Green Therapy, בהתאם לזמינות.",
+        "treatments.html-t35":"למתחמים שלנו",
         "treatments.html-t36":"טיפולים"
       },
       alt:{
@@ -318,8 +318,8 @@ window.GT_COPY={
         "treatments.html-t31":"Important to know",
         "treatments.html-t32":"Website information explains available treatment options and is not medical advice. Suitability for a treatment or technique such as needling or cupping is decided with the practitioner according to training, individual circumstances and professional judgement.",
         "treatments.html-t33":"Want to add treatment to a private spa day?",
-        "treatments.html-t34":"A treatment can also be booked as part of a visit to the Green Therapy private retreat, subject to availability.",
-        "treatments.html-t35":"Explore the Private Retreat",
+        "treatments.html-t34":"A treatment can also be booked as part of a visit to the Green Therapy event venue, subject to availability.",
+        "treatments.html-t35":"Explore the Event Venue",
         "treatments.html-t36":"Treatments"
       },
       alt:{
@@ -372,22 +372,22 @@ window.GT_COPY={
     }}
   },
   "about.html":{
-    he:{title:"אודות Green Therapy | אירועים, מתחם פרטי וטיפולים",description:"Green Therapy מחברת בין חוויות ספא ובריאות לאירועי חברה, מתחם פרטי בבית דגן וטיפולים אישיים.",text:{
+    he:{title:"אודות Green Therapy | אירועים, מתחם אירועים וטיפולים",description:"Green Therapy מחברת בין חוויות ספא ובריאות לאירועי חברה, מתחם אירועים בבית דגן וטיפולים אישיים.",text:{
       "about.html-t1":"אנחנו יוצרים רגעים שאנשים שמחים לקחת איתם",
-      "about.html-t2":"Green Therapy מחברת בין חוויות לאירועי חברה, מתחם פרטי בבית דגן וטיפולים אישיים — עם דגש על מקצועיות, אנשים ותפעול מסודר."
+      "about.html-t2":"Green Therapy מחברת בין חוויות לאירועי חברה, מתחם אירועים בבית דגן וטיפולים אישיים — עם דגש על מקצועיות, אנשים ותפעול מסודר."
     }},
-    en:{title:"About Green Therapy | Events, Private Retreat & Treatments",description:"Green Therapy brings together corporate event experiences, a private retreat in Beit Dagan and personal massage and bodywork treatments.",text:{
+    en:{title:"About Green Therapy | Events, Event Venue & Treatments",description:"Green Therapy brings together corporate event experiences, a event venue in Beit Dagan and personal massage and bodywork treatments.",text:{
       "about.html-t1":"We Create the Moments People Are Glad They Experienced",
-      "about.html-t2":"Green Therapy brings together corporate event experiences, a private setting in Beit Dagan and personal treatments — with a focus on people, professionalism and organised delivery."
+      "about.html-t2":"Green Therapy brings together corporate event experiences, a event setting in Beit Dagan and personal treatments — with a focus on people, professionalism and organised delivery."
     }}
   },
   "contact.html":{
-    he:{title:"צור קשר | Green Therapy",description:"צרו קשר עם Green Therapy לתכנון אירוע חברה, בדיקת זמינות במתחם הפרטי או קביעת טיפול.",text:{
-      "contact.html-t1":"אירוע חברה, יום במתחם הפרטי או טיפול?",
+    he:{title:"צור קשר | Green Therapy",description:"צרו קשר עם Green Therapy לתכנון אירוע חברה, בדיקת זמינות במתחם האירועים או קביעת טיפול.",text:{
+      "contact.html-t1":"אירוע חברה, יום במתחם האירועים או טיפול?",
       "contact.html-t2":"ספרו לנו מה אתם מחפשים, מתי וכמה אנשים מגיעים. נחזור אליכם עם האפשרות המתאימה ועם זמינות."
     }},
-    en:{title:"Contact Green Therapy | Events, Retreat & Treatments",description:"Contact Green Therapy to plan a company event, check private retreat availability or book a treatment.",text:{
-      "contact.html-t1":"Company Event, Private Retreat or Treatment?",
+    en:{title:"Contact Green Therapy | Events, Retreat & Treatments",description:"Contact Green Therapy to plan a company event, check event venue availability or book a treatment.",text:{
+      "contact.html-t1":"Company Event, Event Venue or Treatment?",
       "contact.html-t2":"Tell us what you are looking for, your preferred date and how many people are coming. We’ll come back with the relevant options and availability."
     }}
   }
@@ -617,11 +617,11 @@ Object.assign(window.GT_COPY["healthy-bar.html"].en.text,{
 
 Object.assign(window.GT_COPY["about.html"].he.text,{
   "about.html-t200":"אנחנו יוצרים רגעים שאנשים שמחים לקחת איתם",
-  "about.html-t201":"Green Therapy מחברת בין חוויות לאירועי חברה, מתחם פרטי בבית דגן וטיפולים אישיים — עם דגש על מקצועיות, אנשים ותפעול מסודר.",
+  "about.html-t201":"Green Therapy מחברת בין חוויות לאירועי חברה, מתחם אירועים בבית דגן וטיפולים אישיים — עם דגש על מקצועיות, אנשים ותפעול מסודר.",
   "about.html-t202":"שלושה צדדים לאותה Green Therapy",
   "about.html-t203":"אירועי חברה",
   "about.html-t204":"מתחמי עיסוי, אמבטיות קרח, סדנאות ובר שייקים שמגיעים עד האירוע.",
-  "about.html-t205":"המתחם הפרטי",
+  "about.html-t205":"מתחם האירועים",
   "about.html-t206":"מקום אינטימי בבית דגן לביקור פרטי עם אפשרות להוסיף חוויות ספא.",
   "about.html-t207":"טיפולים אישיים",
   "about.html-t208":"עיסויים וטיפולים ממוקדים בתיאום מטפל/ת לפי סוג הטיפול והזמינות.",
@@ -640,11 +640,11 @@ Object.assign(window.GT_COPY["about.html"].he.text,{
 });
 Object.assign(window.GT_COPY["about.html"].en.text,{
   "about.html-t200":"We Create the Moments People Are Glad They Experienced",
-  "about.html-t201":"Green Therapy brings together corporate event experiences, a private setting in Beit Dagan and personal treatments — with a focus on people, professionalism and organised delivery.",
+  "about.html-t201":"Green Therapy brings together corporate event experiences, a event setting in Beit Dagan and personal treatments — with a focus on people, professionalism and organised delivery.",
   "about.html-t202":"Three Sides of the Same Green Therapy",
   "about.html-t203":"Corporate Events",
   "about.html-t204":"Massage areas, ice baths, workshops and healthy bars delivered to the event.",
-  "about.html-t205":"Private Retreat",
+  "about.html-t205":"Event Venue",
   "about.html-t206":"An intimate setting in Beit Dagan with optional spa experiences.",
   "about.html-t207":"Personal Treatments",
   "about.html-t208":"Massage and focused treatments, matched to a practitioner according to treatment type and availability.",
@@ -664,10 +664,10 @@ Object.assign(window.GT_COPY["about.html"].en.text,{
 
 Object.assign(window.GT_COPY["contact.html"].he.text,{
   "contact.html-t200":"בואו נבנה משהו שמתאים לכם",
-  "contact.html-t201":"אירוע חברה, ביקור במתחם הפרטי או טיפול — לא צריך לדעת מראש בדיוק איזו חבילה אתם רוצים.",
+  "contact.html-t201":"אירוע חברה, ביקור במתחם האירועים או טיפול — לא צריך לדעת מראש בדיוק איזו חבילה אתם רוצים.",
   "contact.html-t202":"אירועי חברה",
   "contact.html-t203":"מתחמי עיסוי, קרח, סדנאות ובר שייקים.",
-  "contact.html-t204":"המתחם הפרטי",
+  "contact.html-t204":"מתחם האירועים",
   "contact.html-t205":"בדיקת זמינות ואפשרויות לחוויית ספא.",
   "contact.html-t206":"טיפולים",
   "contact.html-t207":"קביעת טיפול או בדיקת מטפל/ת לפי סוג הטיפול.",
@@ -676,10 +676,10 @@ Object.assign(window.GT_COPY["contact.html"].he.text,{
 });
 Object.assign(window.GT_COPY["contact.html"].en.text,{
   "contact.html-t200":"Let’s Build Something That Fits",
-  "contact.html-t201":"Company event, private retreat visit or treatment — you do not need to know the exact package before getting in touch.",
+  "contact.html-t201":"Company event, event venue visit or treatment — you do not need to know the exact package before getting in touch.",
   "contact.html-t202":"Corporate Events",
   "contact.html-t203":"Massage, ice baths, workshops and healthy bars.",
-  "contact.html-t204":"Private Retreat",
+  "contact.html-t204":"Event Venue",
   "contact.html-t205":"Check availability and optional spa experiences.",
   "contact.html-t206":"Treatments",
   "contact.html-t207":"Book a treatment or check practitioner availability by treatment type.",
@@ -923,3 +923,5 @@ window.GT_COPY["accessibility.html"]={
 ;(()=>{const changes={"index.html":{"he":{"index.html-t248":"המתחמים שלנו","index.html-t249":"לצד הפעילויות לאירועים, אנחנו מציעים מתחם בבית דגן לאירועים עד 35 איש, עם אפשרות להשכרה זוגית בתיאום מראש.","index.html-t250":"מתחם האירועים בבית דגן","index.html-t251":"מתחם אירועים עד 35 איש, עם השכרה זוגית לפי תיאום."},"en":{"index.html-t248":"Our Venues","index.html-t249":"Alongside our event services, we offer a venue in Beit Dagan for events of up to 35 guests and couples bookings by arrangement.","index.html-t250":"Beit Dagan Event Venue","index.html-t251":"For events of up to 35 guests, also available to couples by arrangement."}},"retreat.html":{"he":{"retreat.html-t1":"המתחמים שלנו","retreat.html-t2":"מתחם אירועים בבית דגן עד 35 איש, עם אפשרות להשכרה זוגית ועמדות עיסוי לאירועים בתיאום מראש.","retreat.html-t5":"מתחם אירועים בבית דגן עד 35 איש","retreat.html-t6":"מתחם בית דגן מתאים לאירועים עד 35 איש, ימי גיבוש ומפגשים פרטיים, וגם להשכרה זוגית בתיאום מראש. ניתן לשלב עמדות עיסוי ופעילויות בריאות בהתאם לצורך ולזמינות.","retreat.html-t15":"רוצים לשלב עמדות עיסוי באירוע?","retreat.html-t16":"ניתן לשלב עמדות עיסוי, אמבטיות קרח, סדנאות ופעילויות בריאות לפי אופי האירוע והזמינות, בתיאום מראש.","retreat.html-t18":"עמדות עיסוי לאירוע או טיפול זוגי ואישי, בהתאם לזמינות.","retreat.html-t28":"מחפשים טיפול אישי מחוץ לאירוע?","retreat.html-t36":"מתחם בית דגן","gt-venues-title":"המתחמים שלנו","gt-venues-intro":"מתחם האירועים בבית דגן מתאים לעד 35 משתתפים וניתן להזמין אותו גם לזוג בתיאום מראש. מתחם גדול נוסף יוצג בהמשך.","gt-venue-name":"מתחם בית דגן | עד 35 איש","gt-venue-info":"לאירועים וימי גיבוש, עם אפשרות להשכרה זוגית. ניתן להוסיף עמדות עיסוי וטיפולים לפי תיאום וזמינות.","gt-upcoming-title":"מתחם אירועים גדול נוסף","gt-upcoming-info":"תמונות ופרטים יפורסמו בקרוב."},"en":{"retreat.html-t1":"Our Venues","retreat.html-t2":"Our Beit Dagan event venue hosts up to 35 guests, with couples bookings and event massage stations available by arrangement.","retreat.html-t5":"Beit Dagan Event Venue · Up to 35 Guests","retreat.html-t6":"The Beit Dagan venue hosts events for up to 35 guests, team days and private gatherings, and is available for couples bookings. Add-on massage and wellness experiences depend on availability.","retreat.html-t15":"Add Massage Stations to Your Event","retreat.html-t16":"Massage stations, guided ice baths and wellness workshops can be arranged for your event, subject to availability.","retreat.html-t18":"Event massage stations or individual and couples treatments by arrangement.","retreat.html-t28":"Looking for Individual Treatment?","retreat.html-t36":"Beit Dagan Venue","gt-venues-title":"Our Venues","gt-venues-intro":"Our Beit Dagan event venue accommodates up to 35 guests and can also be booked by couples. A larger venue will be announced later.","gt-venue-name":"Beit Dagan Venue · Up to 35 Guests","gt-venue-info":"For events and team days, with optional couples bookings, massage stations and spa services by arrangement.","gt-upcoming-title":"Another Larger Event Venue","gt-upcoming-info":"Photos and details coming soon."}},"about.html":{"he":{"about.html-t205":"המתחמים שלנו","about.html-t206":"מתחם בית דגן לאירועים עד 35 משתתפים, עם אפשרות להשכרה זוגית."},"en":{"about.html-t205":"Our Venues","about.html-t206":"Our Beit Dagan event venue accommodates up to 35 guests, with couples bookings by arrangement."}},"treatments.html":{"he":{"treatments.html-t28":"חנה גינדי","treatments.html-t29":"מטפלת בעיסוי שוודי ובאבנים חמות. התיאום בהתאם לזמינות.","treatments.html-t30":"קביעת טיפול עם חנה","treatments.html-t33":"רוצים להוסיף עמדות עיסוי לאירוע?","treatments.html-t34":"אפשר להוסיף עמדות עיסוי לאירוע או לקבוע טיפול אישי בהתאם לזמינות.","treatments.html-t35":"למתחמים שלנו"},"en":{"treatments.html-t28":"Hanna Gindi","treatments.html-t29":"Swedish massage and hot stone massage therapist. Booking is subject to availability.","treatments.html-t30":"Book a Treatment with Hanna","treatments.html-t33":"Add Massage Stations to Your Event","treatments.html-t34":"Add massage stations to an event or book an individual treatment, subject to availability.","treatments.html-t35":"Explore Our Venues"}}};const alts={"gt-rooftop":["עמדות עיסוי מול הים","Massage tables overlooking the sea"],"gt-beach":["מתחם עיסוי בחוף הים","Massage stations at a beach event"],"gt-white-event":["מטפלות בעיסוי באירוע","Massage therapists at an event"],"gt-redhead":["משתתפת נהנית מעיסוי באירוע","Guest receiving an event massage"],"gt-ice":["אמבטיית קרח באירוע Green Therapy","Ice bath at a Green Therapy event"],"gt-yoga":["קבוצת משתתפים ביוגה","Participants at a yoga workshop"],"gt-bowl":["קערת פירות עם גרנולה","Healthy granola and fruit bowl"],"gt-alon":["אלון לצד תעודות ההכשרה שלו","Alon with massage certifications"],"gt-hanna":["חנה גינדי מעניקה עיסוי","Hanna Gindi performing massage"],"gt-venue-garden":["חצר בית דגן","Beit Dagan event garden"],"gt-venue-tub":["ג׳קוזי בבית דגן","Beit Dagan venue hot tub"],"gt-venue-sauna":["סאונה בבית דגן","Beit Dagan venue sauna"],"gt-venue-courtyard":["חצר מקורה בבית דגן","Beit Dagan covered courtyard"],"gt-venue-seating":["פינת ישיבה בבית דגן","Beit Dagan seating area"],"gt-venue-room":["חדר טיפולים בבית דגן","Beit Dagan treatment room"]};for(const [page,langs] of Object.entries(changes)){const p=window.GT_COPY[page];if(!p)continue;for(const [lang,values] of Object.entries(langs)){const v=p[lang]||(p[lang]={});v.text={...(v.text||{}),...values};if(page==='retreat.html'){v.title=lang==='he'?'המתחמים שלנו | Green Therapy | בית דגן':'Our Venues | Green Therapy | Beit Dagan';v.description=lang==='he'?'מתחם אירועים Green Therapy בבית דגן עד 35 איש, עם אפשרות להשכרה זוגית ועמדות עיסוי.':'Green Therapy event venue in Beit Dagan for up to 35 guests, with couples bookings and optional massage stations.';}}}for(const page of ['index.html','spa.html','ice-bath.html','workshops.html','healthy-bar.html','about.html','retreat.html','treatments.html']){const p=window.GT_COPY[page];if(!p)continue;for(const lang of ['he','en']){if(!p[lang])continue;const e=Object.fromEntries(Object.entries(alts).map(([k,v])=>[k,v[lang==='he'?0:1]]));p[lang].alt={...(p[lang].alt||{}),...e};}}})();
 
 ;(()=>{const altText={he:{"gt-ice-photo":"משתתפת באמבטיית קרח עם מדריך באירוע Green Therapy","gt-smoothie-original":"איור מקורי של שייקים וקערות סופר פוד"},en:{"gt-ice-photo":"A guest in an ice bath with an instructor at a Green Therapy event","gt-smoothie-original":"Original illustration of smoothies and superfood bowls"}};for(const page of ["index.html","ice-bath.html","healthy-bar.html"]){for(const lang of ["he","en"]){const p=window.GT_COPY?.[page]?.[lang];if(p)p.alt={...(p.alt||{}),...altText[lang]};}}})();
+
+;(()=>{const textByLanguage={he:{"index.html-t223":"שיעורי יוגה באירועים, מדיטציה, מיינדפולנס, Sound Healing והרצאות בהתאמה ליום חברה או כנס.","index.html-t239":"עיסויים, שיעורי יוגה וסדנאות גוף־נפש, מתחמים מעוצבים ורגעים מהאירועים שלנו."},en:{"index.html-t223":"Yoga classes at corporate events, meditation, mindfulness, Sound Healing and talks tailored to team days and conferences.","index.html-t239":"Massage treatments, group yoga and mind-body workshops, styled event spaces and highlights from our events."}};const alt={he:"מדריכת יוגה וקבוצת משתתפים בשיעור יוגה באירוע",en:"Yoga instructor guiding a group session at a Green Therapy event"};for(const lang of ["he","en"]){const c=window.GT_COPY?.["index.html"]?.[lang];if(c)c.text={...(c.text||{}),...textByLanguage[lang]};for(const page of ["index.html","workshops.html"]){const v=window.GT_COPY?.[page]?.[lang];if(v)v.alt={...(v.alt||{}),"gt-yoga-event":alt[lang]};}}})();

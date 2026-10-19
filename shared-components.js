@@ -31,7 +31,7 @@ const STRINGS={
     plan:"Plan an Event", links:"Links", legal:"Legal", contact:"Contact",
     privacy:"Privacy Policy", terms:"Terms of Use", accessibility:"Accessibility Statement",
     phone:"Phone", email:"Email", address:"Address", map:"View on map",
-    formTitle:"Contact Us", formIntro:"Leave a few details and we’ll get back to you about an event, private retreat visit or treatment.",
+    formTitle:"Contact Us", formIntro:"Leave a few details and we’ll get back to you about an event, event venue booking or treatment.",
     name:"Full name", emailField:"Email", phoneField:"Phone", message:"Tell us briefly what you are looking for", send:"Send",
     sent:"Thank you. Your inquiry was sent.", notConnected:"Form delivery is not connected yet. Please call or message us on WhatsApp.",
     sending:"Sending…", menu:"Open menu", close:"Close menu", language:"עבור לעברית", wa:"Chat on WhatsApp"

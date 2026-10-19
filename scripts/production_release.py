@@ -314,8 +314,8 @@ def add_wellness_space(soup, en=False):
         copy="Alongside the mobile corporate experiences, Green Therapy also operates a private wellness and hospitality space. Contact us for availability, hosting details and the experiences currently offered on site."
         cta="Ask about the wellness space"
     else:
-        title="הצימר ומתחם הבריאות של Green Therapy"
-        copy="לצד מתחמי ה-Wellness שמגיעים לאירועי חברה, Green Therapy מפעילה גם צימר ומתחם בריאות פרטי. לפרטים על אירוח, זמינות והחוויות המתקיימות במקום – דברו איתנו."
+        title="מתחם האירועים והבריאות של Green Therapy"
+        copy="לצד מתחמי ה-Wellness שמגיעים לאירועי חברה, Green Therapy מפעילה גם מתחם אירועים ובריאות. לפרטים על אירוח, זמינות והחוויות המתקיימות במקום – דברו איתנו."
         cta="לפרטים על המתחם"
     section_html=f"""
 <section id="wellness-space" class="gt-wellness-space py-16 md:py-24 bg-primary-container/45 border-y border-outline-variant/20">
@@ -344,8 +344,8 @@ def ensure_internal_nav(soup, en=False):
     if not header: return
     nav=header.find("nav")
     if not nav: return
-    links_en=[("index.html","Home"),("spa.html","Pop-Up Spa"),("ice-bath.html","Ice Baths"),("workshops.html","Mind & Body"),("healthy-bar.html","Healthy Bar"),("index.html#private-retreat","Private Retreat"),("gallery.html","Gallery"),("contact.html","Contact")]
-    links_he=[("index.html","דף הבית"),("spa.html","Pop-Up Spa"),("ice-bath.html","אמבטיות קרח"),("workshops.html","Mind & Body"),("healthy-bar.html","בר בריאות"),("index.html#private-retreat","הצימר"),("gallery.html","גלריה"),("contact.html","צור קשר")]
+    links_en=[("index.html","Home"),("spa.html","Pop-Up Spa"),("ice-bath.html","Ice Baths"),("workshops.html","Mind & Body"),("healthy-bar.html","Healthy Bar"),("index.html#private-retreat","Event Venue"),("gallery.html","Gallery"),("contact.html","Contact")]
+    links_he=[("index.html","דף הבית"),("spa.html","Pop-Up Spa"),("ice-bath.html","אמבטיות קרח"),("workshops.html","Mind & Body"),("healthy-bar.html","בר בריאות"),("index.html#private-retreat","מתחם האירועים"),("gallery.html","גלריה"),("contact.html","צור קשר")]
     nav.clear()
     for href,label in (links_en if en else links_he):
         a=soup.new_tag("a", href=href)

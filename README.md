@@ -1,18 +1,18 @@
 # Green Therapy
 
-Static bilingual Green Therapy website deployed on Netlify.
+Static bilingual Green Therapy website deployed to Cloudflare Workers and mirrored on Netlify.
 
 ## Current site structure
 
 - `index.html` — Corporate events homepage
-- `retreat.html` — Private retreat / zimmer in Beit Dagan, with optional spa add-ons
+- `retreat.html` — Event venue / event venue in Beit Dagan, with optional spa add-ons
 - `treatments.html` — Personal massage and treatment menu + practitioner booking
 - `spa.html` — Corporate Pop-Up Massage
 - `ice-bath.html` — Guided corporate ice-bath experience
 - `workshops.html` — Mind-body workshops and talks
 - `healthy-bar.html` — Smoothie / healthy bar for events
 - `about.html` — About Green Therapy
-- `contact.html` — Contact for events, retreat availability and treatments
+- `contact.html` — Contact for events, event venue availability and treatments
 - `privacy.html`, `terms.html`, `accessibility.html` — Legal/accessibility pages
 
 ## Languages
