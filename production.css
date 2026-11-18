@@ -331,3 +331,8 @@ main figure:hover img{
 @media(max-width:420px){
   main .flex.flex-wrap.items-center.gap-4>a{width:100%;justify-content:center}
 }
+
+/* Contact form build notice and site development credit */
+.gt-shared-form-notice{display:inline-flex;justify-self:start;align-items:center;padding:5px 10px;border:1px solid rgba(29,51,38,.22);border-radius:999px;background:#edf4ef;color:#1d3326;font-size:.75rem;line-height:1.3;font-weight:700}
+.gt-react-footer-credit{max-width:1180px;margin:30px auto 0;padding-top:18px;border-top:1px solid rgba(255,255,255,.18);color:rgba(255,255,255,.78);text-align:center;font-size:.875rem;line-height:1.5}
+.gt-react-footer-credit a{color:#fff;text-decoration:underline;text-underline-offset:3px}

@@ -18,7 +18,7 @@ const STRINGS={
     plan:"לתכנון אירוע", links:"קישורים", legal:"משפטי", contact:"צור קשר",
     privacy:"מדיניות פרטיות", terms:"תנאי שימוש", accessibility:"הצהרת נגישות",
     phone:"טלפון", email:"מייל", address:"כתובת", map:"לצפייה במפה",
-    formTitle:"יצירת קשר", formIntro:"השאירו כמה פרטים ונחזור אליכם לגבי אירוע, אירוח במתחם או טיפול.",
+    formTitle:"יצירת קשר", formNotice:"הטופס בתהליך עבודה", formIntro:"השאירו כמה פרטים ונחזור אליכם לגבי אירוע, אירוח במתחם או טיפול.",
     name:"שם מלא", emailField:"מייל", phoneField:"טלפון", message:"ספרו לנו בקצרה מה אתם מחפשים", send:"שלח",
     sent:"תודה, הפנייה נשלחה.", notConnected:"שליחת הטופס עדיין אינה מחוברת. אפשר להתקשר או לשלוח הודעה בוואטסאפ.",
     sending:"שולחים…", menu:"פתיחת תפריט", close:"סגירת תפריט", language:"Switch to English", wa:"שיחה בוואטסאפ"
@@ -31,7 +31,7 @@ const STRINGS={
     plan:"Plan an Event", links:"Links", legal:"Legal", contact:"Contact",
     privacy:"Privacy Policy", terms:"Terms of Use", accessibility:"Accessibility Statement",
     phone:"Phone", email:"Email", address:"Address", map:"View on map",
-    formTitle:"Contact Us", formIntro:"Leave a few details and we’ll get back to you about an event, event venue booking or treatment.",
+    formTitle:"Contact Us", formNotice:"Form under construction", formIntro:"Leave a few details and we’ll get back to you about an event, event venue booking or treatment.",
     name:"Full name", emailField:"Email", phoneField:"Phone", message:"Tell us briefly what you are looking for", send:"Send",
     sent:"Thank you. Your inquiry was sent.", notConnected:"Form delivery is not connected yet. Please call or message us on WhatsApp.",
     sending:"Sending…", menu:"Open menu", close:"Close menu", language:"עבור לעברית", wa:"Chat on WhatsApp"
@@ -171,7 +171,8 @@ function Footer(){
         h("li",null,h("strong",null,T.email+":")," ",h("a",{href:"mailto:"+EMAIL},EMAIL)),
         h("li",null,h("strong",null,T.address+":")," ",h("a",{href:MAP,target:"_blank",rel:"noopener noreferrer"},T.map))
       ))
-    )
+    ),
+    h("p",{className:"gt-react-footer-credit",dir:"ltr"},"Developed by ",h("a",{href:"https://mosheschwartzberg.com/",target:"_blank",rel:"noopener noreferrer"},"CodeCrafter"))
   );
 }
 
@@ -205,6 +206,7 @@ function ContactSection(){
         )
       ),
       h("form",{className:"gt-shared-contact-form",onSubmit:submit},
+        h("span",{className:"gt-shared-form-notice",role:"note"},T.formNotice),
         h("input",{className:"gt-honeypot",name:"company_website",tabIndex:-1,autoComplete:"off","aria-hidden":"true"}),
         h("div",{className:"gt-shared-form-grid"},
           h("label",null,h("span",null,T.name),h("input",{name:"name",required:true,autoComplete:"name"})),
