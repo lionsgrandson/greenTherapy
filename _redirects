@@ -6,3 +6,5 @@
 
 /retreat /retreat.html 200
 /treatments /treatments.html 200
+/couple /couple.html 301
+/couple/ /couple.html 301

@@ -1,6 +1,7 @@
 import React, {useMemo, useState} from "https://esm.sh/react@19.1.1";
 import {createRoot} from "https://esm.sh/react-dom@19.1.1/client";
 import "./copy-overrides.js";
+import "./seo-copy.js";
 
 const h=React.createElement;
 const PHONE="+972 53-532-4962";
@@ -202,6 +203,7 @@ function ContactSection(){
         h("div",{className:"gt-shared-contact-links"},
           h("a",{href:"tel:"+TEL},h("span",null,T.phone),h("strong",{dir:"ltr",className:"gt-phone-isolate"},PHONE)),
           h("a",{href:"mailto:"+EMAIL},h("span",null,T.email),h("strong",null,EMAIL)),
+          h("a",{href:WA,target:"_blank",rel:"noopener noreferrer"},h("span",null,T.wa),h("strong",null,"WhatsApp")),
           h("a",{href:MAP,target:"_blank",rel:"noopener noreferrer"},h("span",null,T.address),h("strong",null,T.map))
         )
       ),
@@ -305,14 +307,12 @@ function initLazy(){
 
 function updateSeo(){
   const data=currentPageData();
-  const base="https://green-therapy.netlify.app/"+(PAGE==="index.html"?"":PAGE);
+  const base="https://greentherapy.co.il/"+(PAGE==="index.html"?"":PAGE);
   let canonical=document.querySelector('link[rel="canonical"]');
   if(!canonical){canonical=document.createElement("link");canonical.rel="canonical";document.head.appendChild(canonical);}
-  canonical.href=LANG==="en"?base+"?lang=en":base;
-  document.querySelectorAll('link[rel="alternate"][hreflang],link[data-gt-hreflang]').forEach(x=>x.remove());
-  [["he",base],["en",base+"?lang=en"],["x-default",base]].forEach(([lang,url])=>{
-    const l=document.createElement("link");l.rel="alternate";l.hreflang=lang;l.href=url;l.dataset.gtHreflang="1";document.head.appendChild(l);
-  });
+  // English query-parameter UI is not a separately crawlable HTML locale.
+  canonical.href=base;
+  document.querySelectorAll('link[data-gt-hreflang]').forEach(e=>e.remove());
   if(data.title){
     document.title=data.title;
     const ogt=document.querySelector('meta[property="og:title"]'); if(ogt) ogt.content=data.title;
@@ -324,6 +324,16 @@ function updateSeo(){
   const ogu=document.querySelector('meta[property="og:url"]'); if(ogu) ogu.content=canonical.href;
 }
 
+function trackContactIntent(){
+  document.addEventListener("click",e=>{
+    const a=e.target.closest("a[href]");
+    if(!a||typeof window.gtag!=="function")return;
+    const url=a.getAttribute("href")||"";
+    const via=url.includes("wa.me/")?"whatsapp":url.startsWith("tel:")?"telephone":url.startsWith("mailto:")?"email":null;
+    if(!via)return;
+    window.gtag("event","contact_click",{contact_method:via,lead_type:["spa.html","ice-bath.html","workshops.html","healthy-bar.html","index.html"].includes(PAGE)?"b2b":"b2c",landing_page:location.pathname});
+  });
+}
 function initContextualLinks(){
   document.querySelectorAll("[data-wa-he],[data-wa-en]").forEach(el=>{
     const msg=LANG==="he"?el.dataset.waHe:el.dataset.waEn;
@@ -386,4 +396,4 @@ if(headerRoot) createRoot(headerRoot).render(h(Header));
 if(footerRoot) createRoot(footerRoot).render(h(Footer));
 if(contactRoot) createRoot(contactRoot).render(h(ContactSection));
 const waRoot=document.createElement("div");waRoot.id="gt-wa-root";document.body.appendChild(waRoot);createRoot(waRoot).render(h(FloatingWhatsApp));
-syncLanguageLinks();initContextualLinks();initFaq();initReveal();initLazy();initMaterialIconFallback();initHashAnchorNavigation();
+syncLanguageLinks();initContextualLinks();trackContactIntent();initFaq();initReveal();initLazy();initMaterialIconFallback();initHashAnchorNavigation();

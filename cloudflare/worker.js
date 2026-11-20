@@ -21,6 +21,9 @@ export default {
       destination.searchParams.set("lang", "en");
       return Response.redirect(destination, 301);
     }
+    if (path === "/couple" || path === "/couple/") {
+      return Response.redirect(new URL("/couple.html", url.origin), 301);
+    }
     if (path === "/gallery" || path === "/gallery.html") {
       return Response.redirect(new URL("/", url.origin), 301);
     }

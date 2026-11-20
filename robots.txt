@@ -1,3 +1,20 @@
 User-agent: *
 Allow: /
-Sitemap: https://green-therapy.netlify.app/sitemap.xml
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+# Search access is separate from AI model-training crawlers.
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+Sitemap: https://greentherapy.co.il/sitemap.xml
