@@ -24,3 +24,4 @@ for(const p of pages){
 assert(!sitemap.some(v=>v.includes("?lang=en")),"Client-rendered English variants must not be in sitemap");
 assert(readFileSync("robots.txt","utf8").includes("Sitemap: "+site+"/sitemap.xml"));
 console.log("Green Therapy static SEO audit passed:",pages.length,"pages");
+import "./attribution-audit.mjs";
