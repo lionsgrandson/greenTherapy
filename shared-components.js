@@ -27,6 +27,7 @@ const STRINGS={
     sent:"תודה, הפנייה נשלחה.", notConnected:"לא הצלחנו לשלוח את הפנייה. נסו שוב או צרו קשר בטלפון או בוואטסאפ.",
     timeoutError:"לא התקבל אישור מהשירות בזמן. ייתכן שהפנייה נשלחה. אפשר ליצור קשר בוואטסאפ כדי לוודא.",
     rateLimited:"לא ניתן לשלוח פניות נוספות כרגע. נסו שוב מאוחר יותר או צרו קשר בוואטסאפ.",
+    fallbackWhatsApp:"שליחת הפנייה ב-WhatsApp",
     privacyNotice:"הפרטים נשלחים דרך EmailJS כדי שנוכל לחזור אליכם.", privacyLink:"מדיניות הפרטיות",
     sending:"שולחים…", menu:"פתיחת תפריט", close:"סגירת תפריט", language:"Switch to English", wa:"שיחה בוואטסאפ"
   },
@@ -43,6 +44,7 @@ const STRINGS={
     sent:"Thank you. Your inquiry was sent.", notConnected:"We couldn’t send your inquiry. Please try again or contact us by phone or WhatsApp.",
     timeoutError:"The request timed out without confirmation. Your inquiry may have been sent; you can check with us on WhatsApp.",
     rateLimited:"We can’t accept more inquiries right now. Please try later or contact us on WhatsApp.",
+    fallbackWhatsApp:"Send your inquiry via WhatsApp",
     privacyNotice:"Your details are sent through EmailJS so we can reply.", privacyLink:"Privacy Policy",
     sending:"Sending…", menu:"Open menu", close:"Close menu", language:"עבור לעברית", wa:"Chat on WhatsApp"
   }
@@ -190,6 +192,7 @@ function ContactSection(){
   const [status,setStatus]=useState("");
   const [statusKind,setStatusKind]=useState("");
   const [submitting,setSubmitting]=useState(false);
+  const [fallbackWa,setFallbackWa]=useState("");
   const sendingRef=useRef(false);
   async function submit(e){
     e.preventDefault();
@@ -209,7 +212,16 @@ function ContactSection(){
       form.reportValidity();
       return;
     }
+    const fallbackMessage=[
+      LANG==="he"?"שלום, ניסיתי לשלוח פנייה דרך האתר:":"Hi, I tried to send an inquiry through the website:",
+      (LANG==="he"?"שם: ":"Name: ")+name,
+      (LANG==="he"?"טלפון: ":"Phone: ")+phone,
+      email?(LANG==="he"?"מייל: ":"Email: ")+email:null,
+      message?(LANG==="he"?"הודעה: ":"Message: ")+message:null
+    ].filter(Boolean).join("\\n");
+    const fallbackUrl=WA+"?text="+encodeURIComponent(fallbackMessage);
     sendingRef.current=true;
+    setFallbackWa("");
     setSubmitting(true);
     setStatusKind("");
     setStatus(T.sending);
@@ -234,17 +246,20 @@ function ContactSection(){
       if(res.status===429){
         setStatus(T.rateLimited);
         setStatusKind("error");
+        setFallbackWa(fallbackUrl);
         return;
       }
       if(!res.ok)throw new Error("EmailJS request failed with HTTP "+res.status);
       setStatus(T.sent);
       setStatusKind("success");
+      setFallbackWa("");
       form.reset();
     }catch(err){
       const timedOut=err instanceof Error && err.name==="AbortError";
       console.warn("Green Therapy contact delivery failed:",timedOut?"Request timed out":err instanceof Error?err.message:"Network error");
       setStatus(timedOut?T.timeoutError:T.notConnected);
       setStatusKind("error");
+      setFallbackWa(fallbackUrl);
     }finally{
       clearTimeout(timeout);
       sendingRef.current=false;
@@ -273,7 +288,8 @@ function ContactSection(){
         h("label",null,h("span",null,T.message),h("textarea",{name:"message",rows:3,maxLength:5000})),
         h("button",{type:"submit",disabled:submitting},submitting?T.sending:T.send),
         h("p",{className:"gt-shared-form-privacy"},T.privacyNotice+" ",h("a",{href:withLang("privacy.html")},T.privacyLink)),
-        h("div",{className:"gt-shared-form-status"+(statusKind?" is-"+statusKind:""),role:"status","aria-live":"polite"},status)
+        h("div",{className:"gt-shared-form-status"+(statusKind?" is-"+statusKind:""),role:"status","aria-live":"polite"},status),
+        fallbackWa&&h("a",{className:"gt-shared-form-fallback",href:fallbackWa,target:"_blank",rel:"noopener noreferrer"},T.fallbackWhatsApp)
       )
     )
   );
