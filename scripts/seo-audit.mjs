@@ -25,11 +25,3 @@ assert(!sitemap.some(v=>v.includes("?lang=en")),"Client-rendered English variant
 assert(readFileSync("robots.txt","utf8").includes("Sitemap: "+site+"/sitemap.xml"));
 console.log("Green Therapy static SEO audit passed:",pages.length,"pages");
 import "./attribution-audit.mjs";
-
-/* Temporary public review-image text verification; remove after inspection. */
-for (const [reviewId,file] of [["corporate","assets/gallery/corporate-event-review.webp"],["garden","assets/gallery/garden-workshop-review.webp"]]){
-  const image64=readFileSync(file).toString("base64");
-  console.log("REVIEW_IMAGE_START:"+reviewId);
-  for(let offset=0;offset<image64.length;offset+=1000) console.log("REVIEW_IMAGE_CHUNK:"+reviewId+":"+image64.slice(offset,offset+1000));
-  console.log("REVIEW_IMAGE_END:"+reviewId);
-}
