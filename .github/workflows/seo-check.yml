@@ -14,4 +14,5 @@ jobs:
         with:
           node-version: '22'
       - run: node scripts/seo-audit.mjs
-      - run: node --check shared-components.js && node --check copy-overrides.js
+      - run: node scripts/site-ux-audit.mjs
+      - run: node --check shared-components.js && node --check copy-overrides.js && node --check seo-copy.js
