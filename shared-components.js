@@ -218,7 +218,7 @@ function ContactSection(){
       (LANG==="he"?"טלפון: ":"Phone: ")+phone,
       email?(LANG==="he"?"מייל: ":"Email: ")+email:null,
       message?(LANG==="he"?"הודעה: ":"Message: ")+message:null
-    ].filter(Boolean).join("\\n");
+    ].filter(Boolean).join("\n");
     const fallbackUrl=WA+"?text="+encodeURIComponent(fallbackMessage);
     sendingRef.current=true;
     setFallbackWa("");
