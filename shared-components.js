@@ -103,8 +103,11 @@ function applyStaticTranslation(){
   document.body.classList.toggle("gt-lang-en",LANG==="en");
   document.body.classList.toggle("gt-lang-he",LANG==="he");
   const data=currentPageData();
+  // Testimonial cards are shared on multiple pages; reuse their source translations.
+  const sharedReviews=(window.GT_COPY?.["index.html"]?.[LANG]?.text)||{};
   document.querySelectorAll("[data-i18n]").forEach(el=>{
-    const v=data.text&&data.text[el.dataset.i18n];
+    const key=el.dataset.i18n;
+    const v=(data.text&&data.text[key]) ?? (key.startsWith("index.html-t")?sharedReviews[key]:undefined);
     if(typeof v==="string") el.textContent=v;
   });
   document.querySelectorAll("[data-i18n-alt]").forEach(el=>{
