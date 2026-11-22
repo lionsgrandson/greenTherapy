@@ -304,17 +304,6 @@ function FloatingWhatsApp(){
   );
 }
 
-function initFaq(){
-  document.querySelectorAll("details").forEach(d=>{
-    d.classList.add("gt-faq-item");
-    d.addEventListener("toggle",()=>{
-      if(!d.open)return;
-      const scope=d.closest("section")||document;
-      scope.querySelectorAll("details[open]").forEach(other=>{if(other!==d) other.open=false;});
-    });
-  });
-}
-
 function initReveal(){
   const els=[...document.querySelectorAll(
     "main > section, main article, main .tactile-card, main .grid > div, main .grid > article, main .grid > a, main figure"
@@ -473,4 +462,4 @@ if(headerRoot) createRoot(headerRoot).render(h(Header));
 if(footerRoot) createRoot(footerRoot).render(h(Footer));
 if(contactRoot) createRoot(contactRoot).render(h(ContactSection));
 const waRoot=document.createElement("div");waRoot.id="gt-wa-root";document.body.appendChild(waRoot);createRoot(waRoot).render(h(FloatingWhatsApp));
-syncLanguageLinks();initContextualLinks();trackContactIntent();initFaq();initReveal();initLazy();initMaterialIconFallback();initHashAnchorNavigation();
+syncLanguageLinks();initContextualLinks();trackContactIntent();initReveal();initLazy();initMaterialIconFallback();initHashAnchorNavigation();
