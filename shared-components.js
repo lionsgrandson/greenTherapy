@@ -1,4 +1,4 @@
-import React, {useMemo, useState} from "https://esm.sh/react@19.1.1";
+import React, {useMemo, useRef, useState} from "https://esm.sh/react@19.1.1";
 import {createRoot} from "https://esm.sh/react-dom@19.1.1/client";
 import "./copy-overrides.js";
 import "./seo-copy.js";
@@ -9,6 +9,9 @@ const TEL="+972535324962";
 const WA="https://wa.me/972535324962";
 const EMAIL="alongreentherapy@gmail.com";
 const MAP="https://share.google/hEvKhs5USb65ZEgi7";
+// EmailJS allows "primary_service" for the default connected email service.
+// Restrict allowed domains and configure a default service in the EmailJS dashboard.
+const EMAILJS={serviceId:"primary_service",templateId:"template_suj8dvg",publicKey:"dh2O2Nh2z42DJGLUB"};
 
 const STRINGS={
   he:{
@@ -19,9 +22,10 @@ const STRINGS={
     plan:"לתכנון אירוע", links:"קישורים", legal:"משפטי", contact:"צור קשר",
     privacy:"מדיניות פרטיות", terms:"תנאי שימוש", accessibility:"הצהרת נגישות",
     phone:"טלפון", email:"מייל", address:"כתובת", map:"לצפייה במפה",
-    formTitle:"יצירת קשר", formNotice:"הטופס בתהליך עבודה", formIntro:"השאירו כמה פרטים ונחזור אליכם לגבי אירוע, אירוח במתחם או טיפול.",
+    formTitle:"יצירת קשר", formIntro:"השאירו כמה פרטים ונחזור אליכם לגבי אירוע, אירוח במתחם או טיפול.",
     name:"שם מלא", emailField:"מייל", phoneField:"טלפון", message:"ספרו לנו בקצרה מה אתם מחפשים", send:"שלח",
-    sent:"תודה, הפנייה נשלחה.", notConnected:"שליחת הטופס עדיין אינה מחוברת. אפשר להתקשר או לשלוח הודעה בוואטסאפ.",
+    sent:"תודה, הפנייה נשלחה.", notConnected:"לא הצלחנו לשלוח את הפנייה. נסו שוב או צרו קשר בטלפון או בוואטסאפ.",
+    privacyNotice:"הפרטים נשלחים דרך EmailJS כדי שנוכל לחזור אליכם.", privacyLink:"מדיניות הפרטיות",
     sending:"שולחים…", menu:"פתיחת תפריט", close:"סגירת תפריט", language:"Switch to English", wa:"שיחה בוואטסאפ"
   },
   en:{
@@ -32,9 +36,10 @@ const STRINGS={
     plan:"Plan an Event", links:"Links", legal:"Legal", contact:"Contact",
     privacy:"Privacy Policy", terms:"Terms of Use", accessibility:"Accessibility Statement",
     phone:"Phone", email:"Email", address:"Address", map:"View on map",
-    formTitle:"Contact Us", formNotice:"Form under construction", formIntro:"Leave a few details and we’ll get back to you about an event, event venue booking or treatment.",
+    formTitle:"Contact Us", formIntro:"Leave a few details and we’ll get back to you about an event, event venue booking or treatment.",
     name:"Full name", emailField:"Email", phoneField:"Phone", message:"Tell us briefly what you are looking for", send:"Send",
-    sent:"Thank you. Your inquiry was sent.", notConnected:"Form delivery is not connected yet. Please call or message us on WhatsApp.",
+    sent:"Thank you. Your inquiry was sent.", notConnected:"We couldn’t send your inquiry. Please try again or contact us by phone or WhatsApp.",
+    privacyNotice:"Your details are sent through EmailJS so we can reply.", privacyLink:"Privacy Policy",
     sending:"Sending…", menu:"Open menu", close:"Close menu", language:"עבור לעברית", wa:"Chat on WhatsApp"
   }
 };
@@ -179,21 +184,58 @@ function Footer(){
 
 function ContactSection(){
   const [status,setStatus]=useState("");
+  const [statusKind,setStatusKind]=useState("");
+  const [submitting,setSubmitting]=useState(false);
+  const sendingRef=useRef(false);
   async function submit(e){
     e.preventDefault();
+    if(sendingRef.current)return;
     const form=e.currentTarget;
+    const data=new FormData(form);
+    // Quietly discard bot submissions without sending email.
+    if(String(data.get("company_website")||"").trim()){
+      form.reset();
+      return;
+    }
+    const name=String(data.get("name")||"").trim();
+    const phone=String(data.get("phone")||"").trim();
+    const email=String(data.get("email")||"").trim();
+    const message=String(data.get("message")||"").trim();
+    if(!name||!phone||!form.checkValidity()){
+      form.reportValidity();
+      return;
+    }
+    sendingRef.current=true;
+    setSubmitting(true);
+    setStatusKind("");
     setStatus(T.sending);
-    const payload=Object.fromEntries(new FormData(form));
-    const body=new URLSearchParams({"form-name":"contact",...payload}).toString();
     try{
-      const res=await fetch("/",{
+      const res=await fetch("https://api.emailjs.com/api/v1.0/email/send",{
         method:"POST",
-        headers:{"content-type":"application/x-www-form-urlencoded"},
-        body
+        headers:{"Content-Type":"application/json"},
+        body:JSON.stringify({
+          service_id:EMAILJS.serviceId,
+          template_id:EMAILJS.templateId,
+          user_id:EMAILJS.publicKey,
+          template_params:{
+            name,phone,email,message,
+            from_name:name,from_email:email,reply_to:email||EMAIL,
+            page_url:location.href,language:LANG
+          }
+        })
       });
-      if(res.ok){setStatus(T.sent);form.reset();}
-      else setStatus(T.notConnected);
-    }catch{setStatus(T.notConnected);}
+      if(!res.ok)throw new Error("EmailJS request failed with HTTP "+res.status);
+      setStatus(T.sent);
+      setStatusKind("success");
+      form.reset();
+    }catch(err){
+      console.warn("Green Therapy contact delivery failed:",err instanceof Error?err.message:"Network error");
+      setStatus(T.notConnected);
+      setStatusKind("error");
+    }finally{
+      sendingRef.current=false;
+      setSubmitting(false);
+    }
   }
   return h("section",{className:"gt-shared-contact",id:"contact-form"},
     h("div",{className:"gt-shared-contact-inner"},
@@ -208,16 +250,16 @@ function ContactSection(){
         )
       ),
       h("form",{className:"gt-shared-contact-form",onSubmit:submit},
-        h("span",{className:"gt-shared-form-notice",role:"note"},T.formNotice),
         h("input",{className:"gt-honeypot",name:"company_website",tabIndex:-1,autoComplete:"off","aria-hidden":"true"}),
         h("div",{className:"gt-shared-form-grid"},
-          h("label",null,h("span",null,T.name),h("input",{name:"name",required:true,autoComplete:"name"})),
-          h("label",null,h("span",null,T.phoneField),h("input",{name:"phone",required:true,type:"tel",dir:"ltr",autoComplete:"tel"})),
-          h("label",null,h("span",null,T.emailField),h("input",{name:"email",type:"email",dir:"ltr",autoComplete:"email"}))
+          h("label",null,h("span",null,T.name),h("input",{name:"name",required:true,maxLength:120,autoComplete:"name"})),
+          h("label",null,h("span",null,T.phoneField),h("input",{name:"phone",required:true,type:"tel",maxLength:32,dir:"ltr",autoComplete:"tel"})),
+          h("label",null,h("span",null,T.emailField),h("input",{name:"email",type:"email",maxLength:254,dir:"ltr",autoComplete:"email"}))
         ),
-        h("label",null,h("span",null,T.message),h("textarea",{name:"message",rows:3})),
-        h("button",{type:"submit"},T.send),
-        h("div",{className:"gt-shared-form-status",role:"status","aria-live":"polite"},status)
+        h("label",null,h("span",null,T.message),h("textarea",{name:"message",rows:3,maxLength:5000})),
+        h("button",{type:"submit",disabled:submitting},submitting?T.sending:T.send),
+        h("p",{className:"gt-shared-form-privacy"},T.privacyNotice+" ",h("a",{href:withLang("privacy.html")},T.privacyLink)),
+        h("div",{className:"gt-shared-form-status"+(statusKind?" is-"+statusKind:""),role:"status","aria-live":"polite"},status)
       )
     )
   );
