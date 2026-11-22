@@ -44,3 +44,11 @@ The primary hierarchy is now:
 3. Personal treatments
 
 Existing corporate service URLs were retained so current links and search visibility are not unnecessarily discarded. New retreat and treatments URLs are included in `sitemap.xml`, with extensionless Netlify rewrites in `_redirects`.
+
+## Contact form (EmailJS)
+
+The shared bilingual contact form in `shared-components.js` sends directly from the browser to the EmailJS REST API. The configured public key is `dh2O2Nh2z42DJGLUB`, template is `template_suj8dvg`, and service alias is `primary_service` (the default connected service in EmailJS). No private API key is stored in the repository. This integration replaces the earlier homepage POST used for Netlify Forms, which Cloudflare Workers did not handle.
+
+**Before accepting leads:** configure a connected email service as the **default** in the EmailJS dashboard, set the Contact Us template recipient (Green Therapy's inbox), and verify that the template variables `{{name}}`, `{{phone}}`, `{{email}}`, `{{message}}` match the EmailJS template. The form also provides `from_name`, `from_email`, `reply_to`, `page_url`, and `language`. If the default-service alias is unavailable, replace `primary_service` with the exact EmailJS `service_...` ID. Add `greentherapy.co.il` to the allowed origins/domains in EmailJS and enable appropriate spam controls. Do not put a private key into frontend files.
+
+Test with a real browser submission after deployment. Only an HTTP success response from EmailJS produces the success message; failures leave entered form data intact and show an error with phone/WhatsApp alternatives. The Cloudflare Worker remains GET/HEAD-only and is not used for form delivery.
