@@ -174,7 +174,7 @@ main p{text-wrap:pretty}
 
 .gt-floating-wa-react{position:fixed;right:18px;bottom:18px;z-index:150;width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#25D366;color:#fff!important;border:2px solid #fff;text-decoration:none!important;font-weight:900;box-shadow:0 10px 28px rgba(0,0,0,.24)}
 
-details.gt-faq-item{overflow:hidden}details.gt-faq-item summary{user-select:none}details.gt-faq-item[open]>summary .material-symbols-outlined{transform:rotate(180deg)}details.gt-faq-item>summary .material-symbols-outlined{transition:transform .25s ease}details.gt-faq-item[open]>:not(summary){animation:gtFaqReveal .28s cubic-bezier(.2,.8,.2,1) both}@keyframes gtFaqReveal{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+
 
 .gt-animate-ready [data-gt-reveal]{opacity:0;transform:translateY(14px)}.gt-animate-ready [data-gt-reveal].gt-visible{opacity:1;transform:none;transition:opacity .55s ease,transform .55s cubic-bezier(.2,.8,.2,1)}
 .gt-lang-en main{direction:ltr}.gt-lang-en main .text-right{text-align:left!important}.gt-lang-en main .right-4{right:auto!important;left:1rem!important}.gt-lang-en main .right-5{right:auto!important;left:1.25rem!important}
@@ -195,7 +195,7 @@ details.gt-faq-item{overflow:hidden}details.gt-faq-item summary{user-select:none
  .gt-floating-wa-react{right:12px;bottom:12px;width:52px;height:52px}
  main h1{font-size:clamp(2rem,9.4vw,2.85rem)!important;line-height:1.08!important}main h2{font-size:clamp(1.6rem,7.2vw,2.15rem)!important;line-height:1.16!important}
 }
-@media(prefers-reduced-motion:reduce){.gt-animate-ready [data-gt-reveal]{opacity:1;transform:none}.gt-animate-ready [data-gt-reveal].gt-visible{transition:none}details.gt-faq-item[open]>:not(summary){animation:none}}
+@media(prefers-reduced-motion:reduce){.gt-animate-ready [data-gt-reveal]{opacity:1;transform:none}.gt-animate-ready [data-gt-reveal].gt-visible{transition:none}}
 
 
 /* Language switch + motion polish */
@@ -337,6 +337,23 @@ main figure:hover img{
 .gt-react-footer-credit{max-width:1180px;margin:30px auto 0;padding-top:18px;border-top:1px solid rgba(255,255,255,.18);color:rgba(255,255,255,.78);text-align:center;font-size:.875rem;line-height:1.5}
 .gt-react-footer-credit a{color:#fff;text-decoration:underline;text-underline-offset:3px}
 
-.gt-review-sources{margin-top:1.75rem}.gt-review-sources-intro{font-size:.9rem;color:#5f6c63;font-weight:600;margin:0 0 .45rem}.gt-review-sources details{max-width:100%}.gt-review-sources summary{cursor:pointer;font-weight:700;color:#2d5a43;padding:.5rem 0}.gt-review-sources .gt-review-photo-grid{margin-top:1rem}.gt-floating-wa-react svg{width:30px;height:30px;display:block}
+.gt-floating-wa-react svg{width:30px;height:30px;display:block}
 
 .gt-shared-form-fallback{display:inline-flex;align-items:center;justify-content:center;justify-self:start;max-width:100%;background:#fff;color:#1d5a38;border:2px solid #25D366;border-radius:999px;padding:10px 18px;font-weight:800;text-decoration:none;line-height:1.4}.gt-shared-form-fallback:hover,.gt-shared-form-fallback:focus-visible{background:#effbf2}@media(max-width:767px){.gt-shared-form-fallback{justify-self:stretch;text-align:center}}
+
+
+/* Continuous, seamless customer testimonials. Two identical groups keep the loop gap-free. */
+.gt-testimonials-section{overflow:hidden}
+.gt-testimonials-window{width:100%;overflow:hidden;direction:ltr;margin-top:2.25rem;mask-image:linear-gradient(to right,transparent,black 2.5%,black 97.5%,transparent);-webkit-mask-image:linear-gradient(to right,transparent,black 2.5%,black 97.5%,transparent)}
+.gt-testimonials-track{display:flex;width:max-content;align-items:stretch;direction:ltr;animation:gt-testimonials-right-to-left 82s linear infinite;will-change:transform}
+.gt-testimonials-set{display:flex;gap:1rem;padding-right:1rem;flex:0 0 auto;align-items:stretch}
+.gt-testimonials-set article{box-sizing:border-box;flex:0 0 clamp(295px,29vw,380px);width:clamp(295px,29vw,380px);height:auto;direction:rtl;text-align:right}
+.gt-testimonials-set article blockquote{overflow-wrap:anywhere}
+html[lang="en"] .gt-testimonials-set article{direction:ltr;text-align:left}
+@keyframes gt-testimonials-right-to-left{from{transform:translate3d(0,0,0)}to{transform:translate3d(-50%,0,0)}}
+@media(max-width:767px){.gt-testimonials-window{margin-top:1.75rem}.gt-testimonials-set article{flex-basis:min(82vw,355px);width:min(82vw,355px);min-width:250px}}
+@media(prefers-reduced-motion:reduce){
+  .gt-testimonials-window{overflow-x:auto;mask-image:none;-webkit-mask-image:none;scrollbar-width:thin}
+  .gt-testimonials-track{animation:none;will-change:auto}
+  .gt-testimonials-set[aria-hidden="true"]{display:none}
+}
