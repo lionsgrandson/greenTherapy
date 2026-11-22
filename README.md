@@ -33,7 +33,7 @@ The Python scripts under `scripts/` are legacy migration/release utilities from 
 
 Website copies of selected photos and public review screenshots from `images/` live in `assets/gallery/`. Originals remain untouched. `assets/gallery/manifest.json` records each source and its output dimensions. Run `python scripts/prepare_site_images.py` (requires Pillow) to regenerate these WebP copies; this utility does not rewrite pages.
 
-Photos are placed by subject across the homepage, spa, workshops, personal treatments, retreat workshop, about, and contact pages. Reviews remain in their original Hebrew in expandable sections. Private WhatsApp conversations are not used in these sections.
+Photos are placed by subject across the homepage, spa, workshops, personal treatments, retreat workshop, about, and contact pages. Original public review screenshots remain stored as reference assets only; they are not displayed on the site. Private WhatsApp conversations are not published.
 
 ## October 2026 restructure
 
@@ -53,6 +53,8 @@ The shared bilingual contact form in `shared-components.js` sends directly from 
 
 Test with a real browser submission after deployment. Only an HTTP success response from EmailJS produces the success message; it confirms the API accepted the request, not that a message necessarily arrived in the recipient inbox. Network/HTTP errors, rate limiting and a 20-second timeout show localized feedback, keep form data intact, and offer a user-initiated WhatsApp link prefilled with the inquiry. A timeout has uncertain delivery status, so the UI warns that the email may already have been sent. The Cloudflare Worker remains GET/HEAD-only and is not used for form delivery.
 
-## Customer review screenshots
+## Customer testimonials and FAQ removal
 
-The homepage review grid includes verbatim text from the three public review screenshots in `assets/gallery/`. The original images remain accessible in a collapsed disclosure below the text reviews. A cropped testimonial has no invented author or rating; testimonial text is not to be treated as independent proof of health outcomes.
+The homepage, treatments page and workshops page display eight text-only testimonials as a continuously scrolling right-to-left carousel. The track repeats an identical copy of the eight cards for a seamless loop; duplicate cards are hidden from assistive technology. The original review screenshots are retained in `assets/gallery/` for verification but never embedded in the site. A cropped testimonial has no invented author or rating; testimonial text is not independent proof of health outcomes.
+
+Q&A/FAQ accordion sections have been removed from all service pages. `node scripts/site-ux-audit.mjs` checks that no FAQ or screenshot gallery returns, and that each carousel has matching duplicate content and reduced-motion CSS. The SEO workflow runs this audit along with the ordinary SEO and JavaScript checks.
