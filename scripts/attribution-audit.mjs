@@ -14,7 +14,8 @@ for (const p of pages) {
   assert.equal(page.isPartOf?.["@id"],root+"#website");
   // Duplicate attribution panels were intentionally removed from the visible UI.
   // Canonical HTML links and JSON-LD remain shared, public source signals.
-  assert(html.includes('<link rel="canonical" href="'+url+'"/>'),p+" missing canonical link");
+  const canonicalTags=[...html.matchAll(/<link\b[^>]*>/g)].map(m=>m[0]);
+  assert(canonicalTags.some(tag=>/\brel=["']canonical["']/.test(tag) && tag.includes('href="'+url+'"')),p+" missing canonical link");
   assert.equal((html.match(/gt-source-attribution/g)||[]).length,0,p+" legacy attribution UI returned");
   assert.equal((html.match(/<h1\b/g)||[]).length,1,p+" H1 changed");
   if (services.includes(p)) {
